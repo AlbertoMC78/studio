@@ -223,7 +223,7 @@ export const courseData: CourseModule[] = [
 <h3>Recursos Complementarios</h3>
 <h4>Videos Recomendados</h4>
 <ul>
-    <li><strong>(Español) Curso HTML5 desde cero</strong> - Un curso completo en video por EDteam: <a href="https://www.youtube.com/watch?v=k2IydkL3_o" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+    <li><strong>(Español) Curso HTML5 desde cero</strong> - Un curso completo en video por EDteam: <a href="https://www.youtube.com/watch?v=k2IydkL3_oE" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
     <li><strong>(Inglés) HTML Full Course for Beginners</strong> - Un video exhaustivo de Traversy Media: <a href="https://www.youtube.com/watch?v=mJgBOIoGihA" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
 </ul>
 <h4>Lecturas Oficiales</h4>
@@ -310,7 +310,7 @@ export const courseData: CourseModule[] = [
 <h3>Recursos Complementarios</h3>
 <h4>Videos Recomendados</h4>
 <ul>
-    <li><strong>(Español) ¿Qué es HTML Semántico?</strong> - Una explicación clara de CodelyTV: <a href="https://www.youtube.com/watch?v=T1itpKr822o" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+    <li><strong>(Español) ¿Qué es HTML Semántico?</strong> - Una explicación clara de la Universidad JavaScript: <a href="https://www.youtube.com/watch?v=T1itpKr822o" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
 </ul>
 <h4>Lecturas Oficiales</h4>
 <ul>
@@ -699,273 +699,319 @@ git push --set-upstream origin nueva-funcionalidad</code></pre>
   },
   {
     id: '2',
-    title: 'MÓDULO 2: Programación con JavaScript',
-    objective: 'Dominar JavaScript para lógica de programación, manipulación del DOM y trabajo con datos',
+    title: 'MÓDULO 2: JavaScript a Profundidad',
+    objective: 'Dominar JavaScript, su asincronismo y sus paradigmas para resolver problemas complejos.',
     classes: [
         {
           id: '2.1', 
-          title: 'Variables, tipos de datos y operadores', 
-          content: `<h2>El Cerebro de la Web: Introducción a JavaScript</h2>
-<p>Hemos construido el esqueleto (HTML) y hemos vestido nuestra página (CSS). Ahora es el momento de darle vida y cerebro con <strong>JavaScript (JS)</strong>. JavaScript es un lenguaje de programación completo que se ejecuta directamente en el navegador del usuario. Nos permite crear interactividad, manipular contenido dinámicamente y comunicarnos con servidores.</p>
+          title: 'Tipos, Coerción y Comparaciones Estrictas', 
+          content: `<h2>La Verdad sobre JavaScript: Tipos, Coerción y Comparaciones</h2>
+<p>JavaScript es un lenguaje de "tipado dinámico", lo que significa que no tienes que declarar el tipo de una variable. Esto ofrece flexibilidad, pero también es una fuente común de errores si no se entienden los conceptos de <strong>coerción de tipo</strong> y <strong>comparación estricta</strong>.</p>
 
-<h3>1. Variables: Contenedores de Información</h3>
-<p>En programación, necesitamos una forma de almacenar valores para usarlos más tarde. Para eso usamos las <strong>variables</strong>. Piensa en ellas como cajas con etiquetas donde guardamos datos.</p>
-<p>En JavaScript moderno, tenemos tres formas de declarar una variable:</p>
+<h3>1. El Sistema de Tipos de JavaScript</h3>
+<p>Los tipos primitivos son la base:</p>
 <ul>
-    <li><strong><code>let</code>:</strong> Es la forma estándar y más recomendada para declarar variables cuyo valor puede cambiar con el tiempo.</li>
-    <li><strong><code>const</code>:</strong> Se usa para declarar "constantes", es decir, variables cuyo valor no cambiará después de ser asignado. Es una buena práctica usar <code>const</code> por defecto y solo cambiar a <code>let</code> si sabes que necesitarás reasignar el valor.</li>
-    <li><strong><code>var</code>:</strong> La forma antigua de declarar variables. Tiene un comportamiento de "scope" (alcance) que puede ser confuso y propenso a errores. Se recomienda evitar <code>var</code> en código moderno.</li>
+    <li><strong>String:</strong> <code>"hola"</code></li>
+    <li><strong>Number:</strong> <code>42</code>, <code>3.14</code> (no hay distinción entre enteros y flotantes)</li>
+    <li><strong>Boolean:</strong> <code>true</code>, <code>false</code></li>
+    <li><strong>null:</strong> Un valor asignado que significa "sin valor". Es un objeto (un error histórico, pero así funciona).</li>
+    <li><strong>undefined:</strong> Una variable que no ha sido asignada.</li>
+    <li><strong>Symbol:</strong> Un identificador único e inmutable.</li>
+    <li><strong>BigInt:</strong> Para números enteros más grandes de lo que <code>Number</code> puede manejar.</li>
 </ul>
-<pre><code class="language-javascript">// Usando let para un valor que puede cambiar
-let edad = 30;
-edad = 31; // Esto es válido
+<p>Y luego tenemos los <strong>Objetos</strong>, que son colecciones de propiedades (incluyendo funciones, que son objetos de primera clase).</p>
+<pre><code class="language-javascript">console.log(typeof 42);         // "number"
+console.log(typeof "Alberto");  // "string"
+console.log(typeof true);       // "boolean"
+console.log(typeof undefined);  // "undefined"
+console.log(typeof null);       // "object" (¡la trampa!)
+console.log(typeof {});         // "object"
+</code></pre>
 
-// Usando const para un valor que no cambiará
-const nombre = "Alberto";
-// nombre = "Carlos"; // Esto provocaría un error
+<h3>2. Coerción de Tipo: La Conversión Automática</h3>
+<p>La coerción es la conversión automática de valores de un tipo de dato a otro. Ocurre cuando se usan operadores con valores de tipos diferentes. Es una de las características más potentes y peligrosas de JS.</p>
+<pre><code class="language-javascript">console.log(10 + "5"); // "105" (Number se convierte a String)
+console.log(10 - "5"); // 5     (String se convierte a Number)
+console.log(10 * "5"); // 50    (String se convierte a Number)
+console.log(true + 1); // 2     (Boolean 'true' se convierte a 1)
+</code></pre>
+<p>Aunque a veces es útil, depender de la coerción implícita puede llevar a resultados inesperados y errores difíciles de depurar.</p>
 
-console.log("Hola, " + nombre + ". Tienes " + edad + " años.");</code></pre>
+<h3>3. Comparaciones: El Doble vs. el Triple Igual</h3>
+<p>Aquí es donde la coerción causa más problemas. JavaScript tiene dos operadores de igualdad:</p>
+<h4><code>==</code> (Igualdad Débil o Abstracta)</h4>
+<p>Este operador <strong>permite la coerción de tipo</strong> antes de comparar. Intenta convertir los operandos a un tipo común antes de hacer la comparación.</p>
+<pre><code class="language-javascript">console.log(5 == "5");        // true (coerción)
+console.log(0 == false);      // true (coerción)
+console.log(null == undefined); // true (una regla especial del lenguaje)
+console.log("" == 0);         // true (coerción)
+</code></pre>
+<p><strong>Regla general: Evita usar <code>==</code> casi siempre.</strong> Las reglas de coerción son complejas y pueden ocultar errores en tu lógica.</p>
 
-<h3>2. Tipos de Datos Primitivos</h3>
-<p>JavaScript tiene varios tipos de datos fundamentales:</p>
-<ul>
-  <li><strong>String (Cadena de texto):</strong> Para texto. Se escribe entre comillas simples (<code>''</code>) o dobles (<code>""</code>). Ejemplo: <code>'Hola Mundo'</code>.</li>
-  <li><strong>Number (Número):</strong> Para cualquier tipo de número, ya sea entero (<code>25</code>) o con decimales (<code>99.99</code>).</li>
-  <li><strong>Boolean (Booleano):</strong> Representa un valor de verdad, solo puede ser <code>true</code> o <code>false</code>. Es la base de la lógica y la toma de decisiones.</li>
-  <li><strong><code>null</code>:</strong> Representa la ausencia intencional de un valor. Es un valor que asignamos nosotros para decir "aquí no hay nada".</li>
-  <li><strong><code>undefined</code>:</strong> Significa que una variable ha sido declarada pero aún no se le ha asignado un valor.</li>
-</ul>
-
-<h3>3. Operadores: Realizando Acciones</h3>
-<p>Los operadores son símbolos que realizan operaciones sobre nuestros datos.</p>
-<h4>Operadores Aritméticos</h4>
-<p>Para realizar cálculos matemáticos.</p>
-<ul>
-  <li><code>+</code> (Suma)</li>
-  <li><code>-</code> (Resta)</li>
-  <li><code>*</code> (Multiplicación)</li>
-  <li><code>/</code> (División)</li>
-  <li><code>%</code> (Módulo o Resto): Devuelve el resto de una división. <code>10 % 3</code> es <code>1</code>.</li>
-</ul>
-
-<h4>Operadores de Asignación</h4>
-<p>Para asignar valores a las variables.</p>
-<ul>
-  <li><code>=</code> (Asignación): <code>let x = 10;</code></li>
-  <li><code>+=</code> (Suma y asignación): <code>x += 5;</code> es lo mismo que <code>x = x + 5;</code></li>
-  <li><code>-=</code>, <code>*=</code>, <code>/=</code> funcionan de manera similar.</li>
-</ul>
-
-<h4>Operadores de Comparación</h4>
-<p>Para comparar valores. El resultado siempre es un booleano (<code>true</code> o <code>false</code>).</p>
-<ul>
-  <li><code>==</code> (Igualdad laxa): Compara solo el valor, no el tipo. <code>'5' == 5</code> es <code>true</code>. <strong>(Evitar su uso)</strong></li>
-  <li><code>===</code> (Igualdad estricta): Compara tanto el valor como el tipo. <code>'5' === 5</code> es <code>false</code>. <strong>(Esta es la que debes usar siempre)</strong>.</li>
-  <li><code>!=</code> y <code>!==</code> (Desigualdad laxa y estricta).</li>
-  <li><code>&gt;</code> (Mayor que), <code>&lt;</code> (Menor que), <code>&gt;=</code> (Mayor o igual que), <code>&lt;=</code> (Menor o igual que).</li>
-</ul>
-
-<h4>Operadores Lógicos</h4>
-<p>Para combinar expresiones booleanas.</p>
-<ul>
-  <li><code>&&</code> (AND / Y): Devuelve <code>true</code> solo si ambas condiciones son verdaderas. <code>(edad > 18 && tieneCarnet)</code>.</li>
-  <li><code>||</code> (OR / O): Devuelve <code>true</code> si al menos una de las condiciones es verdadera. <code>(esFinDeSemana || esFestivo)</code>.</li>
-  <li><code>!</code> (NOT / No): Invierte el valor booleano. <code>!esVisible</code>.</li>
-</ul>
-
-<p>Estos bloques de construcción son la base de toda la programación en JavaScript. Al combinarlos, podemos empezar a escribir programas que toman decisiones y realizan tareas complejas.</p>
+<h4><code>===</code> (Igualdad Estricta)</h4>
+<p>Este operador es tu mejor amigo. Compara los valores <strong>sin permitir coerción de tipo</strong>. Si los tipos son diferentes, inmediatamente devuelve <code>false</code>.</p>
+<pre><code class="language-javascript">console.log(5 === "5");        // false (Number vs String)
+console.log(0 === false);      // false (Number vs Boolean)
+console.log(null === undefined); // false (tipos diferentes)
+</code></pre>
+<p><strong>Usa siempre la igualdad estricta (<code>===</code> y <code>!==</code>).</strong> Te forzará a ser explícito sobre los tipos con los que trabajas, resultando en un código más predecible, robusto y fácil de entender. Si necesitas convertir un tipo, hazlo tú mismo de forma explícita (p. ej., usando <code>Number(value)</code> o <code>String(value)</code>) en lugar de dejar que JS lo adivine por ti.</p>
 <hr/>
 <h3>Recursos Complementarios</h3>
 <h4>Videos Recomendados</h4>
 <ul>
-    <li><strong>(Español) Aprende JavaScript Ahora!</strong> - Un curso completo en un solo video por freeCodeCamp en Español: <a href="https://www.youtube.com/watch?v=ivdTnPl1iY" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+    <li><strong>(Inglés) JavaScript Showdown: == vs ===</strong> - Un video conciso y claro de Fireship: <a href="https://www.youtube.com/watch?v=s55t64Mma14" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
 </ul>
 <h4>Lecturas Oficiales</h4>
 <ul>
-    <li><strong>MDN Web Docs: Guía de JavaScript</strong> - La fuente de documentación más importante para JS: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide" target="_blank" rel="noopener noreferrer">Leer documentación</a></li>
+    <li><strong>MDN Web Docs: Igualdad en JS</strong> - La guía definitiva sobre las comparaciones en JavaScript: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Equality_comparisons_and_sameness" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
 </ul>
 `,
           duration: 60
         },
-        { id: '2.2', title: 'Condicionales y bucles', content: `<h2>Tomando Decisiones y Repitiendo Tareas: Condicionales y Bucles</h2>
-<p>Los programas informáticos no serían muy útiles si solo pudieran ejecutar instrucciones una tras otra. Su verdadero poder reside en su capacidad para <strong>evaluar condiciones</strong> y <strong>repetir acciones</strong>. Para esto, JavaScript nos proporciona los condicionales y los bucles.</p>
+        { id: '2.2', title: 'El Contexto de \`this\` y Prototipos', content: `<h2>El Corazón de JavaScript: Prototipos y el Contexto 'this'</h2>
+<p>Para dominar realmente JavaScript, es crucial entender dos de sus conceptos más fundamentales y, a menudo, más confusos: el sistema de herencia basado en <strong>prototipos</strong> y la palabra clave contextual <strong><code>this</code></strong>.</p>
 
-<h3>1. Condicionales: Los Caminos del Código</h3>
-<p>Los condicionales permiten que nuestro código tome diferentes caminos basados en si una expresión es verdadera (<code>true</code>) o falsa (<code>false</code>).</p>
+<h3>1. Herencia Prototípica: La Cadena de Objetos</h3>
+<p>A diferencia de lenguajes como Java o C# que usan "clases", JavaScript utiliza un mecanismo llamado <strong>herencia prototípica</strong>. Cada objeto en JavaScript tiene una propiedad interna oculta (<code>[[Prototype]]</code>) que es una referencia (un "prototipo") a otro objeto. Cuando intentas acceder a una propiedad de un objeto, si el objeto no la tiene, JavaScript busca en su prototipo. Si el prototipo tampoco la tiene, busca en el prototipo del prototipo, y así sucesivamente, hasta llegar a un objeto cuyo prototipo es <code>null</code>. Esta secuencia se conoce como la <strong>cadena de prototipos (prototype chain)</strong>.</p>
+<p>Esto es increíblemente poderoso. Significa que puedes tener un objeto (p. ej., <code>animal</code>) con un método <code>respirar()</code>. Luego, puedes crear otro objeto (p. ej., <code>perro</code>) y establecer su prototipo como <code>animal</code>. Ahora, aunque <code>perro</code> no tenga definido el método <code>respirar()</code>, puedes llamar a <code>perro.respirar()</code> y JavaScript lo encontrará en la cadena de prototipos.</p>
+<pre><code class="language-javascript">const animal = {
+  respirar: function() {
+    console.log("Respirando...");
+  }
+};
 
-<h4><code>if / else if / else</code></h4>
-<p>Esta es la estructura de control más fundamental. Permite ejecutar un bloque de código si una condición es verdadera, y opcionalmente, otros bloques si la primera condición es falsa.</p>
-<pre><code class="language-javascript">const edad = 19;
-const tieneCarnet = true;
+// Creamos un objeto 'perro' cuyo prototipo es 'animal'
+const perro = Object.create(animal);
+perro.ladrar = function() {
+  console.log("¡Guau!");
+};
 
-if (edad >= 18 && tieneCarnet) {
-  console.log("Puedes conducir legalmente."); // Se ejecuta este bloque
-} else if (edad >= 18 && !tieneCarnet) {
-  console.log("Eres mayor de edad, pero necesitas un carnet para conducir.");
-} else {
-  console.log("No puedes conducir.");
-}</code></pre>
+perro.ladrar();    // "¡Guau!" (propiedad propia de 'perro')
+perro.respirar();  // "Respirando..." (heredada de 'animal')
+</code></pre>
+<p>Las "clases" de JavaScript (introducidas en ES6 con la palabra clave <code>class</code>) son, en gran medida, "azúcar sintáctico" sobre este sistema de prototipos. Simplifican la sintaxis, pero por debajo, la herencia prototípica sigue siendo el motor.</p>
 
-<h4>Operador Ternario (<code>? :</code>)</h4>
-<p>Es una forma compacta de escribir una declaración <code>if/else</code> simple. Es muy útil para asignar un valor a una variable basado en una condición.</p>
-<pre><code class="language-javascript">const temperatura = 15;
-const tiempo = temperatura > 20 ? "Es un día cálido" : "Es un día fresco";
+<h3>2. El Contexto Dinámico: \`this\`</h3>
+<p>La palabra clave <code>this</code> es una de las características más incomprendidas de JavaScript porque su valor no se determina donde se escribe la función, sino <strong>cómo se llama a la función</strong>. Se refiere al "contexto de ejecución" de la función.</p>
+<p>Aquí están las reglas principales que determinan el valor de <code>this</code>:</p>
+<ol>
+    <li><strong>Llamada a Método (Method Invocation):</strong> Si una función se llama como una propiedad de un objeto, <code>this</code> se enlaza a ese objeto.</li>
+    <pre><code class="language-javascript">const persona = {
+  nombre: "Alberto",
+  saludar: function() {
+    console.log("Hola, soy " + this.nombre);
+  }
+};
+persona.saludar(); // this es 'persona'. Imprime "Hola, soy Alberto"
+</code></pre>
 
-console.log(tiempo); // "Es un día fresco"</code></pre>
-
-<h4><code>switch</code></h4>
-<p>La declaración <code>switch</code> es útil cuando tienes una única expresión cuyo valor quieres comparar con múltiples opciones distintas.</p>
-<pre><code class="language-javascript">const diaDeLaSemana = "lunes";
-let mensaje;
-
-switch (diaDeLaSemana) {
-  case "lunes":
-    mensaje = "¡Ánimo, empieza la semana!";
-    break; // 'break' es crucial para salir del switch
-  case "viernes":
-    mensaje = "¡Hoy es viernes!";
-    break;
-  case "sabado":
-  case "domingo":
-    mensaje = "Es fin de semana.";
-    break;
-  default: // Se ejecuta si ningún 'case' coincide
-    mensaje = "Es un día normal de trabajo.";
+    <li><strong>Llamada a Función Simple (Simple Function Invocation):</strong> Si una función se llama directamente (no como propiedad de un objeto), <code>this</code> se enlaza al objeto global (<code>window</code> en los navegadores) o es <code>undefined</code> en modo estricto ('use strict'). Este es el origen de muchos errores.</li>
+    <pre><code class="language-javascript">'use strict';
+function quienSoy() {
+  console.log(this);
 }
-console.log(mensaje);</code></pre>
+quienSoy(); // undefined
+</code></pre>
 
-<h3>2. Bucles: Los Trabajadores Incansables</h3>
-<p>Los bucles nos permiten ejecutar un bloque de código repetidamente mientras se cumpla una condición.</p>
-
-<h4><code>for</code></h4>
-<p>El bucle <code>for</code> es ideal cuando sabes de antemano cuántas veces quieres que se repita el bucle. Su sintaxis tiene tres partes: inicialización, condición y expresión final (incremento/decremento).</p>
-<pre><code class="language-javascript">// Imprime los números del 0 al 4
-for (let i = 0; i < 5; i++) {
-  console.log("El número es " + i);
-}</code></pre>
-
-<h4><code>while</code></h4>
-<p>El bucle <code>while</code> se ejecuta mientras una condición especificada sea verdadera. Es perfecto para situaciones donde no sabes cuántas iteraciones necesitarás.</p>
-<pre><code class="language-javascript">let contador = 0;
-
-while (contador < 3) {
-  console.log("Iteración número " + contador);
-  contador++;
-}</code></pre>
-<p><strong>¡Cuidado!</strong> Es fácil crear un bucle infinito con <code>while</code> si olvidas actualizar la variable de la condición (como <code>contador++</code>).</p>
-
-<h4><code>do...while</code></h4>
-<p>Similar a <code>while</code>, pero con una diferencia clave: el bloque de código se ejecuta <strong>al menos una vez</strong>, porque la condición se evalúa <em>después</em> de la primera ejecución.</p>
-<pre><code class="language-javascript">let password;
-
-do {
-  password = prompt("Introduce tu contraseña (debe tener al menos 4 caracteres):");
-} while (password.length < 4);
-
-console.log("Contraseña aceptada.");</code></pre>
-<p>Dominar los condicionales y los bucles te da el control sobre el flujo de tu programa, permitiéndote crear lógica compleja y manejar tareas repetitivas de manera eficiente.</p>
+    <li><strong>Funciones de Flecha (Arrow Functions):</strong> ¡La excepción a la regla! Las funciones de flecha <strong>no tienen su propio <code>this</code></strong>. En su lugar, "heredan" el valor de <code>this</code> del contexto en el que fueron creadas. Esto las hace increíblemente útiles para callbacks y para evitar problemas con el contexto.</li>
+    <pre><code class="language-javascript">const miObjeto = {
+  valor: 42,
+  metodoNormal: function() {
+    setTimeout(function() {
+      // 'this' aquí es 'window' o undefined, ¡perdimos el contexto!
+      console.log(this.valor); // undefined
+    }, 1000);
+  },
+  metodoConFlecha: function() {
+    setTimeout(() => {
+      // La flecha hereda el 'this' de 'metodoConFlecha', que es 'miObjeto'
+      console.log(this.valor); // 42 ¡Funciona!
+    }, 1000);
+  }
+};
+miObjeto.metodoConFlecha();
+</code></pre>
+    <li><strong>Llamada Explícita (<code>.call</code>, <code>.apply</code>, <code>.bind</code>):</strong> Puedes forzar explícitamente el valor de <code>this</code> en una función usando estos métodos.</li>
+</ol>
+<p>Entender que <code>this</code> es dinámico y que las funciones de flecha se comportan de manera diferente es un salto cualitativo en tu habilidad para escribir JavaScript robusto y predecible.</p>
 <hr/>
 <h3>Recursos Complementarios</h3>
 <h4>Videos Recomendados</h4>
 <ul>
-    <li><strong>(Español) Condicionales en JavaScript (if, else, switch)</strong> - Video de Dorian Desings: <a href="https://www.youtube.com/watch?v=345-q_S4-58" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
-    <li><strong>(Español) Bucles en JavaScript (for, while, do while)</strong> - Video del mismo autor: <a href="https://www.youtube.com/watch?v=6rSl3_3p4h4" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+    <li><strong>(Inglés) The JavaScript \`this\` keyword explained in 100 seconds</strong> - Video de Fireship: <a href="https://www.youtube.com/watch?v=gvicrj31JOM" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
 </ul>
 <h4>Lecturas Oficiales</h4>
 <ul>
-    <li><strong>MDN Web Docs: Toma de decisiones en tu código — condicionales</strong>: <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/conditionals" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
-    <li><strong>MDN Web Docs: Bucles en el código</strong>: <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Looping_code" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
-</ul>`, duration: 75 },
-        { id: '2.3', title: 'Funciones y scope', content: `<h2>Bloques de Código Reutilizables: Funciones y Scope</h2>
-<p>A medida que nuestros programas crecen, nos encontramos repitiendo las mismas secuencias de código una y otra vez. Las <strong>funciones</strong> son uno de los conceptos más importantes en programación porque nos permiten empaquetar un bloque de código bajo un nombre, para poder reutilizarlo fácilmente cuando lo necesitemos.</p>
+    <li><strong>MDN Web Docs: Herencia y la cadena de prototipos</strong>: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Inheritance_and_the_prototype_chain" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
+    <li><strong>MDN Web Docs: El operador \`this\`</strong>: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/this" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
+</ul>`, duration: 90 },
+        { id: '2.3', title: 'Asincronismo: Callbacks, Promesas y Async/Await', content: `<h2>Manejando el Tiempo: El Modelo Asíncrono de JavaScript</h2>
+<p>JavaScript en su núcleo es un lenguaje <strong>síncrono y de un solo hilo (single-threaded)</strong>. Esto significa que solo puede hacer una cosa a la vez. Si una tarea tarda mucho en completarse (como una petición a un servidor), bloquearía todo el programa. Para solucionar esto, JavaScript utiliza un <strong>modelo de concurrencia asíncrono</strong>, basado en un "event loop" (bucle de eventos).</p>
 
-<h3>1. ¿Qué es una Función?</h3>
-<p>Una función es un bloque de código diseñado para realizar una tarea específica. Se puede "llamar" o "invocar" en cualquier parte de nuestro programa para ejecutar ese bloque de código. Esto sigue el principio <strong>DRY (Don't Repeat Yourself - No te repitas)</strong>, haciendo nuestro código más limpio, fácil de mantener y con menos errores.</p>
+<h3>1. El Problema: El Código Bloqueante</h3>
+<p>Imagina que pides datos a una API. Si el código fuera puramente síncrono, la interfaz de usuario se congelaría hasta que llegara la respuesta. No podrías hacer clic en botones ni interactuar con la página. El asincronismo nos permite iniciar una tarea de larga duración y continuar con otras cosas mientras esperamos que termine.</p>
 
-<h3>2. Declarando Funciones</h3>
-<p>Hay varias maneras de crear funciones en JavaScript.</p>
-<h4>Declaración de Función (Function Declaration)</h4>
-<p>Esta es la forma clásica. Usas la palabra clave <code>function</code>, seguida del nombre de la función, una lista de parámetros entre paréntesis y el código a ejecutar entre llaves.</p>
-<pre><code class="language-javascript">// Declaramos la función con un parámetro 'nombre'
-function saludar(nombre) {
-  console.log("¡Hola, " + nombre + "!");
+<h3>2. La Evolución del Asincronismo en JS</h3>
+
+<h4>Fase 1: Callbacks</h4>
+<p>La forma original de manejar operaciones asíncronas era a través de <strong>funciones de callback</strong>. Pasabas una función como argumento a otra función, y esta se "llamaba de vuelta" (called back) una vez que la tarea asíncrona había finalizado.</p>
+<pre><code class="language-javascript">function descargarDatos(url, callback) {
+  console.log("Iniciando descarga de " + url);
+  setTimeout(() => { // Simulamos una petición de red
+    const datos = "Estos son los datos";
+    callback(datos);
+  }, 2000);
 }
 
-// La llamamos para ejecutarla
-saludar("Alberto"); // Imprime: ¡Hola, Alberto!
+descargarDatos("mi-api.com/datos", function(resultado) {
+  console.log("Descarga completada:", resultado);
+});
+
+console.log("Esta línea se ejecuta antes de que la descarga termine.");
 </code></pre>
+<p>El problema con los callbacks surge cuando necesitas encadenar varias operaciones asíncronas, una después de la otra. Esto lleva a una anidación profunda de funciones, conocida como el <strong>"Callback Hell"</strong> o "Pyramid of Doom", que es difícil de leer y mantener.</p>
 
-<h4>Expresión de Función (Function Expression)</h4>
-<p>También puedes asignar una función a una variable. La función puede ser anónima (sin nombre).</p>
-<pre><code class="language-javascript">const despedirse = function(nombre) {
-  console.log("¡Adiós, " + nombre + "!");
-};
-
-despedirse("Ana"); // Imprime: ¡Adiós, Ana!
-</code></pre>
-
-<h4>Funciones de Flecha (Arrow Functions)</h4>
-<p>Introducidas en ES6, las funciones de flecha ofrecen una sintaxis más corta y concisa, especialmente para funciones simples.</p>
-<pre><code class="language-javascript">// Función para sumar dos números
-const sumar = (a, b) => {
-  return a + b;
-};
-
-// Si la función solo tiene una línea y devuelve un valor,
-// puedes omitir las llaves y la palabra 'return'.
-const restar = (a, b) => a - b;
-
-console.log(sumar(5, 3));   // Imprime: 8
-console.log(restar(10, 4)); // Imprime: 6
-</code></pre>
-
-<h3>3. Parámetros y Valor de Retorno</h3>
+<h4>Fase 2: Promesas (Promises)</h4>
+<p>Las promesas (introducidas en ES6) son objetos que representan la eventual finalización (o fallo) de una operación asíncrona. Una promesa puede estar en uno de tres estados:</p>
 <ul>
-    <li><strong>Parámetros:</strong> Son las variables que una función recibe como entrada. Son los valores con los que la función trabajará. (<code>nombre</code>, <code>a</code>, y <code>b</code> en los ejemplos anteriores).</li>
-    <li><strong>Valor de Retorno (Return Value):</strong> Una función puede devolver un resultado usando la palabra clave <code>return</code>. Cuando se ejecuta <code>return</code>, la función termina inmediatamente y "entrega" el valor especificado. Si una función no tiene un <code>return</code> explícito, devuelve <code>undefined</code> por defecto.</li>
+    <li><strong>Pending (Pendiente):</strong> El estado inicial; la operación aún no ha terminado.</li>
+    <li><strong>Fulfilled (Cumplida):</strong> La operación se completó con éxito.</li>
+    <li><strong>Rejected (Rechazada):</strong> La operación falló.</li>
 </ul>
-
-<h3>4. El Concepto de Scope (Ámbito)</h3>
-<p>El scope determina la accesibilidad (visibilidad) de las variables. En JavaScript, existen principalmente dos tipos de scope:</p>
-<ul>
-    <li><strong>Scope Global:</strong> Las variables declaradas fuera de cualquier función están en el scope global. Son accesibles desde cualquier parte de tu código. Abusar de las variables globales es una mala práctica, ya que puede llevar a conflictos de nombres y a código difícil de rastrear.</li>
-    <li><strong>Scope Local (o de Función):</strong> Las variables declaradas dentro de una función (con <code>let</code>, <code>const</code> o <code>var</code>) solo son visibles y accesibles <strong>dentro de esa función</strong>. No se pueden usar desde fuera.</li>
-</ul>
-<pre><code class="language-javascript">const variableGlobal = "Soy global";
-
-function miFuncion() {
-  const variableLocal = "Soy local";
-  console.log(variableGlobal); // "Soy global" (accesible)
-  console.log(variableLocal);  // "Soy local" (accesible)
+<p>Las promesas nos permiten encadenar operaciones asíncronas de una manera mucho más limpia usando los métodos <code>.then()</code> (para el éxito) y <code>.catch()</code> (para el error).</p>
+<pre><code class="language-javascript">function descargarDatosConPromesa(url) {
+  return new Promise((resolve, reject) => {
+    console.log("Iniciando descarga con promesa...");
+    setTimeout(() => {
+      const exito = true; // Simular éxito o fracaso
+      if (exito) {
+        resolve("Datos descargados exitosamente");
+      } else {
+        reject("Error en la descarga");
+      }
+    }, 2000);
+  });
 }
 
-miFuncion();
-
-console.log(variableGlobal); // "Soy global" (accesible)
-// console.log(variableLocal); // ¡ERROR! variableLocal is not defined
+descargarDatosConPromesa("mi-api.com/datos")
+  .then(resultado => {
+    console.log("Éxito:", resultado);
+    return "Procesando " + resultado; // Puedes encadenar más .then
+  })
+  .then(nuevoResultado => {
+    console.log(nuevoResultado);
+  })
+  .catch(error => {
+    console.error("Fallo:", error);
+  });
 </code></pre>
-<p>Entender el scope es crucial para evitar errores y escribir código modular y organizado. Cada función crea su propio "universo" aislado, protegiendo sus variables del mundo exterior y evitando que interfieran con el resto de tu programa.</p>
+
+<h4>Fase 3: Async/Await</h4>
+<p><code>async/await</code> (introducido en ES2017) es "azúcar sintáctico" sobre las promesas. No introduce nueva funcionalidad, pero nos permite escribir código asíncrono que <strong>parece síncrono</strong>. Es la forma moderna y preferida de manejar el asincronismo.</p>
+<ul>
+    <li>La palabra clave <code>async</code> se pone antes de una función para declarar que es una función asíncrona. Estas funciones siempre devuelven una promesa implícitamente.</li>
+    <li>La palabra clave <code>await</code> se usa <strong>dentro</strong> de una función <code>async</code> para pausar la ejecución de la función y esperar a que una promesa se resuelva.</li>
+</ul>
+<pre><code class="language-javascript">async function gestionarDescarga() {
+  try {
+    console.log("Vamos a descargar los datos...");
+    const resultado = await descargarDatosConPromesa("mi-api.com/datos");
+    console.log("Éxito:", resultado);
+    const nuevoResultado = "Procesando " + resultado;
+    console.log(nuevoResultado);
+    console.log("Todo terminado.");
+  } catch (error) {
+    console.error("Fallo:", error);
+  }
+}
+
+gestionarDescarga();
+</code></pre>
+<p>Como puedes ver, el código con <code>async/await</code> es mucho más plano, legible y fácil de razonar, especialmente cuando se manejan errores con bloques <code>try...catch</code>. Entender esta evolución es clave para escribir aplicaciones web modernas y eficientes.</p>
 <hr/>
 <h3>Recursos Complementarios</h3>
 <h4>Videos Recomendados</h4>
 <ul>
-    <li><strong>(Español) Funciones en JavaScript (Arrow functions, callbacks, anónimas, etc)</strong> - Video de Dorian Desings: <a href="https://www.youtube.com/watch?v=Pbj21s9D214" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
-    <li><strong>(Inglés) JavaScript Scope & Hoisting</strong> - Un video claro sobre el scope de Fireship: <a href="https://www.youtube.com/watch?v=s-7iI3bE3dI" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+    <li><strong>(Español) La GUÍA DEFINITIVA sobre ASINCRONÍA en JAVASCRIPT</strong> - Un video muy completo de La Cocina del Código: <a href="https://www.youtube.com/watch?v=SPv-Sj1p2wA" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
 </ul>
 <h4>Lecturas Oficiales</h4>
 <ul>
-    <li><strong>MDN Web Docs: Funciones</strong> - La guía completa sobre funciones en JavaScript: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Functions" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
-    <li><strong>MDN Web Docs: Ámbito (Scope)</strong> - Explicación detallada del scope: <a href="https://developer.mozilla.org/es/docs/Glossary/Scope" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
+    <li><strong>MDN Web Docs: JavaScript Asíncrono</strong> - La guía de referencia de MDN sobre este tema: <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Asynchronous" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
+</ul>`, duration: 90 },
+        { id: '2.4', title: 'Gestión de Errores y Depuración', content: `<h2>El Arte de la Resiliencia: Gestión de Errores y Depuración</h2>
+<p>Escribir código que funciona cuando todo va bien es solo la mitad del trabajo. Un desarrollador profesional se distingue por su habilidad para anticipar, manejar y corregir errores. Un programa robusto no es aquel que nunca falla, sino aquel que falla de manera predecible y controlada.</p>
+
+<h3>1. Tipos de Errores</h3>
+<p>En JavaScript, podemos clasificar los errores en varias categorías:</p>
+<ul>
+    <li><strong>Errores de Sintaxis (Syntax Errors):</strong> Ocurren cuando escribes código que no sigue las reglas gramaticales de JavaScript. El intérprete ni siquiera puede empezar a ejecutar el código. Por ejemplo, olvidar una llave de cierre <code>}</code>.</li>
+    <li><strong>Errores en Tiempo de Ejecución (Runtime Errors):</strong> Ocurren mientras el código se está ejecutando. El código es sintácticamente válido, pero sucede algo inesperado. Por ejemplo, intentar llamar a un método en una variable <code>null</code> (p. ej., <code>null.toString()</code>).</li>
+    <li><strong>Errores de Lógica (Logic Errors):</strong> Son los más difíciles de encontrar. El código es válido y se ejecuta sin fallar, pero no produce el resultado esperado. Por ejemplo, un cálculo incorrecto en un carrito de la compra.</li>
+</ul>
+
+<h3>2. Gestión de Errores en Tiempo de Ejecución: \`try...catch...finally\`</h3>
+<p>Para manejar los errores que pueden ocurrir en tiempo de ejecución (como una respuesta fallida de una API), usamos el bloque <strong><code>try...catch</code></strong>.</p>
+<ul>
+    <li><strong><code>try</code>:</strong> Envuelves el código que sospechas que podría lanzar un error dentro de este bloque.</li>
+    <li><strong><code>catch</code>:</strong> Si se produce un error dentro del bloque <code>try</code>, la ejecución salta inmediatamente a este bloque, pasándole un objeto de error con información sobre lo que salió mal.</li>
+    <li><strong><code>finally</code>:</strong> Este bloque (opcional) se ejecuta siempre, sin importar si hubo un error o no. Es perfecto para tareas de "limpieza", como cerrar una conexión o quitar un indicador de carga.</li>
+</ul>
+<pre><code class="language-javascript">async function obtenerDatosDeUsuario(id) {
+  try {
+    console.log("Intentando obtener datos...");
+    const respuesta = await fetch(\`https://api.example.com/users/\${id}\`);
+
+    if (!respuesta.ok) {
+      // Lanzamos un error manualmente para ser capturado por el catch
+      throw new Error(\`Error de red: \${respuesta.status}\`);
+    }
+
+    const datos = await respuesta.json();
+    console.log("Datos obtenidos:", datos);
+    return datos;
+  } catch (error) {
+    console.error("Ha ocurrido un problema:", error.message);
+    // Aquí podríamos mostrar un mensaje de error al usuario
+  } finally {
+    console.log("La operación ha finalizado (con o sin éxito).");
+  }
+}
+</code></pre>
+<p>La palabra clave <code>throw</code> te permite crear y lanzar tus propios errores personalizados.</p>
+
+<h3>3. Depuración (Debugging): El Trabajo de Detective</h3>
+<p>La depuración es el proceso de encontrar y corregir errores, especialmente los de lógica. Las herramientas del desarrollador de tu navegador son tu mejor aliado.</p>
+<h4>La Consola (<code>console</code>)</h4>
+<p>Ya la has estado usando. Es más que solo <code>console.log()</code>. Puedes usar:</p>
+<ul>
+    <li><code>console.error('Mensaje de error')</code>: Para errores.</li>
+    <li><code>console.warn('Advertencia')</code>: Para advertencias.</li>
+    <li><code>console.table(miArrayDeObjetos)</code>: Para mostrar datos tabulares de forma legible.</li>
+</ul>
+
+<h4>El Depurador (Debugger)</h4>
+<p>Es la herramienta más potente. Te permite pausar la ejecución de tu código en puntos específicos y examinar el estado de tu programa línea por línea.</p>
+<ol>
+    <li><strong>Breakpoints (Puntos de Ruptura):</strong> Puedes establecer un breakpoint haciendo clic en el número de línea en la pestaña "Sources" (Fuentes) de las herramientas del desarrollador. Cuando el código llegue a esa línea, la ejecución se detendrá.</li>
+    <li><strong>Inspección de Variables:</strong> Una vez pausado, puedes pasar el ratón por encima de cualquier variable en tu código para ver su valor actual. También puedes ver todas las variables accesibles en el panel "Scope".</li>
+    <li><strong>Control de Flujo:</strong> Puedes avanzar a la siguiente línea (step over), entrar en una función que se está llamando (step into), o continuar la ejecución hasta el siguiente breakpoint.</li>
+</ol>
+<p>Aprender a usar el depurador de manera efectiva te ahorrará incontables horas de frustración. En lugar de llenar tu código de <code>console.log</code>, puedes detener el tiempo y ver exactamente qué está pasando.</p>
+<hr/>
+<h3>Recursos Complementarios</h3>
+<h4>Videos Recomendados</h4>
+<ul>
+    <li><strong>(Español) Cómo DEPURAR CÓDIGO JavaScript</strong> - Guía práctica de La Cocina del Código: <a href="https://www.youtube.com/watch?v=F0sA2vD0A" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+</ul>
+<h4>Lecturas Oficiales</h4>
+<ul>
+    <li><strong>MDN Web Docs: try...catch</strong>: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/try...catch" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
+    <li><strong>MDN Web Docs: Depuración de JavaScript en el navegador</strong>: <a href="https://developer.mozilla.org/es/docs/Learn/Common_questions/Tools_and_setup/What_are_browser_developer_tools#el_depurador_de_javascript" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
 </ul>`, duration: 75 },
-        { id: '2.4', title: 'Arreglos y objetos', content: 'Contenido sobre arreglos y objetos en JS.', duration: 60 },
-        { id: '2.5', title: 'Manipulación del DOM', content: 'Contenido sobre manipulación del DOM.', duration: 90 },
-        { id: '2.6', title: 'Eventos y formularios', content: 'Contenido sobre eventos y formularios en JS.', duration: 90 },
-        { id: '2.7', title: 'JSON y almacenamiento local', content: 'Contenido sobre JSON y Local Storage.', duration: 45 },
-        { id: '2.8', title: 'Fetch API: consumir datos de APIs', content: 'Contenido sobre Fetch API.', duration: 90 },
     ],
     project: {
-        title: 'Aplicación de tareas (ToDo List)',
-        description: 'Crea una ToDo List interactiva utilizando HTML, CSS y JavaScript puro, con manipulación del DOM y almacenamiento local.'
+        title: 'Aplicación de Tareas con API Externa',
+        description: 'Crea una ToDo List que obtiene y guarda sus datos de una API REST pública (como JSONPlaceholder), gestionando estados de carga y errores.'
     },
     quizId: 'quiz_2'
   },
