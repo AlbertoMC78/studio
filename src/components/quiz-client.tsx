@@ -116,7 +116,7 @@ export function QuizClient({ moduleContent, moduleTitle, moduleId }: { moduleCon
                  <Button onClick={resetQuiz}>Try Again</Button>
             </CardFooter>
          </Card>
-    )
+    );
   }
 
   return (
@@ -124,7 +124,7 @@ export function QuizClient({ moduleContent, moduleTitle, moduleId }: { moduleCon
       <CardHeader>
         <CardTitle className="font-headline text-3xl text-primary">Quiz Time!</CardTitle>
         <CardDescription>Select the correct answer for each question.</CardDescription>
-      </Header>
+      </CardHeader>
       <CardContent className="space-y-6">
         {quiz?.map((q, qIndex) => (
           <div key={qIndex}>
