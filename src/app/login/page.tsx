@@ -78,13 +78,21 @@ export default function LoginPage() {
     } catch (e) {
       const authError = e as AuthError;
       let errorMessage = 'An unexpected error occurred. Please try again.';
-      if (authError.code === 'auth/user-not-found') {
-        errorMessage = 'No user found with this email. You can sign up instead.';
-      } else if (authError.code === 'auth/wrong-password') {
-        errorMessage = 'Incorrect password. Please try again.';
-      } else if (authError.code === 'auth/email-already-in-use') {
-        errorMessage = 'This email is already in use. Please log in.';
+      
+      switch (authError.code) {
+        case 'auth/invalid-credential':
+        case 'auth/user-not-found':
+        case 'auth/wrong-password':
+          errorMessage = 'Invalid email or password. Please try again or sign up.';
+          break;
+        case 'auth/email-already-in-use':
+          errorMessage = 'This email is already in use. Please log in.';
+          break;
+        default:
+          errorMessage = 'An unexpected error occurred. Please try again.';
+          break;
       }
+
       setError(errorMessage);
       console.error(authError);
     } finally {
