@@ -10,9 +10,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['"PT Sans"', 'sans-serif'],
-        headline: ['"Playfair Display"', 'serif'],
-        code: ['"Source Code Pro"', 'monospace'],
+        body: ['"Inter"', 'sans-serif'],
+        headline: ['"Merriweather"', 'serif'],
+        code: ['"Fira Code"', 'monospace'],
       },
       colors: {
         background: 'hsl(var(--background))',
