@@ -126,7 +126,99 @@ export const courseData: CourseModule[] = [
       {
         id: '1.2',
         title: 'HTML básico: etiquetas, listas, tablas, enlaces',
-        content: '<h2>Estructura con HTML</h2><p>Aprende las etiquetas fundamentales de HTML para estructurar contenido web.</p><pre><code class="language-html">&lt;h1&gt;Título&lt;/h1&gt;\n&lt;p&gt;Un párrafo de texto.&lt;/p&gt;</code></pre>',
+        content: `<h2>Los Cimientos de la Web: Estructura con HTML</h2>
+<p>HTML (HyperText Markup Language) no es un lenguaje de programación; es un <strong>lenguaje de marcado</strong>. Su única función es describir y estructurar el contenido de una página web. Le dice al navegador qué es un título, qué es un párrafo, dónde va una imagen, etc.</p>
+
+<h3>1. La Anatomía de una Etiqueta HTML</h3>
+<p>Casi todo en HTML está compuesto por <strong>elementos</strong>, que generalmente consisten en una etiqueta de apertura y una de cierre, envolviendo el contenido.</p>
+<pre><code class="language-html">&lt;p&gt;Este es el contenido de un párrafo.&lt;/p&gt;
+&lt;!--  |   |                       |  --&gt;
+&lt;!--  1   2                       3  --&gt;</code></pre>
+<ol>
+  <li><strong>Etiqueta de apertura:</strong> <code>&lt;p&gt;</code>. Indica el inicio de un elemento.</li>
+  <li><strong>Contenido:</strong> El texto o los otros elementos que van dentro.</li>
+  <li><strong>Etiqueta de cierre:</strong> <code>&lt;/p&gt;</code>. Igual que la de apertura, pero con una barra inclinada (<code>/</code>). Indica el final del elemento.</li>
+</ol>
+<p>Algunos elementos son "vacíos" o "auto-cerrados", lo que significa que no tienen contenido ni etiqueta de cierre, como la etiqueta de imagen <code>&lt;img&gt;</code> o la de salto de línea <code>&lt;br&gt;</code>.</p>
+
+<h3>2. Estructura Básica de un Documento HTML</h3>
+<p>Todo archivo <code>.html</code> sigue una estructura fundamental:</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Título de la Página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- El contenido visible va aquí --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<ul>
+    <li><code>&lt;!DOCTYPE html&gt;</code>: Declaración que define que el documento es HTML5.</li>
+    <li><code>&lt;html&gt;</code>: El elemento raíz de la página.</li>
+    <li><code>&lt;head&gt;</code>: Contiene metadatos (información sobre el documento), como el título (<code>&lt;title&gt;</code>) que aparece en la pestaña del navegador, enlaces a CSS y el juego de caracteres.</li>
+    <li><code>&lt;body&gt;</code>: Contiene todo el contenido visible de la página web.</li>
+</ul>
+
+<h3>3. Etiquetas Esenciales para Contenido</h3>
+
+<h4>Títulos (Headings)</h4>
+<p>Se usan para titular secciones y subsecciones. Van del <code>&lt;h1&gt;</code> (el más importante) al <code>&lt;h6&gt;</code> (el menos importante).</p>
+<pre><code class="language-html">&lt;h1&gt;Título Principal del Artículo&lt;/h1&gt;
+&lt;h2&gt;Una sección importante&lt;/h2&gt;
+&lt;p&gt;Texto de esta sección...&lt;/p&gt;</code></pre>
+
+<h4>Párrafos (Paragraphs)</h4>
+<p>La etiqueta <code>&lt;p&gt;</code> se usa para bloques de texto.</p>
+
+<h4>Enlaces (Anchors)</h4>
+<p>La etiqueta <code>&lt;a&gt;</code> crea hipervínculos. El atributo <code>href</code> (hypertext reference) especifica la URL de destino.</p>
+<pre><code class="language-html">&lt;a href="https://www.google.com"&gt;Ir a Google&lt;/a&gt;</code></pre>
+
+<h4>Listas</h4>
+<p>Hay dos tipos principales:</p>
+<ul>
+    <li><strong>Listas desordenadas (<code>&lt;ul&gt;</code>):</strong> Para ítems sin un orden particular. Cada ítem se define con <code>&lt;li&gt;</code>.</li>
+    <li><strong>Listas ordenadas (<code>&lt;ol&gt;</code>):</strong> Para ítems secuenciales (1, 2, 3...). Cada ítem también se define con <code>&lt;li&gt;</code>.</li>
+</ul>
+<pre><code class="language-html">&lt;h4&gt;Lista de la compra:&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Leche&lt;/li&gt;
+  &lt;li&gt;Pan&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Pasos para hacer café:&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Hervir agua&lt;/li&gt;
+  &lt;li&gt;Añadir café&lt;/li&gt;
+  &lt;li&gt;Servir&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+<h4>Tablas</h4>
+<p>Se usan para mostrar datos tabulares. Son una estructura de filas y celdas.</p>
+<ul>
+    <li><code>&lt;table&gt;</code>: Envuelve toda la tabla.</li>
+    <li><code>&lt;thead&gt;</code>: Contiene la fila de cabecera.</li>
+    <li><code>&lt;tbody&gt;</code>: Contiene el cuerpo de la tabla.</li>
+    <li><code>&lt;tr&gt;</code> (table row): Define una fila.</li>
+    <li><code>&lt;th&gt;</code> (table header): Define una celda de cabecera.</li>
+    <li><code>&lt;td&gt;</code> (table data): Define una celda de datos.</li>
+</ul>
+<pre><code class="language-html">&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Nombre&lt;/th&gt;
+      &lt;th&gt;Edad&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ana&lt;/td&gt;
+      &lt;td&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+<p>Estas etiquetas son los bloques de construcción fundamentales. Dominarlas te permitirá crear la estructura de cualquier página web que imagines.</p>`,
         duration: 60,
       },
       {
