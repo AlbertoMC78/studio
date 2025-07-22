@@ -605,7 +605,7 @@ p {
 <h3>Recursos Complementarios</h3>
 <h4>Videos Recomendados</h4>
 <ul>
-    <li><strong>(Español) ¿Qué es Git y GitHub? ¡La guía para principiantes!</strong> - Un video introductorio de HolaMundo: <a href="https://www.youtube.com/watch?v=VdGzPZ31ts8" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+    <li><strong>(Español) ¿Qué es Git y GitHub? ¡La guía para principiantes!</strong> - Un video introductorio de HolaMundo: <a href="https://www.youtube.com/watch?v=3GymExBkKjE" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
 </ul>
 <h4>Lecturas Oficiales</h4>
 <ul>
