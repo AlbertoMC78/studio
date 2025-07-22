@@ -374,7 +374,51 @@ p {
       {
         id: '1.5',
         title: 'Box model y layout',
-        content: '<h2>El Modelo de Caja</h2><p>Todo en CSS es una caja. Aprende a controlar el `padding`, `border`, y `margin`.</p>',
+        content: `<h2>El Concepto Fundamental de Diseño Web: El Modelo de Caja (Box Model)</h2>
+<p>En CSS, todo elemento HTML es tratado como una caja rectangular. El <strong>Modelo de Caja</strong> es la regla que define cómo se calcula el tamaño de esta caja y cómo interactúa con los demás elementos. Comprenderlo es absolutamente esencial para maquetar (hacer el layout) de cualquier página web.</p>
+<p>Cada caja está compuesta de cuatro partes, ordenadas desde adentro hacia afuera:</p>
+<img src="https://placehold.co/600x400.png" data-ai-hint="css box model diagram" alt="Diagrama del Modelo de Caja de CSS" style="width:100%; max-width:500px; margin: 20px auto; display: block;" />
+
+<h3>1. Content (Contenido)</h3>
+<p>Es el área donde se muestra tu contenido real: texto, una imagen, un video, etc. Sus dimensiones son el <code>width</code> (ancho) y el <code>height</code> (alto) que defines en tu CSS.</p>
+
+<h3>2. Padding (Relleno)</h3>
+<p>Es un espacio transparente que rodea el contenido, separándolo del borde. El padding "empuja" el borde hacia afuera. Es como el margen interior de una hoja de papel.</p>
+<pre><code class="language-css">.mi-caja {
+  padding: 20px; /* 20px de relleno en los 4 lados */
+  padding-top: 10px; /* Relleno solo arriba */
+  padding-left: 15px; /* Relleno solo a la izquierda */
+  /* shorthand: arriba, derecha, abajo, izquierda */
+  padding: 10px 20px 10px 20px; 
+}</code></pre>
+
+<h3>3. Border (Borde)</h3>
+<p>Es una línea que se dibuja alrededor del padding y el contenido. El borde tiene un grosor, un estilo y un color.</p>
+<pre><code class="language-css">.mi-caja {
+  border: 2px solid #36454F; /* grosor, estilo, color */
+}</code></pre>
+
+<h3>4. Margin (Margen)</h3>
+<p>Es un espacio transparente que rodea el borde, "empujando" a los otros elementos para crear espacio entre ellos. Es el espacio <em>exterior</em> de la caja.</p>
+<pre><code class="language-css">.mi-caja {
+  margin: 30px; /* 30px de margen en los 4 lados */
+  margin-bottom: 40px; /* Margen solo abajo */
+}</code></pre>
+
+<h3>El Tamaño Total de un Elemento</h3>
+<p>Por defecto, el ancho total de una caja es la suma de: <code>width</code> + <code>padding-left</code> + <code>padding-right</code> + <code>border-left</code> + <code>border-right</code>.</p>
+<p>Esto puede ser poco intuitivo. Si defines <code>width: 200px</code> y luego añades <code>padding: 20px</code>, ¡el ancho visible total será de 240px! Esto causaba muchos dolores de cabeza a los desarrolladores.</p>
+
+<h4>La Solución: \`box-sizing: border-box\`</h4>
+<p>Para solucionar esto, usamos una regla mágica en CSS que simplifica enormemente el cálculo del tamaño. <code>box-sizing: border-box;</code> le dice al navegador: "Cuando yo defina un <code>width</code> de 200px, quiero que ese sea el ancho <strong>total</strong>, incluyendo el padding y el borde". El navegador entonces ajustará el espacio del contenido hacia adentro para hacerle campo al padding y al borde.</p>
+<p>Es una práctica estándar y altamente recomendada incluir esta regla al inicio de tu CSS para todos los elementos:</p>
+<pre><code class="language-css">*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}</code></pre>
+<p>Con esta simple regla, si declaras <code>width: 200px;</code>, la caja ocupará exactamente 200px de ancho en la pantalla, facilitando enormemente la creación de layouts precisos.</p>
+<p>Dominar el Modelo de Caja es el primer gran paso para dejar de "luchar" con CSS y empezar a decirle exactamente qué hacer y cómo posicionar los elementos con predictibilidad y control.</p>`,
         duration: 50,
       },
       {
