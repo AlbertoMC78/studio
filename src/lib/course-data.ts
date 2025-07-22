@@ -300,7 +300,75 @@ export const courseData: CourseModule[] = [
         id: '1.4',
         title: 'CSS básico: selectores, propiedades, colores',
         content:
-          '<h2>Estilos con CSS</h2><p>Aprende a seleccionar elementos HTML y aplicarles estilos. </p><pre><code class="language-css">p {\n  color: blue;\n  font-size: 16px;\n}</code></pre>',
+          `<h2>Dando Vida a la Web: Introducción a CSS</h2>
+<p>Si HTML es el esqueleto de una página web, <strong>CSS (Cascading Style Sheets)</strong> es la piel, la ropa y el maquillaje. Es el lenguaje que usamos para describir cómo se deben presentar visualmente los elementos HTML, controlando todo, desde los colores y las fuentes hasta la disposición de los elementos en la página.</p>
+
+<h3>1. ¿Cómo se conecta el CSS al HTML?</h3>
+<p>La forma más común y recomendada es usar una hoja de estilos externa. Esto implica crear un archivo separado con la extensión <code>.css</code> (por ejemplo, <code>style.css</code>) y enlazarlo desde el <code>&lt;head&gt;</code> de tu documento HTML.</p>
+<pre><code class="language-html">&lt;!-- En tu archivo index.html --&gt;
+&lt;head&gt;
+  &lt;title&gt;Mi Página con Estilo&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;</code></pre>
+<p>Esta práctica mantiene la estructura (HTML) y la presentación (CSS) separadas, lo que hace que el código sea mucho más fácil de mantener.</p>
+
+<h3>2. La Sintaxis de una Regla CSS</h3>
+<p>Una regla CSS consta de dos partes principales: un <strong>selector</strong> y un <strong>bloque de declaración</strong>.</p>
+<pre><code class="language-css">h1 {
+  color: #0A2342;
+  font-size: 2.5rem;
+}
+/* |  |      |      | */
+/* 1  2      3      4 */
+</code></pre>
+<ol>
+  <li><strong>Selector:</strong> Apunta al elemento(s) HTML que quieres estilizar. En este caso, <code>h1</code> selecciona todos los elementos <code>&lt;h1&gt;</code>.</li>
+  <li><strong>Bloque de declaración:</strong> Envuelto en llaves <code>{ }</code>, contiene una o más declaraciones.</li>
+  <li><strong>Propiedad:</strong> El aspecto que deseas cambiar (ej., <code>color</code>, <code>font-size</code>).</li>
+  <li><strong>Valor:</strong> El valor que quieres asignar a la propiedad (ej., <code>#0A2342</code>, <code>2.5rem</code>). Cada declaración termina con un punto y coma <code>;</code>.</li>
+</ol>
+
+<h3>3. Selectores Fundamentales</h3>
+<p>Para estilizar algo, primero debes seleccionarlo. Aquí están los selectores más básicos:</p>
+<ul>
+    <li><strong>Selector de Etiqueta (o Tipo):</strong> Selecciona todos los elementos de un tipo específico.</li>
+    <pre><code class="language-css">/* Estiliza todos los párrafos */
+p {
+  line-height: 1.6;
+}</code></pre>
+    <li><strong>Selector de Clase:</strong> Selecciona todos los elementos que tienen un atributo <code>class</code> específico. Es el selector más versátil y utilizado. Se denota con un punto (<code>.</code>).</li>
+    <pre><code class="language-html">&lt;p class="destacado"&gt;Este párrafo es importante.&lt;/p&gt;</code></pre>
+    <pre><code class="language-css">.destacado {
+  font-weight: bold;
+  color: hsl(var(--accent));
+}</code></pre>
+    <li><strong>Selector de ID:</strong> Selecciona <strong>un único elemento</strong> que tiene un atributo <code>id</code> específico. Un ID debe ser único en toda la página. Se denota con una almohadilla (<code>#</code>).</li>
+    <pre><code class="language-html">&lt;header id="encabezado-principal"&gt;...&lt;/header&gt;</code></pre>
+    <pre><code class="language-css">#encabezado-principal {
+  background-color: #f0f0f0;
+}</code></pre>
+</ul>
+
+<h3>4. Propiedades Básicas y Colores</h3>
+<p>Algunas propiedades comunes para empezar:</p>
+<ul>
+  <li><code>color</code>: Establece el color del texto.</li>
+  <li><code>background-color</code>: Establece el color de fondo de un elemento.</li>
+  <li><code>font-size</code>: Define el tamaño del texto.</li>
+  <li><code>font-family</code>: Define el tipo de letra (fuente) para el texto.</li>
+  <li><code>font-weight</code>: Define el grosor del texto (normal, bold).</li>
+  <li><code>text-align</code>: Alinea el texto (left, center, right).</li>
+</ul>
+
+<h4>Definición de Colores</h4>
+<p>Puedes especificar colores de varias maneras:</p>
+<ul>
+  <li><strong>Nombres de color:</strong> <code>red</code>, <code>blue</code>, <code>green</code> (limitado).</li>
+  <li><strong>HEX:</strong> <code>#RRGGBB</code> (Rojo, Verde, Azul en hexadecimal). Por ejemplo, <code>#FFFFFF</code> es blanco y <code>#0A2342</code> es un azul oscuro.</li>
+  <li><strong>RGB:</strong> <code>rgb(rojo, verde, azul)</code> donde cada valor va de 0 a 255. Por ejemplo, <code>rgb(10, 35, 66)</code>.</li>
+  <li><strong>HSL (Recomendado):</strong> <code>hsl(tono, saturación, luminosidad)</code>. Es muy intuitivo. El tono es un ángulo en la rueda de color (0-360), la saturación es un porcentaje (0% gris, 100% color puro), y la luminosidad es un porcentaje (0% negro, 100% blanco).</li>
+</ul>
+<p>CSS es un lenguaje vasto, pero dominar estos fundamentos (cómo enlazar, la sintaxis de las reglas y los selectores básicos) te da el poder de transformar documentos HTML simples en diseños web atractivos y legibles.</p>`,
         duration: 60,
       },
       {
