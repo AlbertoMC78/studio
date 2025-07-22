@@ -9,16 +9,21 @@ import {
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { CourseModule } from '@/lib/course-data';
-import { CheckCircle, Circle, FileQuestion } from 'lucide-react';
+import { CheckCircle, Circle, FileQuestion, Lock } from 'lucide-react';
 import { useLocalStorage } from '@/hooks/use-local-storage';
-import { useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 import { Card } from '@/components/ui/card';
+import { cn } from '@/lib/utils';
 
 type ProgressState = {
   [classId: string]: boolean;
 };
 
-export function CourseModuleItem({ module }: { module: CourseModule }) {
+type QuizResults = {
+  [moduleId: string]: boolean;
+};
+
+export function CourseModuleItem({ module, isLocked }: { module: CourseModule; isLocked: boolean }) {
   const [progress, setProgress] = useLocalStorage<ProgressState>(
     `progress-${module.id}`,
     {}
@@ -29,6 +34,7 @@ export function CourseModuleItem({ module }: { module: CourseModule }) {
   const progressPercentage = totalClasses > 0 ? (completedClasses / totalClasses) * 100 : 0;
 
   const toggleCompletion = (classId: string) => {
+    if (isLocked) return;
     setProgress(prev => ({
       ...prev,
       [classId]: !prev[classId],
@@ -36,24 +42,29 @@ export function CourseModuleItem({ module }: { module: CourseModule }) {
   };
 
   return (
-    <AccordionItem value={module.id} className="border-b-0">
-      <Card className="overflow-hidden shadow-md">
-        <AccordionTrigger className="px-6 py-4 bg-card hover:no-underline">
-          <div className="flex-1 text-left">
-            <h3 className="font-headline text-xl font-semibold text-primary">
-              {module.title}
-            </h3>
-            <p className="text-sm text-muted-foreground mt-1">
-              {module.objective}
-            </p>
-            <div className="flex items-center gap-4 mt-3">
-              <Progress value={progressPercentage} className="w-[70%]" />
-              <span className="text-sm font-medium text-foreground">
-                {Math.round(progressPercentage)}%
-              </span>
-              <span className="text-xs text-muted-foreground">
-                {completedClasses}/{totalClasses} classes
-              </span>
+    <AccordionItem value={module.id} className="border-b-0" disabled={isLocked}>
+      <Card className={cn("overflow-hidden shadow-md", isLocked && "bg-muted/50")}>
+        <AccordionTrigger
+          className={cn("px-6 py-4 bg-card hover:no-underline", isLocked && "cursor-not-allowed")}
+        >
+          <div className="flex-1 text-left flex items-center gap-4">
+             {isLocked && <Lock className="h-6 w-6 text-muted-foreground" />}
+            <div className="flex-1">
+              <h3 className={cn("font-headline text-xl font-semibold text-primary", isLocked && "text-muted-foreground")}>
+                {module.title}
+              </h3>
+              <p className={cn("text-sm text-muted-foreground mt-1", isLocked && "text-muted-foreground/80")}>
+                {module.objective}
+              </p>
+              <div className="flex items-center gap-4 mt-3">
+                <Progress value={progressPercentage} className={cn("w-[70%]", isLocked && "bg-muted-foreground/30")} />
+                <span className={cn("text-sm font-medium text-foreground", isLocked && "text-muted-foreground")}>
+                  {Math.round(progressPercentage)}%
+                </span>
+                <span className={cn("text-xs text-muted-foreground", isLocked && "text-muted-foreground/80")}>
+                  {completedClasses}/{totalClasses} classes
+                </span>
+              </div>
             </div>
           </div>
         </AccordionTrigger>

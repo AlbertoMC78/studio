@@ -13,7 +13,7 @@ export default function QuizPage({ params }: { params: { moduleId: string } }) {
 
   return (
     <div>
-      <QuizClient moduleContent={moduleContent} moduleTitle={module.title} />
+      <QuizClient moduleContent={moduleContent} moduleTitle={module.title} moduleId={module.id} />
     </div>
   );
 }
