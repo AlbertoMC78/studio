@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import {
   SidebarProvider,
   Sidebar,
@@ -19,17 +19,29 @@ import {
   LayoutDashboard,
   Sparkles,
   Bookmark,
-  UserCircle,
+  LogOut,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { AuthProvider, useAuth } from '@/context/auth-context';
+import { auth } from '@/lib/firebase';
+import { signOut } from 'firebase/auth';
 
-export default function MainLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+function InnerLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const router = useRouter();
+  const { user } = useAuth();
+
+  React.useEffect(() => {
+    if (!user) {
+      router.push('/login');
+    }
+  }, [user, router]);
+
+  const handleLogout = async () => {
+    await signOut(auth);
+    router.push('/login');
+  };
 
   const menuItems = [
     {
@@ -48,6 +60,11 @@ export default function MainLayout({
       icon: Bookmark,
     },
   ];
+
+  if (!user) {
+    // Render nothing or a loading spinner while redirecting
+    return null;
+  }
 
   return (
     <SidebarProvider>
@@ -84,15 +101,18 @@ export default function MainLayout({
         </SidebarMenu>
         <SidebarFooter className="p-4 mt-auto">
           <div className="flex items-center gap-3 p-3 rounded-lg bg-sidebar-accent/50">
-             <Avatar>
-                <AvatarImage src="https://placehold.co/40x40" />
-                <AvatarFallback>U</AvatarFallback>
+            <Avatar>
+              <AvatarImage src="https://placehold.co/40x40" data-ai-hint="user avatar" />
+              <AvatarFallback>{user.email?.[0].toUpperCase()}</AvatarFallback>
             </Avatar>
-            <div className="flex flex-col">
-              <span className="font-semibold text-sidebar-foreground">User</span>
-              <span className="text-xs text-sidebar-foreground/70">
-                user@email.com
+            <div className="flex flex-col overflow-hidden">
+              <span className="font-semibold text-sidebar-foreground truncate">
+                {user.email}
               </span>
+              <button onClick={handleLogout} className="text-xs text-sidebar-foreground/70 hover:underline text-left flex items-center gap-1">
+                <LogOut className="w-3 h-3"/>
+                Logout
+              </button>
             </div>
           </div>
         </SidebarFooter>
@@ -105,5 +125,17 @@ export default function MainLayout({
         <main className="p-4 lg:p-8">{children}</main>
       </SidebarInset>
     </SidebarProvider>
+  );
+}
+
+export default function MainLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <AuthProvider>
+      <InnerLayout>{children}</InnerLayout>
+    </AuthProvider>
   );
 }
