@@ -18,9 +18,7 @@ const ContentInjectionInputSchema = z.object({
 });
 export type ContentInjectionInput = z.infer<typeof ContentInjectionInputSchema>;
 
-const ContentInjectionOutputSchema = z.object({
-  content: z.string().describe('The AI-generated educational content.'),
-});
+const ContentInjectionOutputSchema = z.string().describe('The AI-generated educational content.');
 export type ContentInjectionOutput = z.infer<typeof ContentInjectionOutputSchema>;
 
 export async function injectAiContent(input: ContentInjectionInput): Promise<ContentInjectionOutput> {
@@ -52,8 +50,6 @@ const contentInjectionFlow = ai.defineFlow(
   },
   async input => {
     const {output} = await contentInjectionPrompt(input);
-    return {
-      content: output!.text,
-    };
+    return output!;
   }
 );

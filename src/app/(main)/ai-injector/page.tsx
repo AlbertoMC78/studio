@@ -50,7 +50,7 @@ export default function AiInjectorPage() {
     setGeneratedContent('');
     try {
       const result = await injectAiContent(values);
-      setGeneratedContent(result.content);
+      setGeneratedContent(result);
     } catch (error) {
       console.error('Failed to inject content:', error);
       setGeneratedContent('Error: Could not generate content.');
