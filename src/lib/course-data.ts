@@ -1,3 +1,4 @@
+
 export interface CourseClass {
   id: string;
   title: string;
@@ -75,13 +76,45 @@ export const courseData: CourseModule[] = [
         id: '1.1',
         title: '¿Cómo funciona la Web?',
         content:
-          '<h2>El Modelo Cliente-Servidor</h2><p>Exploraremos cómo los navegadores (clientes) solicitan información a los servidores y cómo estos responden con HTML, CSS y JavaScript.</p>',
+          `<h2>El Viaje de una Página Web: Del Clic a la Pantalla</h2>
+<p>Cada vez que visitas un sitio web, desencadenas una serie de eventos rapidísimos y complejos a través de una red global. La arquitectura que lo hace posible se conoce como el <strong>modelo Cliente-Servidor</strong>. Es la columna vertebral de la World Wide Web.</p>
+
+<h3>1. Los Actores Principales</h3>
+<ul>
+  <li><strong>El Cliente (Tu Navegador):</strong> Es el software en tu dispositivo (Chrome, Firefox, Safari) que actúa como tu agente en la web. Su trabajo es solicitar, recibir e interpretar (renderizar) la información para que puedas verla y interactuar con ella.</li>
+  <li><strong>El Servidor:</strong> Es un ordenador potente, siempre encendido y conectado a internet, cuyo propósito es "servir" contenido cuando un cliente lo solicita. Almacena los archivos (HTML, CSS, JavaScript, imágenes), ejecuta lógica de negocio y se conecta a bases de datos.</li>
+</ul>
+
+<h3>2. El Protocolo de Comunicación: HTTP/S</h3>
+<p>Cliente y servidor necesitan un lenguaje común para entenderse. Este lenguaje es el <strong>Protocolo de Transferencia de Hipertexto (HTTP)</strong>. Su versión segura, <strong>HTTPS</strong>, encripta la comunicación, lo cual es el estándar hoy en día.</p>
+<ul>
+    <li><strong>Petición (Request):</strong> El cliente envía una petición HTTP al servidor. Por ejemplo: <code>GET /index.html</code>, que significa "dame el archivo index.html".</li>
+    <li><strong>Respuesta (Response):</strong> El servidor procesa la petición y devuelve una respuesta HTTP, que incluye un <strong>código de estado</strong> (como <code>200 OK</code> si todo fue bien, o <code>404 Not Found</code> si no encontró el recurso) y el contenido solicitado (el archivo HTML, por ejemplo).</li>
+</ul>
+
+<h3>3. Las Direcciones de la Web: IP y DNS</h3>
+<p>Para que tu navegador sepa a qué servidor enviar la petición, necesita su dirección. En internet, las direcciones son numéricas, llamadas <strong>direcciones IP</strong> (ej., <code>172.217.16.142</code>).</p>
+<p>Como recordar números es difícil para los humanos, usamos nombres de dominio (ej., <code>google.com</code>). El <strong>Sistema de Nombres de Dominio (DNS)</strong> actúa como la agenda telefónica de internet, traduciendo los nombres de dominio que escribimos a la dirección IP del servidor correspondiente.</p>
+
+<h3>4. El Proceso Completo (Paso a Paso)</h3>
+<ol>
+  <li><strong>Escribes la URL:</strong> Ingresas <code>https://www.ejemplo.com</code> en tu navegador y presionas Enter.</li>
+  <li><strong>Traducción DNS:</strong> Tu navegador pregunta a un servidor DNS: "¿Cuál es la IP de <code>www.ejemplo.com</code>?". El DNS responde con la dirección IP del servidor.</li>
+  <li><strong>Petición HTTP/S:</strong> Tu navegador establece una conexión con el servidor en esa IP y le envía una petición HTTP/S pidiendo la página principal.</li>
+  <li><strong>Procesamiento del Servidor:</strong> El servidor recibe la petición. Busca el archivo HTML solicitado. Si es una página dinámica (ej., un perfil de red social), puede que necesite consultar una base de datos y construir el HTML sobre la marcha.</li>
+  <li><strong>Respuesta del Servidor:</strong> El servidor envía el archivo HTML de vuelta a tu navegador como parte de la respuesta HTTP/S.</li>
+  <li><strong>Renderizado (Fase 1 - HTML):</strong> El navegador comienza a leer el HTML. Entiende la estructura: aquí va un título, aquí un párrafo, aquí una imagen.</li>
+  <li><strong>Peticiones Adicionales:</strong> Mientras lee el HTML, el navegador encuentra referencias a otros archivos, como hojas de estilo CSS (<code>&lt;link rel="stylesheet" href="style.css"&gt;</code>) y scripts de JavaScript (<code>&lt;script src="app.js"&gt;&lt;/script&gt;</code>). Realiza peticiones HTTP/S adicionales para cada uno de estos archivos.</li>
+  <li><strong>Renderizado (Fase 2 - CSS y JS):</strong> A medida que llegan los archivos CSS y JavaScript, el navegador los aplica. El CSS le da estilo y apariencia visual a la estructura HTML. El JavaScript añade interactividad, como animaciones, validación de formularios o la capacidad de cargar más contenido sin recargar la página.</li>
+</ol>
+<p>Este ciclo completo, desde la petición inicial hasta que la página es completamente visible e interactiva, ocurre en cuestión de segundos o incluso milisegundos, gracias a la eficiencia de esta arquitectura fundamental.</p>
+`,
         duration: 30,
       },
       {
         id: '1.2',
         title: 'HTML básico: etiquetas, listas, tablas, enlaces',
-        content: '<h2>Estructura con HTML</h2><p>Aprende las etiquetas fundamentales de HTML para estructurar contenido web.</p><pre><code class="language-html">&lt;h1&gt;Título&lt;/h1&gt;\\n&lt;p&gt;Un párrafo de texto.&lt;/p&gt;</code></pre>',
+        content: '<h2>Estructura con HTML</h2><p>Aprende las etiquetas fundamentales de HTML para estructurar contenido web.</p><pre><code class="language-html">&lt;h1&gt;Título&lt;/h1&gt;\n&lt;p&gt;Un párrafo de texto.&lt;/p&gt;</code></pre>',
         duration: 60,
       },
       {
@@ -95,7 +128,7 @@ export const courseData: CourseModule[] = [
         id: '1.4',
         title: 'CSS básico: selectores, propiedades, colores',
         content:
-          '<h2>Estilos con CSS</h2><p>Aprende a seleccionar elementos HTML y aplicarles estilos. </p><pre><code class="language-css">p {\\n  color: blue;\\n  font-size: 16px;\\n}</code></pre>',
+          '<h2>Estilos con CSS</h2><p>Aprende a seleccionar elementos HTML y aplicarles estilos. </p><pre><code class="language-css">p {\n  color: blue;\n  font-size: 16px;\n}</code></pre>',
         duration: 60,
       },
       {
@@ -169,5 +202,6 @@ export const courseData: CourseModule[] = [
         description: 'Desarrolla una aplicación de notas completa utilizando React, manejando estado, componentes y routing.'
     },
     quizId: 'quiz_3'
-  },
-];
+  }
+]
+    
