@@ -135,7 +135,7 @@ export default function AiInjectorPage() {
         <CardHeader>
           <CardTitle className="font-headline text-2xl text-primary">
             Generated Content
-          </AITraining>
+          </CardTitle>
           <CardDescription>
             Review the AI-generated content below.
           </CardDescription>
