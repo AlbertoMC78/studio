@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { NoteTaking } from '@/components/note-taking';
 import { SaveButton } from '@/components/save-button';
 import { Card, CardContent } from '@/components/ui/card';
+import { AudioPlayer } from '@/components/audio-player';
 
 export default function ClassPage({
   params,
@@ -19,14 +20,17 @@ export default function ClassPage({
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
       <div className="lg:col-span-2 space-y-6">
-        <div className="flex justify-between items-start">
+        <div className="flex justify-between items-start gap-4">
           <div>
             <p className="text-sm font-semibold text-accent">{module.title}</p>
             <h1 className="text-4xl font-bold font-headline text-primary mt-1">
               {lesson.title}
             </h1>
           </div>
-          <SaveButton lessonId={lesson.id} lessonTitle={lesson.title} />
+          <div className="flex gap-2 flex-shrink-0">
+             <AudioPlayer lessonContent={lesson.content} />
+             <SaveButton lessonId={lesson.id} lessonTitle={lesson.title} />
+          </div>
         </div>
 
         <Card className="shadow-lg">
