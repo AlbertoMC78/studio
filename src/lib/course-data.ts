@@ -8,7 +8,7 @@ export interface CourseClass {
 
 export interface CourseModule {
   id: string;
-  title: string;
+  title:string;
   objective: string;
   classes: CourseClass[];
   project: {
@@ -425,7 +425,79 @@ p {
         id: '1.6',
         title: 'Flexbox y Grid',
         content:
-          '<h2>Layouts Modernos</h2><p>Domina Flexbox y Grid, las herramientas más poderosas de CSS para crear layouts complejos y responsivos.</p>',
+          `<h2>Layouts Modernos: Flexbox y Grid</h2>
+<p>Hasta ahora, has aprendido a tratar cada elemento como una caja individual. Flexbox y Grid son tecnologías de CSS que te permiten ir más allá, dándote el poder de controlar cómo se organizan y alinean grupos de cajas. Son las herramientas fundamentales para crear cualquier layout moderno y responsivo.</p>
+
+<h3>1. Flexbox: El Poder del Eje Único</h3>
+<p><strong>Flexbox (Flexible Box Layout)</strong> está diseñado para maquetar elementos en una sola dimensión, ya sea una fila o una columna. Es perfecto para alinear ítems, distribuirlos y controlar su orden dentro de un contenedor.</p>
+
+<h4>Conceptos Clave de Flexbox</h4>
+<ul>
+    <li><strong>Contenedor Flex (Flex Container):</strong> Es el elemento padre al que le aplicas <code>display: flex;</code>.</li>
+    <li><strong>Ítems Flex (Flex Items):</strong> Son los hijos directos del contenedor flex.</li>
+    <li><strong>Eje Principal (Main Axis):</strong> La dirección en la que se colocan los ítems flex (por defecto, horizontal).</li>
+    <li><strong>Eje Cruzado (Cross Axis):</strong> El eje perpendicular al eje principal (por defecto, vertical).</li>
+</ul>
+
+<h4>Propiedades del Contenedor (Padre)</h4>
+<ul>
+    <li><code>display: flex;</code>: Activa el contexto de Flexbox.</li>
+    <li><code>flex-direction: row | column;</code>: Establece la dirección del eje principal.</li>
+    <li><code>justify-content</code>: Alinea los ítems a lo largo del eje principal (<code>flex-start</code>, <code>center</code>, <code>flex-end</code>, <code>space-between</code>).</li>
+    <li><code>align-items</code>: Alinea los ítems a lo largo del eje cruzado (<code>flex-start</code>, <code>center</code>, <code>flex-end</code>, <code>stretch</code>).</li>
+    <li><code>flex-wrap: nowrap | wrap;</code>: Permite que los ítems salten a la siguiente línea si no caben.</li>
+</ul>
+
+<pre><code class="language-css">.contenedor-flex {
+  display: flex;
+  justify-content: space-between; /* Distribuye el espacio entre los ítems */
+  align-items: center; /* Centra los ítems verticalmente */
+}</code></pre>
+
+<h3>2. CSS Grid: El Poder de las Dos Dimensiones</h3>
+<p><strong>Grid Layout</strong> es un sistema de maquetación bidimensional. Te permite crear una cuadrícula de filas y columnas donde puedes posicionar elementos de forma precisa. Es ideal para layouts de página complejos.</p>
+
+<h4>Conceptos Clave de Grid</h4>
+<ul>
+    <li><strong>Contenedor Grid (Grid Container):</strong> El elemento padre al que aplicas <code>display: grid;</code>.</li>
+    <li><strong>Ítems Grid (Grid Items):</strong> Los hijos directos del contenedor.</li>
+    <li><strong>Líneas de Grid (Grid Lines):</strong> Las líneas horizontales y verticales que dividen la cuadrícula.</li>
+    <li><strong>Celdas de Grid (Grid Cells):</strong> El espacio entre cuatro líneas de grid.</li>
+    <li><strong>Áreas de Grid (Grid Areas):</strong> Un espacio rectangular que puede abarcar múltiples celdas.</li>
+</ul>
+
+<h4>Propiedades del Contenedor (Padre)</h4>
+<ul>
+    <li><code>display: grid;</code>: Activa el contexto de Grid.</li>
+    <li><code>grid-template-columns</code>: Define el número y tamaño de las columnas (ej: <code>1fr 1fr 2fr;</code> crea tres columnas, la última el doble de ancha).</li>
+    <li><code>grid-template-rows</code>: Define el número y tamaño de las filas (ej: <code>auto 100px;</code>).</li>
+    <li><code>gap</code>: Define el espacio entre filas y columnas (ej: <code>20px;</code>).</li>
+</ul>
+
+<h4>Propiedades de los Ítems (Hijos)</h4>
+<ul>
+    <li><code>grid-column-start / grid-column-end</code>: Define en qué línea de columna empieza y termina un ítem.</li>
+    <li><code>grid-row-start / grid-row-end</code>: Define en qué línea de fila empieza y termina un ítem.</li>
+    <li><code>grid-column</code> y <code>grid-row</code> (shorthand): Abreviaturas para las propiedades anteriores (ej: <code>grid-column: 1 / 3;</code> abarca desde la línea 1 a la 3).</li>
+</ul>
+
+<pre><code class="language-css">.contenedor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
+  gap: 1rem;
+}
+
+.item-destacado {
+  grid-column: 1 / span 2; /* Ocupa dos columnas */
+  grid-row: 1;
+}</code></pre>
+
+<h3>¿Cuándo usar Flexbox y cuándo usar Grid?</h3>
+<ul>
+    <li>Usa <strong>Flexbox</strong> para componentes y alineación en una dimensión: barras de navegación, alineación de ítems dentro de una tarjeta, centrado de contenido.</li>
+    <li>Usa <strong>Grid</strong> para el layout general de la página en dos dimensiones: la estructura principal de tu sitio web con encabezado, contenido, barra lateral y pie de página.</li>
+</ul>
+<p>La verdadera maestría viene de combinar ambos. Puedes tener un layout principal hecho con Grid, y dentro de una de las áreas de ese grid, usar Flexbox para alinear los elementos de un componente.</p>`,
         duration: 90,
       },
       {
