@@ -424,8 +424,7 @@ p {
       {
         id: '1.6',
         title: 'Flexbox y Grid',
-        content:
-          `<h2>Layouts Modernos: Flexbox y Grid</h2>
+        content: `<h2>Layouts Modernos: Flexbox y Grid</h2>
 <p>Hasta ahora, has aprendido a tratar cada elemento como una caja individual. Flexbox y Grid son tecnologías de CSS que te permiten ir más allá, dándote el poder de controlar cómo se organizan y alinean grupos de cajas. Son las herramientas fundamentales para crear cualquier layout moderno y responsivo.</p>
 
 <h3>1. Flexbox: El Poder del Eje Único</h3>
@@ -608,8 +607,7 @@ git push origin main
 
 # Si estás subiendo una rama nueva por primera vez
 git push --set-upstream origin nueva-funcionalidad</code></pre>
-<p><code>origin</code> es el nombre por defecto que Git le da al repositorio remoto desde el que clonaste. Ahora tus cambios están seguros en la nube y disponibles para tus colaboradores.</p>
-`,
+<p><code>origin</code> es el nombre por defecto que Git le da al repositorio remoto desde el que clonaste. Ahora tus cambios están seguros en la nube y disponibles para tus colaboradores.</p>`,
         duration: 60,
       },
     ],
@@ -624,7 +622,80 @@ git push --set-upstream origin nueva-funcionalidad</code></pre>
     title: 'MÓDULO 2: Programación con JavaScript',
     objective: 'Dominar JavaScript para lógica de programación, manipulación del DOM y trabajo con datos',
     classes: [
-        { id: '2.1', title: 'Variables, tipos de datos y operadores', content: 'Contenido sobre variables en JS.', duration: 60 },
+        {
+          id: '2.1', 
+          title: 'Variables, tipos de datos y operadores', 
+          content: `<h2>El Cerebro de la Web: Introducción a JavaScript</h2>
+<p>Hemos construido el esqueleto (HTML) y hemos vestido nuestra página (CSS). Ahora es el momento de darle vida y cerebro con <strong>JavaScript (JS)</strong>. JavaScript es un lenguaje de programación completo que se ejecuta directamente en el navegador del usuario. Nos permite crear interactividad, manipular contenido dinámicamente y comunicarnos con servidores.</p>
+
+<h3>1. Variables: Contenedores de Información</h3>
+<p>En programación, necesitamos una forma de almacenar valores para usarlos más tarde. Para eso usamos las <strong>variables</strong>. Piensa en ellas como cajas con etiquetas donde guardamos datos.</p>
+<p>En JavaScript moderno, tenemos tres formas de declarar una variable:</p>
+<ul>
+    <li><strong><code>let</code>:</strong> Es la forma estándar y más recomendada para declarar variables cuyo valor puede cambiar con el tiempo.</li>
+    <li><strong><code>const</code>:</strong> Se usa para declarar "constantes", es decir, variables cuyo valor no cambiará después de ser asignado. Es una buena práctica usar <code>const</code> por defecto y solo cambiar a <code>let</code> si sabes que necesitarás reasignar el valor.</li>
+    <li><strong><code>var</code>:</strong> La forma antigua de declarar variables. Tiene un comportamiento de "scope" (alcance) que puede ser confuso y propenso a errores. Se recomienda evitar <code>var</code> en código moderno.</li>
+</ul>
+<pre><code class="language-javascript">// Usando let para un valor que puede cambiar
+let edad = 30;
+edad = 31; // Esto es válido
+
+// Usando const para un valor que no cambiará
+const nombre = "Alberto";
+// nombre = "Carlos"; // Esto provocaría un error
+
+console.log("Hola, " + nombre + ". Tienes " + edad + " años.");</code></pre>
+
+<h3>2. Tipos de Datos Primitivos</h3>
+<p>JavaScript tiene varios tipos de datos fundamentales:</p>
+<ul>
+  <li><strong>String (Cadena de texto):</strong> Para texto. Se escribe entre comillas simples (<code>''</code>) o dobles (<code>""</code>). Ejemplo: <code>'Hola Mundo'</code>.</li>
+  <li><strong>Number (Número):</strong> Para cualquier tipo de número, ya sea entero (<code>25</code>) o con decimales (<code>99.99</code>).</li>
+  <li><strong>Boolean (Booleano):</strong> Representa un valor de verdad, solo puede ser <code>true</code> o <code>false</code>. Es la base de la lógica y la toma de decisiones.</li>
+  <li><strong><code>null</code>:</strong> Representa la ausencia intencional de un valor. Es un valor que asignamos nosotros para decir "aquí no hay nada".</li>
+  <li><strong><code>undefined</code>:</strong> Significa que una variable ha sido declarada pero aún no se le ha asignado un valor.</li>
+</ul>
+
+<h3>3. Operadores: Realizando Acciones</h3>
+<p>Los operadores son símbolos que realizan operaciones sobre nuestros datos.</p>
+<h4>Operadores Aritméticos</h4>
+<p>Para realizar cálculos matemáticos.</p>
+<ul>
+  <li><code>+</code> (Suma)</li>
+  <li><code>-</code> (Resta)</li>
+  <li><code>*</code> (Multiplicación)</li>
+  <li><code>/</code> (División)</li>
+  <li><code>%</code> (Módulo o Resto): Devuelve el resto de una división. <code>10 % 3</code> es <code>1</code>.</li>
+</ul>
+
+<h4>Operadores de Asignación</h4>
+<p>Para asignar valores a las variables.</p>
+<ul>
+  <li><code>=</code> (Asignación): <code>let x = 10;</code></li>
+  <li><code>+=</code> (Suma y asignación): <code>x += 5;</code> es lo mismo que <code>x = x + 5;</code></li>
+  <li><code>-=</code>, <code>*=</code>, <code>/=</code> funcionan de manera similar.</li>
+</ul>
+
+<h4>Operadores de Comparación</h4>
+<p>Para comparar valores. El resultado siempre es un booleano (<code>true</code> o <code>false</code>).</p>
+<ul>
+  <li><code>==</code> (Igualdad laxa): Compara solo el valor, no el tipo. <code>'5' == 5</code> es <code>true</code>. <strong>(Evitar su uso)</strong></li>
+  <li><code>===</code> (Igualdad estricta): Compara tanto el valor como el tipo. <code>'5' === 5</code> es <code>false</code>. <strong>(Esta es la que debes usar siempre)</strong>.</li>
+  <li><code>!=</code> y <code>!==</code> (Desigualdad laxa y estricta).</li>
+  <li><code>&gt;</code> (Mayor que), <code>&lt;</code> (Menor que), <code>&gt;=</code> (Mayor o igual que), <code>&lt;=</code> (Menor o igual que).</li>
+</ul>
+
+<h4>Operadores Lógicos</h4>
+<p>Para combinar expresiones booleanas.</p>
+<ul>
+  <li><code>&&</code> (AND / Y): Devuelve <code>true</code> solo si ambas condiciones son verdaderas. <code>(edad > 18 && tieneCarnet)</code>.</li>
+  <li><code>||</code> (OR / O): Devuelve <code>true</code> si al menos una de las condiciones es verdadera. <code>(esFinDeSemana || esFestivo)</code>.</li>
+  <li><code>!</code> (NOT / No): Invierte el valor booleano. <code>!esVisible</code>.</li>
+</ul>
+
+<p>Estos bloques de construcción son la base de toda la programación en JavaScript. Al combinarlos, podemos empezar a escribir programas que toman decisiones y realizan tareas complejas.</p>`,
+          duration: 60
+        },
         { id: '2.2', title: 'Condicionales y bucles', content: 'Contenido sobre condicionales y bucles en JS.', duration: 75 },
         { id: '2.3', title: 'Funciones y scope', content: 'Contenido sobre funciones y scope en JS.', duration: 75 },
         { id: '2.4', title: 'Arreglos y objetos', content: 'Contenido sobre arreglos y objetos en JS.', duration: 60 },
