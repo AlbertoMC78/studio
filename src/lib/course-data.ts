@@ -45,6 +45,18 @@ export const courseData: CourseModule[] = [
           '<h2>Herramientas Esenciales</h2><p>Necesitarás un editor de código como VS Code, Git para control de versiones, y Node.js. Te guiaremos en la instalación.</p>',
         duration: 45,
       },
+      {
+        id: '0.4',
+        title: 'Mentalidad de programador y resolución de problemas',
+        content: '<h2>Mentalidad de Programador</h2><p>Contenido sobre la mentalidad de un programador y cómo abordar la resolución de problemas de manera efectiva.</p>',
+        duration: 30,
+      },
+      {
+        id: '0.5',
+        title: 'Cómo estudiar programación (hábitos + metodología)',
+        content: '<h2>Metodología de Estudio</h2><p>Aprende las mejores técnicas y hábitos para estudiar programación de manera eficiente y sostenible a largo plazo.</p>',
+        duration: 30,
+      },
     ],
     project: {
       title: 'Configuración de Entorno',
@@ -69,7 +81,7 @@ export const courseData: CourseModule[] = [
       {
         id: '1.2',
         title: 'HTML básico: etiquetas, listas, tablas, enlaces',
-        content: '<h2>Estructura con HTML</h2><p>Aprende las etiquetas fundamentales de HTML para estructurar contenido web.</p><pre><code class="language-html">&lt;h1&gt;Título&lt;/h1&gt;\n&lt;p&gt;Un párrafo de texto.&lt;/p&gt;</code></pre>',
+        content: '<h2>Estructura con HTML</h2><p>Aprende las etiquetas fundamentales de HTML para estructurar contenido web.</p><pre><code class="language-html">&lt;h1&gt;Título&lt;/h1&gt;\\n&lt;p&gt;Un párrafo de texto.&lt;/p&gt;</code></pre>',
         duration: 60,
       },
       {
@@ -83,7 +95,7 @@ export const courseData: CourseModule[] = [
         id: '1.4',
         title: 'CSS básico: selectores, propiedades, colores',
         content:
-          '<h2>Estilos con CSS</h2><p>Aprende a seleccionar elementos HTML y aplicarles estilos. </p><pre><code class="language-css">p {\n  color: blue;\n  font-size: 16px;\n}</code></pre>',
+          '<h2>Estilos con CSS</h2><p>Aprende a seleccionar elementos HTML y aplicarles estilos. </p><pre><code class="language-css">p {\\n  color: blue;\\n  font-size: 16px;\\n}</code></pre>',
         duration: 60,
       },
       {
@@ -104,6 +116,12 @@ export const courseData: CourseModule[] = [
         title: 'Introducción a Git y GitHub',
         content: '<h2>Control de Versiones</h2><p>Git es fundamental para el desarrollo de software moderno. GitHub es la plataforma donde alojarás tus repositorios.</p>',
         duration: 45,
+      },
+      {
+        id: '1.8',
+        title: 'Git básico: commits, ramas, merge',
+        content: '<h2>Comandos básicos de Git</h2><p>Aprende los comandos esenciales de Git como `commit`, `branch`, `merge` y `push` para gestionar tu código.</p>',
+        duration: 60,
       },
     ],
     project: {
@@ -143,6 +161,8 @@ export const courseData: CourseModule[] = [
         { id: '3.4', title: 'React Router', content: 'Contenido sobre React Router.', duration: 75 },
         { id: '3.5', title: 'Hooks (useState, useEffect, custom hooks)', content: 'Contenido sobre React Hooks.', duration: 120 },
         { id: '3.6', title: 'Manejo de formularios y validaciones', content: 'Contenido sobre formularios en React.', duration: 90 },
+        { id: '3.7', title: 'Introducción a Vue.js', content: 'Contenido sobre Vue.js.', duration: 60 },
+        { id: '3.8', title: 'Introducción a Angular', content: 'Contenido sobre Angular.', duration: 60 },
     ],
     project: {
         title: 'App de notas con React',
