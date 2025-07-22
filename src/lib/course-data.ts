@@ -225,7 +225,75 @@ export const courseData: CourseModule[] = [
         id: '1.3',
         title: 'HTML semántico y buenas prácticas',
         content:
-          '<h2>HTML Semántico</h2><p>Utiliza etiquetas como `<article>`, `<section>`, y `<nav>` para dar significado a tu contenido, mejorando el SEO y la accesibilidad.</p>',
+          `<h2>La Magia del Contexto: HTML Semántico</h2>
+<p>Has aprendido a usar etiquetas HTML para estructurar tu contenido. Ahora, demos un paso más allá. El <strong>HTML Semántico</strong> consiste en elegir la etiqueta HTML correcta según el <strong>significado</strong> de su contenido, no por cómo se ve en el navegador.</p>
+<p>Piensa en etiquetas como <code>&lt;div&gt;</code> y <code>&lt;span&gt;</code>. Son "no semánticas"; no nos dicen nada sobre el contenido que envuelven. En cambio, etiquetas como <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code> o <code>&lt;article&gt;</code> le dan un propósito claro a su contenido.</p>
+
+<h3>¿Por qué es tan importante?</h3>
+<ol>
+  <li><strong>Accesibilidad:</strong> Las tecnologías de asistencia, como los lectores de pantalla para personas con discapacidad visual, utilizan la semántica para interpretar y navegar una página. Un lector de pantalla puede anunciar "Navegación principal" si usas una etiqueta <code>&lt;nav&gt;</code>, permitiendo al usuario saltar directamente a ella.</li>
+  <li><strong>SEO (Search Engine Optimization):</strong> Los motores de búsqueda como Google analizan la estructura de tu página para entender de qué trata. Usar <code>&lt;h1&gt;</code> para tu título principal y <code>&lt;section&gt;</code> para agrupar contenido relacionado les ayuda a indexar tu sitio de manera más efectiva, lo que puede mejorar tu ranking en los resultados de búsqueda.</li>
+  <li><strong>Mantenibilidad:</strong> Un código semántico es más fácil de leer y entender para otros desarrolladores (¡y para tu yo del futuro!). Es auto-documentado.</li>
+</ol>
+
+<h3>Las Etiquetas Semánticas de Layout Principales</h3>
+<p>HTML5 introdujo un conjunto de etiquetas diseñadas para estructurar las secciones principales de una página web.</p>
+
+<pre><code class="language-html">&lt;body&gt;
+  &lt;header&gt;
+    &lt;!-- Contenido introductorio o de navegación --&gt;
+    &lt;h1&gt;Mi Blog Increíble&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="/"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/acerca"&gt;Acerca de&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;!-- El contenido principal y único de esta página --&gt;
+    &lt;article&gt;
+      &lt;h2&gt;Título del Artículo&lt;/h2&gt;
+      &lt;p&gt;Contenido del artículo...&lt;/p&gt;
+      &lt;section&gt;
+        &lt;h3&gt;Comentarios&lt;/h3&gt;
+        &lt;p&gt;Primer comentario...&lt;/p&gt;
+      &lt;/section&gt;
+    &lt;/article&gt;
+
+    &lt;aside&gt;
+      &lt;h3&gt;Publicidad&lt;/h3&gt;
+      &lt;p&gt;Contenido relacionado pero no esencial.&lt;/p&gt;
+    &lt;/aside&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+    &lt;!-- Pie de página con info de contacto, copyright, etc. --&gt;
+    &lt;p&gt;&copy; 2024 Mi Blog Increíble&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+</code></pre>
+
+<ul>
+    <li><code>&lt;header&gt;</code>: Representa el encabezado de una página o sección. Suele contener el logo, el título principal y la navegación.</li>
+    <li><code>&lt;nav&gt;</code>: Define un bloque de enlaces de navegación principal.</li>
+    <li><code>&lt;main&gt;</code>: ¡Crucial! Envuelve el contenido <strong>principal y único</strong> del documento. Solo debe haber uno por página y no debe estar anidado dentro de otras etiquetas de layout como <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>, o <code>&lt;header&gt;</code>.</li>
+    <li><code>&lt;article&gt;</code>: Representa un bloque de contenido independiente y auto-contenido que podría existir por sí solo y tener sentido, como una entrada de blog, un post en un foro o un artículo de noticias.</li>
+    <li><code>&lt;section&gt;</code>: Agrupa contenido temáticamente relacionado. Es una forma más genérica de agrupar contenido que <code>&lt;article&gt;</code>. Generalmente, una sección debe tener su propio encabezado (h2-h6).</li>
+    <li><code>&lt;aside&gt;</code>: Para contenido tangencialmente relacionado con el contenido principal, como barras laterales, publicidad o biografías de autor.</li>
+    <li><code>&lt;footer&gt;</code>: Define el pie de página de un documento o sección. Suele contener información de autoría, copyright, enlaces a políticas, etc.</li>
+</ul>
+
+<h3>Buenas Prácticas</h3>
+<ul>
+    <li><strong>No abuses de los <code>&lt;div&gt;</code>:</strong> Antes de usar un <code>&lt;div&gt;</code>, pregúntate: "¿Hay una etiqueta semántica más apropiada para este contenido?". Usa los <code>div</code> principalmente para fines de estilado cuando no hay otra opción.</li>
+    <li><strong>Jerarquía de Títulos:</strong> Usa los títulos (<code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code>) en orden lógico. No saltes de un <code>&lt;h1&gt;</code> a un <code>&lt;h3&gt;</code> porque te gusta cómo se ve. La apariencia se controla con CSS; el HTML es para la estructura.</li>
+    <li><strong>El atributo <code>alt</code> en imágenes:</strong> Siempre incluye un texto alternativo (<code>alt</code>) en tus etiquetas <code>&lt;img&gt;</code>. Describe la imagen para usuarios de lectores de pantalla y también se muestra si la imagen no puede cargar.</li>
+</ul>
+<pre><code class="language-html">&lt;img src="perrito.jpg" alt="Un cachorro de Golden Retriever jugando en la hierba."&gt;
+</code></pre>
+<p>Adoptar el HTML semántico desde el principio es una de las marcas de un desarrollador web profesional. Tu código será más robusto, accesible y comprensible.</p>`,
         duration: 45,
       },
       {
