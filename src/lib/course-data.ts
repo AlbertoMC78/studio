@@ -503,7 +503,47 @@ p {
       {
         id: '1.7',
         title: 'Introducción a Git y GitHub',
-        content: '<h2>Control de Versiones</h2><p>Git es fundamental para el desarrollo de software moderno. GitHub es la plataforma donde alojarás tus repositorios.</p>',
+        content: `<h2>La Red de Seguridad del Desarrollador: Git y GitHub</h2>
+<p>Imagina que estás escribiendo un documento muy importante. Cada cierto tiempo, guardas una copia con un nombre diferente: "documento_v1", "documento_v2", "documento_final", "documento_final_de_verdad". Esto es engorroso y propenso a errores. El <strong>Control de Versiones</strong> es un sistema que soluciona este problema de manera profesional.</p>
+
+<h3>1. ¿Qué es el Control de Versiones?</h3>
+<p>Es un sistema que registra los cambios realizados en un archivo o conjunto de archivos a lo largo del tiempo, de modo que puedas recuperar versiones específicas más adelante. Es como una máquina del tiempo para tu código. Te permite:</p>
+<ul>
+    <li>Revertir archivos a un estado anterior.</li>
+    <li>Revertir todo el proyecto a un estado anterior.</li>
+    <li>Comparar cambios a lo largo del tiempo.</li>
+    <li>Ver quién modificó algo por última vez que podría estar causando un problema.</li>
+    <li>Trabajar en paralelo con otros desarrolladores sin sobrescribir el trabajo de los demás.</li>
+</ul>
+
+<h3>2. Git: Tu Base de Datos de Cambios Local</h3>
+<p><strong>Git</strong> es el software de control de versiones más popular del mundo. Es un <strong>Sistema de Control de Versiones Distribuido (DVCS)</strong>. Esto significa que no dependes de un servidor central. Cada desarrollador tiene una copia completa del historial del proyecto en su propia máquina.</p>
+<p>Con Git, el flujo de trabajo básico es:</p>
+<ol>
+    <li>Modificas archivos en tu copia de trabajo.</li>
+    <li>Seleccionas los cambios que quieres "guardar" (esto se llama <em>staging</em>).</li>
+    <li>Creas un <em>commit</em>: una instantánea permanente de tus archivos en ese momento, con un mensaje que describe los cambios.</li>
+</ol>
+<p>Toda esta actividad ocurre en tu ordenador, de forma local. Es rápido y no necesitas conexión a internet para ver el historial o hacer commits.</p>
+
+<h3>3. GitHub: Tu Repositorio en la Nube y Plataforma Social</h3>
+<p>Si Git es el software, ¿dónde guardas una copia de seguridad o compartes tu trabajo con otros? Ahí es donde entra <strong>GitHub</strong>.</p>
+<p>GitHub es una plataforma web que aloja repositorios de Git en la nube. Ofrece:</p>
+<ul>
+    <li><strong>Alojamiento de Repositorios Remotos:</strong> Un lugar central (un "remoto") donde puedes "empujar" (<em>push</em>) tus commits. Es la copia de seguridad y la fuente de verdad para el equipo.</li>
+    <li><strong>Colaboración:</strong> Permite que múltiples personas trabajen en el mismo proyecto. Pueden "clonar" (<em>clone</em>) el repositorio, hacer sus cambios y luego proponer integrarlos al proyecto principal a través de un <em>Pull Request</em>.</li>
+    <li><strong>Revisión de Código:</strong> Los Pull Requests son la herramienta clave para la colaboración, permitiendo a otros revisar tus cambios, dejar comentarios y aprobar la integración.</li>
+    <li><strong>Gestión de Proyectos:</strong> Incluye herramientas para seguimiento de errores (<em>Issues</em>), tableros Kanban (<em>Projects</em>) y documentación (<em>Wikis</em>).</li>
+    <li><strong>Portafolio Profesional:</strong> Tu perfil de GitHub se convierte en tu currículum como desarrollador. Muestra los proyectos en los que has trabajado y tus contribuciones a proyectos de código abierto.</li>
+</ul>
+
+<h3>En Resumen: Git vs. GitHub</h3>
+<p>Una analogía útil:</p>
+<ul>
+    <li><strong>Git</strong> es como Microsoft Word: el programa que usas en tu ordenador para escribir y guardar el historial de un documento.</li>
+    <li><strong>GitHub</strong> es como Google Docs o Dropbox: el servicio en la nube donde subes tu documento para tener una copia de seguridad, compartirlo y colaborar con otras personas en tiempo real.</li>
+</ul>
+<p>No se puede ser un desarrollador moderno sin saber Git. Es una habilidad no negociable. GitHub (o alternativas como GitLab o Bitbucket) es el estándar de la industria para trabajar con Git en un entorno profesional y colaborativo.</p>`,
         duration: 45,
       },
       {
