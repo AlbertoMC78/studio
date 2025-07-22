@@ -46,6 +46,8 @@ const prompt = ai.definePrompt({
   output: {schema: GenerateQuizOutputSchema},
   prompt: `You are an expert quiz generator. Given the following module content, generate a quiz with {{numQuestions}} questions. Each question should have multiple choice answers with one correct answer.
 
+YOUR RESPONSE MUST BE IN VALID JSON FORMAT.
+
 Module Content:
 {{moduleContent}}`,
 });
