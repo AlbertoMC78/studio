@@ -876,7 +876,87 @@ console.log("Contraseña aceptada.");</code></pre>
     <li><strong>MDN Web Docs: Toma de decisiones en tu código — condicionales</strong>: <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/conditionals" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
     <li><strong>MDN Web Docs: Bucles en el código</strong>: <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Looping_code" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
 </ul>`, duration: 75 },
-        { id: '2.3', title: 'Funciones y scope', content: 'Contenido sobre funciones y scope en JS.', duration: 75 },
+        { id: '2.3', title: 'Funciones y scope', content: `<h2>Bloques de Código Reutilizables: Funciones y Scope</h2>
+<p>A medida que nuestros programas crecen, nos encontramos repitiendo las mismas secuencias de código una y otra vez. Las <strong>funciones</strong> son uno de los conceptos más importantes en programación porque nos permiten empaquetar un bloque de código bajo un nombre, para poder reutilizarlo fácilmente cuando lo necesitemos.</p>
+
+<h3>1. ¿Qué es una Función?</h3>
+<p>Una función es un bloque de código diseñado para realizar una tarea específica. Se puede "llamar" o "invocar" en cualquier parte de nuestro programa para ejecutar ese bloque de código. Esto sigue el principio <strong>DRY (Don't Repeat Yourself - No te repitas)</strong>, haciendo nuestro código más limpio, fácil de mantener y con menos errores.</p>
+
+<h3>2. Declarando Funciones</h3>
+<p>Hay varias maneras de crear funciones en JavaScript.</p>
+<h4>Declaración de Función (Function Declaration)</h4>
+<p>Esta es la forma clásica. Usas la palabra clave <code>function</code>, seguida del nombre de la función, una lista de parámetros entre paréntesis y el código a ejecutar entre llaves.</p>
+<pre><code class="language-javascript">// Declaramos la función con un parámetro 'nombre'
+function saludar(nombre) {
+  console.log("¡Hola, " + nombre + "!");
+}
+
+// La llamamos para ejecutarla
+saludar("Alberto"); // Imprime: ¡Hola, Alberto!
+</code></pre>
+
+<h4>Expresión de Función (Function Expression)</h4>
+<p>También puedes asignar una función a una variable. La función puede ser anónima (sin nombre).</p>
+<pre><code class="language-javascript">const despedirse = function(nombre) {
+  console.log("¡Adiós, " + nombre + "!");
+};
+
+despedirse("Ana"); // Imprime: ¡Adiós, Ana!
+</code></pre>
+
+<h4>Funciones de Flecha (Arrow Functions)</h4>
+<p>Introducidas en ES6, las funciones de flecha ofrecen una sintaxis más corta y concisa, especialmente para funciones simples.</p>
+<pre><code class="language-javascript">// Función para sumar dos números
+const sumar = (a, b) => {
+  return a + b;
+};
+
+// Si la función solo tiene una línea y devuelve un valor,
+// puedes omitir las llaves y la palabra 'return'.
+const restar = (a, b) => a - b;
+
+console.log(sumar(5, 3));   // Imprime: 8
+console.log(restar(10, 4)); // Imprime: 6
+</code></pre>
+
+<h3>3. Parámetros y Valor de Retorno</h3>
+<ul>
+    <li><strong>Parámetros:</strong> Son las variables que una función recibe como entrada. Son los valores con los que la función trabajará. (<code>nombre</code>, <code>a</code>, y <code>b</code> en los ejemplos anteriores).</li>
+    <li><strong>Valor de Retorno (Return Value):</strong> Una función puede devolver un resultado usando la palabra clave <code>return</code>. Cuando se ejecuta <code>return</code>, la función termina inmediatamente y "entrega" el valor especificado. Si una función no tiene un <code>return</code> explícito, devuelve <code>undefined</code> por defecto.</li>
+</ul>
+
+<h3>4. El Concepto de Scope (Ámbito)</h3>
+<p>El scope determina la accesibilidad (visibilidad) de las variables. En JavaScript, existen principalmente dos tipos de scope:</p>
+<ul>
+    <li><strong>Scope Global:</strong> Las variables declaradas fuera de cualquier función están en el scope global. Son accesibles desde cualquier parte de tu código. Abusar de las variables globales es una mala práctica, ya que puede llevar a conflictos de nombres y a código difícil de rastrear.</li>
+    <li><strong>Scope Local (o de Función):</strong> Las variables declaradas dentro de una función (con <code>let</code>, <code>const</code> o <code>var</code>) solo son visibles y accesibles <strong>dentro de esa función</strong>. No se pueden usar desde fuera.</li>
+</ul>
+<pre><code class="language-javascript">const variableGlobal = "Soy global";
+
+function miFuncion() {
+  const variableLocal = "Soy local";
+  console.log(variableGlobal); // "Soy global" (accesible)
+  console.log(variableLocal);  // "Soy local" (accesible)
+}
+
+miFuncion();
+
+console.log(variableGlobal); // "Soy global" (accesible)
+// console.log(variableLocal); // ¡ERROR! variableLocal is not defined
+</code></pre>
+<p>Entender el scope es crucial para evitar errores y escribir código modular y organizado. Cada función crea su propio "universo" aislado, protegiendo sus variables del mundo exterior y evitando que interfieran con el resto de tu programa.</p>
+<hr/>
+<h3>Recursos Complementarios</h3>
+<h4>Videos Recomendados</h4>
+<ul>
+    <li><strong>(Español) Funciones en JavaScript (Arrow functions, callbacks, anónimas, etc)</strong> - Video de Dorian Desings: <a href="https://www.youtube.com/watch?v=Pbj21s9D214" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+    <li><strong>(Inglés) JavaScript Scope & Hoisting</strong> - Un video claro sobre el scope de Fireship: <a href="https://www.youtube.com/watch?v=s-7iI3bE3dI" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+</ul>
+<h4>Lecturas Oficiales</h4>
+<ul>
+    <li><strong>MDN Web Docs: Funciones</strong> - La guía completa sobre funciones en JavaScript: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Functions" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
+    <li><strong>MDN Web Docs: Ámbito (Scope)</strong> - Explicación detallada del scope: <a href="https://developer.mozilla.org/es/docs/Glossary/Scope" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
+</ul>`, duration: 75 },
         { id: '2.4', title: 'Arreglos y objetos', content: 'Contenido sobre arreglos y objetos en JS.', duration: 60 },
         { id: '2.5', title: 'Manipulación del DOM', content: 'Contenido sobre manipulación del DOM.', duration: 90 },
         { id: '2.6', title: 'Eventos y formularios', content: 'Contenido sobre eventos y formularios en JS.', duration: 90 },
