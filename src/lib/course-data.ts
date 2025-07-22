@@ -478,7 +478,7 @@ p {
 <ul>
     <li><code>grid-column-start / grid-column-end</code>: Define en qué línea de columna empieza y termina un ítem.</li>
     <li><code>grid-row-start / grid-row-end</code>: Define en qué línea de fila empieza y termina un ítem.</li>
-    <li><code>grid-column</code> y <code>grid-row</code> (shorthand): Abreviaturas para las propiedades anteriores (ej: <code>grid-column: 1 / 3;</code> abarca desde la línea 1 a la 3).</li>
+    <li><code>grid-column</code> y <code>grid-row</code> (shorthand): Abreviaturas para las propiedades anteriores (ej: <code>grid-column: 1 / span 2;</code> abarca desde la línea 1 a la 3).</li>
 </ul>
 
 <pre><code class="language-css">.contenedor-grid {
@@ -549,7 +549,67 @@ p {
       {
         id: '1.8',
         title: 'Git básico: commits, ramas, merge',
-        content: '<h2>Comandos básicos de Git</h2><p>Aprende los comandos esenciales de Git como `commit`, `branch`, `merge` y `push` para gestionar tu código.</p>',
+        content: `<h2>Manos a la Obra: Comandos Esenciales de Git</h2>
+<p>Has entendido qué es Git y GitHub. Ahora, es momento de abrir la terminal y aprender los comandos que usarás todos los días. Esta será una guía práctica para el flujo de trabajo básico.</p>
+
+<h3>Configuración Inicial (Solo se hace una vez)</h3>
+<p>Antes de nada, debes decirle a Git quién eres. Esto es importante porque cada commit que hagas usará esta información.</p>
+<pre><code class="language-shell">git config --global user.name "Tu Nombre Completo"
+git config --global user.email "tu_email@example.com"</code></pre>
+
+<h3>1. Inicializar un Repositorio: \`git init\`</h3>
+<p>Para empezar a usar Git en un proyecto, navega a la carpeta de tu proyecto en la terminal y ejecuta:</p>
+<pre><code class="language-shell">git init</code></pre>
+<p>Esto crea una subcarpeta oculta llamada <code>.git</code> donde Git almacenará todo el historial y la configuración del proyecto. ¡Tu proyecto ahora es un repositorio de Git!</p>
+
+<h3>2. El Ciclo Básico: Modificar, Añadir, Comprometer</h3>
+<p>Este es el ciclo que repetirás constantemente.</p>
+<h4>Paso A: Revisa el Estado con \`git status\`</h4>
+<p>Este es tu comando más importante. Te dice qué archivos han sido modificados, cuáles están en el área de preparación (staging) y en qué rama estás.</p>
+<pre><code class="language-shell">git status</code></pre>
+
+<h4>Paso B: Prepara los Cambios con \`git add\`</h4>
+<p>Git no guarda automáticamente todos los archivos que modificas. Debes decirle explícitamente qué cambios incluir en el próximo "punto de guardado" (commit). Esto se llama <em>staging</em> o preparar los cambios.</p>
+<pre><code class="language-shell"># Prepara un archivo específico
+git add index.html
+
+# Prepara todos los archivos modificados y nuevos en el directorio actual
+git add .</code></pre>
+
+<h4>Paso C: Guarda los Cambios con \`git commit\`</h4>
+<p>Un commit es una instantánea de tus archivos preparados. Cada commit tiene un mensaje que describe los cambios realizados. ¡Los buenos mensajes son cruciales!</p>
+<pre><code class="language-shell">git commit -m "Añade la estructura HTML inicial para la página de inicio"</code></pre>
+
+<h3>3. Ramas (Branches): Trabajando en Paralelo</h3>
+<p>Una rama es una línea de desarrollo independiente. La rama por defecto se llama <code>main</code> (o <code>master</code>). Se crean ramas para trabajar en nuevas funcionalidades o corregir errores sin afectar la versión estable (<code>main</code>).</p>
+<h4>Crear y Cambiar de Rama: \`git branch\` y \`git checkout\`</h4>
+<pre><code class="language-shell"># Crea una nueva rama llamada 'nueva-funcionalidad'
+git branch nueva-funcionalidad
+
+# Muévete a esa rama para empezar a trabajar en ella
+git checkout nueva-funcionalidad
+
+# O, un atajo para crear y cambiarte a la rama en un solo paso:
+git checkout -b nueva-funcionalidad</code></pre>
+
+<h3>4. Fusionar (Merge): Integrando Cambios</h3>
+<p>Una vez que has terminado tu trabajo en una rama, querrás integrar esos cambios de vuelta a tu rama principal (<code>main</code>).</p>
+<pre><code class="language-shell"># 1. Primero, vuelve a tu rama principal
+git checkout main
+
+# 2. Luego, fusiona los cambios de la otra rama en main
+git merge nueva-funcionalidad</code></pre>
+<p>Git intentará combinar los cambios automáticamente. A veces, si dos personas han modificado la misma línea de un archivo, ocurrirá un "conflicto de merge", que tendrás que resolver manualmente.</p>
+
+<h3>5. Trabajando con GitHub: \`push\`</h3>
+<p>Hasta ahora, todos tus commits y ramas están solo en tu máquina. Para subirlos a tu repositorio remoto en GitHub, usas <code>git push</code>.</p>
+<pre><code class="language-shell"># Sube tu rama 'main' al remoto llamado 'origin'
+git push origin main
+
+# Si estás subiendo una rama nueva por primera vez
+git push --set-upstream origin nueva-funcionalidad</code></pre>
+<p><code>origin</code> es el nombre por defecto que Git le da al repositorio remoto desde el que clonaste. Ahora tus cambios están seguros en la nube y disponibles para tus colaboradores.</p>
+`,
         duration: 60,
       },
     ],
