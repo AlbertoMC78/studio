@@ -12,6 +12,7 @@ import { CourseModule } from '@/lib/course-data';
 import { CheckCircle, Circle, FileQuestion } from 'lucide-react';
 import { useLocalStorage } from '@/hooks/use-local-storage';
 import { useEffect, useMemo } from 'react';
+import { Card } from '@/components/ui/card';
 
 type ProgressState = {
   [classId: string]: boolean;
@@ -96,8 +97,3 @@ export function CourseModuleItem({ module }: { module: CourseModule }) {
     </AccordionItem>
   );
 }
-
-// Dummy Card component to avoid breaking changes if not present
-const Card = ({ className, children }: { className?: string; children: React.ReactNode }) => (
-    <div className={className}>{children}</div>
-)
