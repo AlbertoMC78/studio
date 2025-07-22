@@ -108,6 +108,18 @@ export const courseData: CourseModule[] = [
   <li><strong>Renderizado (Fase 2 - CSS y JS):</strong> A medida que llegan los archivos CSS y JavaScript, el navegador los aplica. El CSS le da estilo y apariencia visual a la estructura HTML. El JavaScript añade interactividad, como animaciones, validación de formularios o la capacidad de cargar más contenido sin recargar la página.</li>
 </ol>
 <p>Este ciclo completo, desde la petición inicial hasta que la página es completamente visible e interactiva, ocurre en cuestión de segundos o incluso milisegundos, gracias a la eficiencia de esta arquitectura fundamental.</p>
+<hr/>
+<h3>Recursos Complementarios</h3>
+<h4>Videos Recomendados</h4>
+<ul>
+    <li><strong>(Español) ¿Cómo funciona Internet?</strong> - Un excelente resumen visual de Platzi: <a href="https://www.youtube.com/watch?v=sS_o38i2A_w" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+    <li><strong>(Inglés) How the Web Works: A Primer for Newcomers to Web Development</strong> - Una explicación clara y concisa de MDN: <a href="https://www.youtube.com/watch?v=hJHvdBlSxug" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+    <li><strong>(Inglés, Técnico) HTTP Crash Course & Core Concepts</strong> - Un video más profundo de Traversy Media sobre HTTP: <a href="https://www.youtube.com/watch?v=iYM2zFP3Zn0" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+</ul>
+<h4>Lecturas Oficiales</h4>
+<ul>
+    <li><strong>MDN Web Docs: ¿Cómo funciona la web?</strong> - La documentación de referencia para desarrolladores: <a href="https://developer.mozilla.org/es/docs/Learn/Getting_started_with_the_web/How_the_Web_works" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
+</ul>
 `,
         duration: 30,
       },
