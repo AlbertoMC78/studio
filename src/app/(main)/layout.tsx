@@ -20,6 +20,7 @@ import {
   Sparkles,
   Bookmark,
   LogOut,
+  Search,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -58,6 +59,11 @@ function InnerLayout({ children }: { children: React.ReactNode }) {
       href: '/saved',
       label: 'Saved Items',
       icon: Bookmark,
+    },
+    {
+      href: '/search',
+      label: 'Buscador',
+      icon: Search,
     },
   ];
 
