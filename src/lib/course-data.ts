@@ -114,7 +114,7 @@ export const courseData: CourseModule[] = [
 <ul>
     <li><strong>(Español) ¿Cómo funciona Internet?</strong> - Un excelente resumen visual de Platzi: <a href="https://www.youtube.com/watch?v=sS_o38i2A_w" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
     <li><strong>(Inglés) How the Web Works: A Primer for Newcomers to Web Development</strong> - Una explicación clara y concisa de MDN: <a href="https://www.youtube.com/watch?v=hJHvdBlSxug" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
-    <li><strong>(Inglés, Técnico) HTTP Crash Course & Core Concepts</strong> - Un video más profundo de Traversy Media sobre HTTP: <a href="https://www.youtube.com/watch?v=iYM2zFP3Zn0" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+    <li><strong>(Inglés, Técnico) HTTP Crash Course & Core Concepts</strong> - Un video más profundo de Traversy Media: <a href="https://www.youtube.com/watch?v=iYM2zFP3Zn0" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
 </ul>
 <h4>Lecturas Oficiales</h4>
 <ul>
@@ -787,7 +787,95 @@ console.log("Hola, " + nombre + ". Tienes " + edad + " años.");</code></pre>
 `,
           duration: 60
         },
-        { id: '2.2', title: 'Condicionales y bucles', content: 'Contenido sobre condicionales y bucles en JS.', duration: 75 },
+        { id: '2.2', title: 'Condicionales y bucles', content: `<h2>Tomando Decisiones y Repitiendo Tareas: Condicionales y Bucles</h2>
+<p>Los programas informáticos no serían muy útiles si solo pudieran ejecutar instrucciones una tras otra. Su verdadero poder reside en su capacidad para <strong>evaluar condiciones</strong> y <strong>repetir acciones</strong>. Para esto, JavaScript nos proporciona los condicionales y los bucles.</p>
+
+<h3>1. Condicionales: Los Caminos del Código</h3>
+<p>Los condicionales permiten que nuestro código tome diferentes caminos basados en si una expresión es verdadera (<code>true</code>) o falsa (<code>false</code>).</p>
+
+<h4><code>if / else if / else</code></h4>
+<p>Esta es la estructura de control más fundamental. Permite ejecutar un bloque de código si una condición es verdadera, y opcionalmente, otros bloques si la primera condición es falsa.</p>
+<pre><code class="language-javascript">const edad = 19;
+const tieneCarnet = true;
+
+if (edad >= 18 && tieneCarnet) {
+  console.log("Puedes conducir legalmente."); // Se ejecuta este bloque
+} else if (edad >= 18 && !tieneCarnet) {
+  console.log("Eres mayor de edad, pero necesitas un carnet para conducir.");
+} else {
+  console.log("No puedes conducir.");
+}</code></pre>
+
+<h4>Operador Ternario (<code>? :</code>)</h4>
+<p>Es una forma compacta de escribir una declaración <code>if/else</code> simple. Es muy útil para asignar un valor a una variable basado en una condición.</p>
+<pre><code class="language-javascript">const temperatura = 15;
+const tiempo = temperatura > 20 ? "Es un día cálido" : "Es un día fresco";
+
+console.log(tiempo); // "Es un día fresco"</code></pre>
+
+<h4><code>switch</code></h4>
+<p>La declaración <code>switch</code> es útil cuando tienes una única expresión cuyo valor quieres comparar con múltiples opciones distintas.</p>
+<pre><code class="language-javascript">const diaDeLaSemana = "lunes";
+let mensaje;
+
+switch (diaDeLaSemana) {
+  case "lunes":
+    mensaje = "¡Ánimo, empieza la semana!";
+    break; // 'break' es crucial para salir del switch
+  case "viernes":
+    mensaje = "¡Hoy es viernes!";
+    break;
+  case "sabado":
+  case "domingo":
+    mensaje = "Es fin de semana.";
+    break;
+  default: // Se ejecuta si ningún 'case' coincide
+    mensaje = "Es un día normal de trabajo.";
+}
+console.log(mensaje);</code></pre>
+
+<h3>2. Bucles: Los Trabajadores Incansables</h3>
+<p>Los bucles nos permiten ejecutar un bloque de código repetidamente mientras se cumpla una condición.</p>
+
+<h4><code>for</code></h4>
+<p>El bucle <code>for</code> es ideal cuando sabes de antemano cuántas veces quieres que se repita el bucle. Su sintaxis tiene tres partes: inicialización, condición y expresión final (incremento/decremento).</p>
+<pre><code class="language-javascript">// Imprime los números del 0 al 4
+for (let i = 0; i < 5; i++) {
+  console.log("El número es " + i);
+}</code></pre>
+
+<h4><code>while</code></h4>
+<p>El bucle <code>while</code> se ejecuta mientras una condición especificada sea verdadera. Es perfecto para situaciones donde no sabes cuántas iteraciones necesitarás.</p>
+<pre><code class="language-javascript">let contador = 0;
+
+while (contador < 3) {
+  console.log("Iteración número " + contador);
+  contador++;
+}</code></pre>
+<p><strong>¡Cuidado!</strong> Es fácil crear un bucle infinito con <code>while</code> si olvidas actualizar la variable de la condición (como <code>contador++</code>).</p>
+
+<h4><code>do...while</code></h4>
+<p>Similar a <code>while</code>, pero con una diferencia clave: el bloque de código se ejecuta <strong>al menos una vez</strong>, porque la condición se evalúa <em>después</em> de la primera ejecución.</p>
+<pre><code class="language-javascript">let password;
+
+do {
+  password = prompt("Introduce tu contraseña (debe tener al menos 4 caracteres):");
+} while (password.length < 4);
+
+console.log("Contraseña aceptada.");</code></pre>
+<p>Dominar los condicionales y los bucles te da el control sobre el flujo de tu programa, permitiéndote crear lógica compleja y manejar tareas repetitivas de manera eficiente.</p>
+<hr/>
+<h3>Recursos Complementarios</h3>
+<h4>Videos Recomendados</h4>
+<ul>
+    <li><strong>(Español) Condicionales en JavaScript (if, else, switch)</strong> - Video de Dorian Desings: <a href="https://www.youtube.com/watch?v=345-q_S4-58" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+    <li><strong>(Español) Bucles en JavaScript (for, while, do while)</strong> - Video del mismo autor: <a href="https://www.youtube.com/watch?v=6rSl3_3p4h4" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+</ul>
+<h4>Lecturas Oficiales</h4>
+<ul>
+    <li><strong>MDN Web Docs: Toma de decisiones en tu código — condicionales</strong>: <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/conditionals" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
+    <li><strong>MDN Web Docs: Bucles en el código</strong>: <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Looping_code" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
+</ul>`, duration: 75 },
         { id: '2.3', title: 'Funciones y scope', content: 'Contenido sobre funciones y scope en JS.', duration: 75 },
         { id: '2.4', title: 'Arreglos y objetos', content: 'Contenido sobre arreglos y objetos en JS.', duration: 60 },
         { id: '2.5', title: 'Manipulación del DOM', content: 'Contenido sobre manipulación del DOM.', duration: 90 },
