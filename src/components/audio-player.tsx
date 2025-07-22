@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { textToSpeech } from '@/ai/flows/tts';
+import { summarizeLesson } from '@/ai/flows/summarize-lesson';
 import { Button } from '@/components/ui/button';
 import { Volume2, Loader2, AlertCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
@@ -11,26 +12,19 @@ export function AudioPlayer({ lessonContent }: { lessonContent: string }) {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  const stripHtml = (html: string) => {
-    if (typeof document !== 'undefined') {
-      const doc = new DOMParser().parseFromString(html, 'text/html');
-      return doc.body.textContent || "";
-    }
-    // Basic fallback for server-side or environments without DOMParser
-    return html.replace(/<[^>]*>?/gm, '');
-  };
-
-
   const handleGenerateAudio = async () => {
     setIsLoading(true);
     setAudioSrc(null);
 
     try {
-      const plainText = stripHtml(lessonContent);
-      // Limit the text to avoid hitting API limits for TTS
-      const truncatedText = plainText.substring(0, 2000);
-      const result = await textToSpeech({ text: truncatedText });
-      setAudioSrc(result.audio);
+      // Step 1: Generate a summary of the lesson content.
+      const summaryResult = await summarizeLesson({ lessonContent });
+      const summary = summaryResult.summary;
+      
+      // Step 2: Convert the summary to speech.
+      const ttsResult = await textToSpeech({ summary });
+      setAudioSrc(ttsResult.audio);
+
     } catch (error) {
       console.error('Failed to generate audio:', error);
       toast({

@@ -88,7 +88,7 @@ export const courseData: CourseModule[] = [
 <h3>2. El Protocolo de Comunicación: HTTP/S</h3>
 <p>Cliente y servidor necesitan un lenguaje común para entenderse. Este lenguaje es el <strong>Protocolo de Transferencia de Hipertexto (HTTP)</strong>. Su versión segura, <strong>HTTPS</strong>, encripta la comunicación, lo cual es el estándar hoy en día.</p>
 <ul>
-    <li><strong>Petición (Request):</strong> El cliente envía una petición HTTP al servidor. Por ejemplo: <code>GET /index.html</code>, que significa "dame el archivo index.html".</li>
+    <li><strong>Petición (Request):</strong> El cliente envía una petición HTTP al servidor. Por ejemplo: <code>GET /index.html</code>, que significa "dame el archivo index.html". Otros métodos comunes son <code>POST</code> (para enviar datos), <code>PUT</code> (para actualizar) y <code>DELETE</code> (para borrar). La petición también incluye cabeceras (headers) con metadatos, como el tipo de navegador que usas.</li>
     <li><strong>Respuesta (Response):</strong> El servidor procesa la petición y devuelve una respuesta HTTP, que incluye un <strong>código de estado</strong> (como <code>200 OK</code> si todo fue bien, o <code>404 Not Found</code> si no encontró el recurso) y el contenido solicitado (el archivo HTML, por ejemplo).</li>
 </ul>
 
@@ -681,7 +681,7 @@ git push --set-upstream origin nueva-funcionalidad</code></pre>
 <h3>Recursos Complementarios</h3>
 <h4>Videos Recomendados</h4>
 <ul>
-    <li><strong>(Español) Git y GitHub - Curso práctico para principiantes</strong> - Un curso práctico de MoureDev: <a href="https://www.youtube.com/watch?v=3GymExBkKjE" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+    <li><strong>(Español) Git y GitHub - Curso práctico para principiantes</strong> - Un curso práctico de MoureDev: <a href="https://www.youtube.com/watch?v=mBYSUbws4IQ" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
 </ul>
 <h4>Herramientas Interactivas</h4>
 <ul>
@@ -768,7 +768,7 @@ console.log(null === undefined); // false (tipos diferentes)
 `,
           duration: 60
         },
-        { id: '2.2', title: 'El Contexto de \`this\` y Prototipos', content: `<h2>El Corazón de JavaScript: Prototipos y el Contexto 'this'</h2>
+        { id: '2.2', title: 'El Contexto de `this` y Prototipos', content: `<h2>El Corazón de JavaScript: Prototipos y el Contexto 'this'</h2>
 <p>Para dominar realmente JavaScript, es crucial entender dos de sus conceptos más fundamentales y, a menudo, más confusos: el sistema de herencia basado en <strong>prototipos</strong> y la palabra clave contextual <strong><code>this</code></strong>.</p>
 
 <h3>1. Herencia Prototípica: La Cadena de Objetos</h3>
@@ -1001,7 +1001,7 @@ gestionarDescarga();
 <h3>Recursos Complementarios</h3>
 <h4>Videos Recomendados</h4>
 <ul>
-    <li><strong>(Español) Cómo DEPURAR CÓDIGO JavaScript</strong> - Guía práctica de La Cocina del Código: <a href="https://www.youtube.com/watch?v=F0sA2vD0A" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+    <li><strong>(Español) Cómo DEPURAR CÓDIGO JavaScript</strong> - Guía práctica de La Cocina del Código: <a href="https://www.youtube.com/watch?v=F0sA2vD0A0s" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
 </ul>
 <h4>Lecturas Oficiales</h4>
 <ul>
