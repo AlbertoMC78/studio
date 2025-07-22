@@ -218,7 +218,19 @@ export const courseData: CourseModule[] = [
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
-<p>Estas etiquetas son los bloques de construcción fundamentales. Dominarlas te permitirá crear la estructura de cualquier página web que imagines.</p>`,
+<p>Estas etiquetas son los bloques de construcción fundamentales. Dominarlas te permitirá crear la estructura de cualquier página web que imagines.</p>
+<hr/>
+<h3>Recursos Complementarios</h3>
+<h4>Videos Recomendados</h4>
+<ul>
+    <li><strong>(Español) Curso HTML5 desde cero</strong> - Un curso completo en video por EDteam: <a href="https://www.youtube.com/watch?v=k2IydkL3_o" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+    <li><strong>(Inglés) HTML Full Course for Beginners</strong> - Un video exhaustivo de Traversy Media: <a href="https://www.youtube.com/watch?v=mJgBOIoGihA" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+</ul>
+<h4>Lecturas Oficiales</h4>
+<ul>
+    <li><strong>MDN Web Docs: HTML basics</strong> - La guía de referencia principal para HTML: <a href="https://developer.mozilla.org/es/docs/Learn/Getting_started_with_the_web/HTML_basics" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
+</ul>
+`,
         duration: 60,
       },
       {
@@ -293,7 +305,18 @@ export const courseData: CourseModule[] = [
 </ul>
 <pre><code class="language-html">&lt;img src="perrito.jpg" alt="Un cachorro de Golden Retriever jugando en la hierba."&gt;
 </code></pre>
-<p>Adoptar el HTML semántico desde el principio es una de las marcas de un desarrollador web profesional. Tu código será más robusto, accesible y comprensible.</p>`,
+<p>Adoptar el HTML semántico desde el principio es una de las marcas de un desarrollador web profesional. Tu código será más robusto, accesible y comprensible.</p>
+<hr/>
+<h3>Recursos Complementarios</h3>
+<h4>Videos Recomendados</h4>
+<ul>
+    <li><strong>(Español) ¿Qué es HTML Semántico?</strong> - Una explicación clara de CodelyTV: <a href="https://www.youtube.com/watch?v=T1itpKr822o" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+</ul>
+<h4>Lecturas Oficiales</h4>
+<ul>
+    <li><strong>MDN Web Docs: HTML Semántico</strong> - Artículo de referencia sobre el tema: <a href="https://developer.mozilla.org/es/docs/Glossary/Semantics" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
+</ul>
+`,
         duration: 45,
       },
       {
@@ -368,7 +391,19 @@ p {
   <li><strong>RGB:</strong> <code>rgb(rojo, verde, azul)</code> donde cada valor va de 0 a 255. Por ejemplo, <code>rgb(10, 35, 66)</code>.</li>
   <li><strong>HSL (Recomendado):</strong> <code>hsl(tono, saturación, luminosidad)</code>. Es muy intuitivo. El tono es un ángulo en la rueda de color (0-360), la saturación es un porcentaje (0% gris, 100% color puro), y la luminosidad es un porcentaje (0% negro, 100% blanco).</li>
 </ul>
-<p>CSS es un lenguaje vasto, pero dominar estos fundamentos (cómo enlazar, la sintaxis de las reglas y los selectores básicos) te da el poder de transformar documentos HTML simples en diseños web atractivos y legibles.</p>`,
+<p>CSS es un lenguaje vasto, pero dominar estos fundamentos (cómo enlazar, la sintaxis de las reglas y los selectores básicos) te da el poder de transformar documentos HTML simples en diseños web atractivos y legibles.</p>
+<hr/>
+<h3>Recursos Complementarios</h3>
+<h4>Videos Recomendados</h4>
+<ul>
+    <li><strong>(Español) Curso CSS desde Cero</strong> - Un excelente curso en video de freeCodeCamp en Español: <a href="https://www.youtube.com/watch?v=Lztd_g_fxw4" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+    <li><strong>(Inglés) CSS Full Course for Beginners</strong> - Un curso completo de SuperSimpleDev: <a href="https://www.youtube.com/watch?v=G3e-cpL7ofc" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+</ul>
+<h4>Lecturas Oficiales</h4>
+<ul>
+    <li><strong>MDN Web Docs: Primeros pasos en CSS</strong> - La guía fundamental para empezar: <a href="https://developer.mozilla.org/es/docs/Learn/CSS/First_steps" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
+</ul>
+`,
         duration: 60,
       },
       {
@@ -418,7 +453,18 @@ p {
   box-sizing: border-box;
 }</code></pre>
 <p>Con esta simple regla, si declaras <code>width: 200px;</code>, la caja ocupará exactamente 200px de ancho en la pantalla, facilitando enormemente la creación de layouts precisos.</p>
-<p>Dominar el Modelo de Caja es el primer gran paso para dejar de "luchar" con CSS y empezar a decirle exactamente qué hacer y cómo posicionar los elementos con predictibilidad y control.</p>`,
+<p>Dominar el Modelo de Caja es el primer gran paso para dejar de "luchar" con CSS y empezar a decirle exactamente qué hacer y cómo posicionar los elementos con predictibilidad y control.</p>
+<hr/>
+<h3>Recursos Complementarios</h3>
+<h4>Videos Recomendados</h4>
+<ul>
+    <li><strong>(Español) El Modelo de Caja (Box Model) en CSS</strong> - Explicación detallada de FalconMasters: <a href="https://www.youtube.com/watch?v=j352-T4bE0o" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+</ul>
+<h4>Lecturas Oficiales</h4>
+<ul>
+    <li><strong>MDN Web Docs: El Modelo de Caja</strong> - La documentación oficial sobre este concepto: <a href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
+</ul>
+`,
         duration: 50,
       },
       {
@@ -496,7 +542,19 @@ p {
     <li>Usa <strong>Flexbox</strong> para componentes y alineación en una dimensión: barras de navegación, alineación de ítems dentro de una tarjeta, centrado de contenido.</li>
     <li>Usa <strong>Grid</strong> para el layout general de la página en dos dimensiones: la estructura principal de tu sitio web con encabezado, contenido, barra lateral y pie de página.</li>
 </ul>
-<p>La verdadera maestría viene de combinar ambos. Puedes tener un layout principal hecho con Grid, y dentro de una de las áreas de ese grid, usar Flexbox para alinear los elementos de un componente.</p>`,
+<p>La verdadera maestría viene de combinar ambos. Puedes tener un layout principal hecho con Grid, y dentro de una de las áreas de ese grid, usar Flexbox para alinear los elementos de un componente.</p>
+<hr/>
+<h3>Recursos Complementarios</h3>
+<h4>Videos Recomendados</h4>
+<ul>
+    <li><strong>(Español) Guía Completa de Flexbox y CSS Grid</strong> - Un video que compara y explica ambos, por Dorian Desings: <a href="https://www.youtube.com/watch?v=R-lJofc_I7s" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+</ul>
+<h4>Juegos Interactivos (¡La mejor forma de aprender!)</h4>
+<ul>
+    <li><strong>Flexbox Froggy:</strong> Un juego para aprender Flexbox de forma interactiva: <a href="https://flexboxfroggy.com/#es" target="_blank" rel="noopener noreferrer">Jugar ahora</a></li>
+    <li><strong>CSS Grid Garden:</strong> El equivalente para aprender CSS Grid: <a href="https://cssgridgarden.com/#es" target="_blank" rel="noopener noreferrer">Jugar ahora</a></li>
+</ul>
+`,
         duration: 90,
       },
       {
@@ -542,7 +600,18 @@ p {
     <li><strong>Git</strong> es como Microsoft Word: el programa que usas en tu ordenador para escribir y guardar el historial de un documento.</li>
     <li><strong>GitHub</strong> es como Google Docs o Dropbox: el servicio en la nube donde subes tu documento para tener una copia de seguridad, compartirlo y colaborar con otras personas en tiempo real.</li>
 </ul>
-<p>No se puede ser un desarrollador moderno sin saber Git. Es una habilidad no negociable. GitHub (o alternativas como GitLab o Bitbucket) es el estándar de la industria para trabajar con Git en un entorno profesional y colaborativo.</p>`,
+<p>No se puede ser un desarrollador moderno sin saber Git. Es una habilidad no negociable. GitHub (o alternativas como GitLab o Bitbucket) es el estándar de la industria para trabajar con Git en un entorno profesional y colaborativo.</p>
+<hr/>
+<h3>Recursos Complementarios</h3>
+<h4>Videos Recomendados</h4>
+<ul>
+    <li><strong>(Español) ¿Qué es Git y GitHub? ¡La guía para principiantes!</strong> - Un video introductorio de HolaMundo: <a href="https://www.youtube.com/watch?v=VdGzPZ31ts8" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+</ul>
+<h4>Lecturas Oficiales</h4>
+<ul>
+    <li><strong>Libro Pro Git:</strong> El libro oficial y de referencia, disponible gratis online: <a href="https://git-scm.com/book/es/v2" target="_blank" rel="noopener noreferrer">Leer online</a></li>
+</ul>
+`,
         duration: 45,
       },
       {
@@ -607,7 +676,18 @@ git push origin main
 
 # Si estás subiendo una rama nueva por primera vez
 git push --set-upstream origin nueva-funcionalidad</code></pre>
-<p><code>origin</code> es el nombre por defecto que Git le da al repositorio remoto desde el que clonaste. Ahora tus cambios están seguros en la nube y disponibles para tus colaboradores.</p>`,
+<p><code>origin</code> es el nombre por defecto que Git le da al repositorio remoto desde el que clonaste. Ahora tus cambios están seguros en la nube y disponibles para tus colaboradores.</p>
+<hr/>
+<h3>Recursos Complementarios</h3>
+<h4>Videos Recomendados</h4>
+<ul>
+    <li><strong>(Español) Git y GitHub - Curso práctico para principiantes</strong> - Un curso práctico de MoureDev: <a href="https://www.youtube.com/watch?v=3GymExBkKjE" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+</ul>
+<h4>Herramientas Interactivas</h4>
+<ul>
+    <li><strong>Learn Git Branching:</strong> Una herramienta visual e interactiva para aprender los comandos de Git, especialmente el manejo de ramas: <a href="https://learngitbranching.js.org/?locale=es_ES" target="_blank" rel="noopener noreferrer">Empezar a aprender</a></li>
+</ul>
+`,
         duration: 60,
       },
     ],
@@ -693,7 +773,18 @@ console.log("Hola, " + nombre + ". Tienes " + edad + " años.");</code></pre>
   <li><code>!</code> (NOT / No): Invierte el valor booleano. <code>!esVisible</code>.</li>
 </ul>
 
-<p>Estos bloques de construcción son la base de toda la programación en JavaScript. Al combinarlos, podemos empezar a escribir programas que toman decisiones y realizan tareas complejas.</p>`,
+<p>Estos bloques de construcción son la base de toda la programación en JavaScript. Al combinarlos, podemos empezar a escribir programas que toman decisiones y realizan tareas complejas.</p>
+<hr/>
+<h3>Recursos Complementarios</h3>
+<h4>Videos Recomendados</h4>
+<ul>
+    <li><strong>(Español) Aprende JavaScript Ahora!</strong> - Un curso completo en un solo video por freeCodeCamp en Español: <a href="https://www.youtube.com/watch?v=ivdTnPl1iY" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
+</ul>
+<h4>Lecturas Oficiales</h4>
+<ul>
+    <li><strong>MDN Web Docs: Guía de JavaScript</strong> - La fuente de documentación más importante para JS: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide" target="_blank" rel="noopener noreferrer">Leer documentación</a></li>
+</ul>
+`,
           duration: 60
         },
         { id: '2.2', title: 'Condicionales y bucles', content: 'Contenido sobre condicionales y bucles en JS.', duration: 75 },
