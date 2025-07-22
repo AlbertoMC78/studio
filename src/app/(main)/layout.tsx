@@ -62,7 +62,8 @@ function InnerLayout({ children }: { children: React.ReactNode }) {
   ];
 
   if (!user) {
-    // Render nothing or a loading spinner while redirecting
+    // AuthProvider now handles the loading state, so we can return null here
+    // while the redirect is in progress.
     return null;
   }
 
