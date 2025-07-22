@@ -27,7 +27,9 @@ export function AudioPlayer({ lessonContent }: { lessonContent: string }) {
 
     try {
       const plainText = stripHtml(lessonContent);
-      const result = await textToSpeech({ text: plainText });
+      // Limit the text to avoid hitting API limits for TTS
+      const truncatedText = plainText.substring(0, 2000);
+      const result = await textToSpeech({ text: truncatedText });
       setAudioSrc(result.audio);
     } catch (error) {
       console.error('Failed to generate audio:', error);
