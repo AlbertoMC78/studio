@@ -39,7 +39,9 @@ const contentInjectionPrompt = ai.definePrompt({
   Class: {{{className}}}
   Prompt: {{{contentPrompt}}}
 
-  Content:`, // No output schema since the prompt is directly returning text.
+  The output should be HTML.
+  
+  Content:`,
 });
 
 const contentInjectionFlow = ai.defineFlow(
