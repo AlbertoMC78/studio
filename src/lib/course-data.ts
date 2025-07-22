@@ -1,4 +1,5 @@
 
+
 export interface CourseClass {
   id: string;
   title: string;
@@ -76,964 +77,163 @@ export const courseData: CourseModule[] = [
         id: '1.1',
         title: '¿Cómo funciona la Web?',
         content:
-          `<h2>El Viaje de una Página Web: Del Clic a la Pantalla</h2>
-<p>Cada vez que visitas un sitio web, desencadenas una serie de eventos rapidísimos y complejos a través de una red global. La arquitectura que lo hace posible se conoce como el <strong>modelo Cliente-Servidor</strong>. Es la columna vertebral de la World Wide Web.</p>
-
-<h3>1. Los Actores Principales</h3>
-<ul>
-  <li><strong>El Cliente (Tu Navegador):</strong> Es el software en tu dispositivo (Chrome, Firefox, Safari) que actúa como tu agente en la web. Su trabajo es solicitar, recibir e interpretar (renderizar) la información para que puedas verla y interactuar con ella.</li>
-  <li><strong>El Servidor:</strong> Es un ordenador potente, siempre encendido y conectado a internet, cuyo propósito es "servir" contenido cuando un cliente lo solicita. Almacena los archivos (HTML, CSS, JavaScript, imágenes), ejecuta lógica de negocio y se conecta a bases de datos.</li>
-</ul>
-
-<h3>2. El Protocolo de Comunicación: HTTP/S</h3>
-<p>Cliente y servidor necesitan un lenguaje común para entenderse. Este lenguaje es el <strong>Protocolo de Transferencia de Hipertexto (HTTP)</strong>. Su versión segura, <strong>HTTPS</strong>, encripta la comunicación, lo cual es el estándar hoy en día.</p>
-<ul>
-    <li><strong>Petición (Request):</strong> El cliente envía una petición HTTP al servidor. Por ejemplo: <code>GET /index.html</code>, que significa "dame el archivo index.html". Otros métodos comunes son <code>POST</code> (para enviar datos), <code>PUT</code> (para actualizar) y <code>DELETE</code> (para borrar). La petición también incluye cabeceras (headers) con metadatos, como el tipo de navegador que usas.</li>
-    <li><strong>Respuesta (Response):</strong> El servidor procesa la petición y devuelve una respuesta HTTP, que incluye un <strong>código de estado</strong> (como <code>200 OK</code> si todo fue bien, o <code>404 Not Found</code> si no encontró el recurso) y el contenido solicitado (el archivo HTML, por ejemplo).</li>
-</ul>
-
-<h3>3. Las Direcciones de la Web: IP y DNS</h3>
-<p>Para que tu navegador sepa a qué servidor enviar la petición, necesita su dirección. En internet, las direcciones son numéricas, llamadas <strong>direcciones IP</strong> (ej., <code>172.217.16.142</code>).</p>
-<p>Como recordar números es difícil para los humanos, usamos nombres de dominio (ej., <code>google.com</code>). El <strong>Sistema de Nombres de Dominio (DNS)</strong> actúa como la agenda telefónica de internet, traduciendo los nombres de dominio que escribimos a la dirección IP del servidor correspondiente.</p>
-
-<h3>4. El Proceso Completo (Paso a Paso)</h3>
-<ol>
-  <li><strong>Escribes la URL:</strong> Ingresas <code>https://www.ejemplo.com</code> en tu navegador y presionas Enter.</li>
-  <li><strong>Traducción DNS:</strong> Tu navegador pregunta a un servidor DNS: "¿Cuál es la IP de <code>www.ejemplo.com</code>?". El DNS responde con la dirección IP del servidor.</li>
-  <li><strong>Petición HTTP/S:</strong> Tu navegador establece una conexión con el servidor en esa IP y le envía una petición HTTP/S pidiendo la página principal.</li>
-  <li><strong>Procesamiento del Servidor:</strong> El servidor recibe la petición. Busca el archivo HTML solicitado. Si es una página dinámica (ej., un perfil de red social), puede que necesite consultar una base de datos y construir el HTML sobre la marcha.</li>
-  <li><strong>Respuesta del Servidor:</strong> El servidor envía el archivo HTML de vuelta a tu navegador como parte de la respuesta HTTP/S.</li>
-  <li><strong>Renderizado (Fase 1 - HTML):</strong> El navegador comienza a leer el HTML. Entiende la estructura: aquí va un título, aquí un párrafo, aquí una imagen.</li>
-  <li><strong>Peticiones Adicionales:</strong> Mientras lee el HTML, el navegador encuentra referencias a otros archivos, como hojas de estilo CSS (<code>&lt;link rel="stylesheet" href="style.css"&gt;</code>) y scripts de JavaScript (<code>&lt;script src="app.js"&gt;&lt;/script&gt;</code>). Realiza peticiones HTTP/S adicionales para cada uno de estos archivos.</li>
-  <li><strong>Renderizado (Fase 2 - CSS y JS):</strong> A medida que llegan los archivos CSS y JavaScript, el navegador los aplica. El CSS le da estilo y apariencia visual a la estructura HTML. El JavaScript añade interactividad, como animaciones, validación de formularios o la capacidad de cargar más contenido sin recargar la página.</li>
-</ol>
-<p>Este ciclo completo, desde la petición inicial hasta que la página es completamente visible e interactiva, ocurre en cuestión de segundos o incluso milisegundos, gracias a la eficiencia de esta arquitectura fundamental.</p>
-<hr/>
-<h3>Recursos Complementarios</h3>
-<h4>Videos Recomendados</h4>
-<ul>
-    <li><strong>(Español) ¿Cómo funciona Internet?</strong> - Un excelente resumen visual de Platzi: <a href="https://www.youtube.com/watch?v=sS_o38i2A_w" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
-    <li><strong>(Inglés) How the Web Works: A Primer for Newcomers to Web Development</strong> - Una explicación clara y concisa de MDN: <a href="https://www.youtube.com/watch?v=hJHvdBlSxug" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
-    <li><strong>(Inglés, Técnico) HTTP Crash Course & Core Concepts</strong> - Un video más profundo de Traversy Media: <a href="https://www.youtube.com/watch?v=iYM2zFP3Zn0" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
-</ul>
-<h4>Lecturas Oficiales</h4>
-<ul>
-    <li><strong>MDN Web Docs: ¿Cómo funciona la web?</strong> - La documentación de referencia para desarrolladores: <a href="https://developer.mozilla.org/es/docs/Learn/Getting_started_with_the_web/How_the_Web_works" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
-</ul>
-`,
+          '<h2>El Viaje de una Página Web: Del Clic a la Pantalla</h2>\n<p>Cada vez que visitas un sitio web, desencadenas una serie de eventos rapidísimos y complejos a través de una red global. La arquitectura que lo hace posible se conoce como el <strong>modelo Cliente-Servidor</strong>. Es la columna vertebral de la World Wide Web.</p>\n\n<h3>1. Los Actores Principales</h3>\n<ul>\n  <li><strong>El Cliente (Tu Navegador):</strong> Es el software en tu dispositivo (Chrome, Firefox, Safari) que actúa como tu agente en la web. Su trabajo es solicitar, recibir e interpretar (renderizar) la información para que puedas verla y interactuar con ella.</li>\n  <li><strong>El Servidor:</strong> Es un ordenador potente, siempre encendido y conectado a internet, cuyo propósito es "servir" contenido cuando un cliente lo solicita. Almacena los archivos (HTML, CSS, JavaScript, imágenes), ejecuta lógica de negocio y se conecta a bases de datos.</li>\n</ul>\n\n<h3>2. El Protocolo de Comunicación: HTTP/S</h3>\n<p>Cliente y servidor necesitan un lenguaje común para entenderse. Este lenguaje es el <strong>Protocolo de Transferencia de Hipertexto (HTTP)</strong>. Su versión segura, <strong>HTTPS</strong>, encripta la comunicación, lo cual es el estándar hoy en día.</p>\n<ul>\n    <li><strong>Petición (Request):</strong> El cliente envía una petición HTTP al servidor. Por ejemplo: <code>GET /index.html</code>, que significa "dame el archivo index.html". Otros métodos comunes son <code>POST</code> (para enviar datos), <code>PUT</code> (para actualizar) y <code>DELETE</code> (para borrar). La petición también incluye cabeceras (headers) con metadatos, como el tipo de navegador que usas.</li>\n    <li><strong>Respuesta (Response):</strong> El servidor procesa la petición y devuelve una respuesta HTTP, que incluye un <strong>código de estado</strong> (como <code>200 OK</code> si todo fue bien, o <code>404 Not Found</code> si no encontró el recurso) y el contenido solicitado (el archivo HTML, por ejemplo).</li>\n</ul>\n\n<h3>3. Las Direcciones de la Web: IP y DNS</h3>\n<p>Para que tu navegador sepa a qué servidor enviar la petición, necesita su dirección. En internet, las direcciones son numéricas, llamadas <strong>direcciones IP</strong> (ej., <code>172.217.16.142</code>).</p>\n<p>Como recordar números es difícil para los humanos, usamos nombres de dominio (ej., <code>google.com</code>). El <strong>Sistema de Nombres de Dominio (DNS)</strong> actúa como la agenda telefónica de internet, traduciendo los nombres de dominio que escribimos a la dirección IP del servidor correspondiente.</p>\n\n<h3>4. El Proceso Completo (Paso a Paso)</h3>\n<ol>\n  <li><strong>Escribes la URL:</strong> Ingresas <code>https://www.ejemplo.com</code> en tu navegador y presionas Enter.</li>\n  <li><strong>Traducción DNS:</strong> Tu navegador pregunta a un servidor DNS: "¿Cuál es la IP de <code>www.ejemplo.com</code>?". El DNS responde con la dirección IP del servidor.</li>\n  <li><strong>Petición HTTP/S:</strong> Tu navegador establece una conexión con el servidor en esa IP y le envía una petición HTTP/S pidiendo la página principal.</li>\n  <li><strong>Procesamiento del Servidor:</strong> El servidor recibe la petición. Busca el archivo HTML solicitado. Si es una página dinámica (ej., un perfil de red social), puede que necesite consultar una base de datos y construir el HTML sobre la marcha.</li>\n  <li><strong>Respuesta del Servidor:</strong> El servidor envía el archivo HTML de vuelta a tu navegador como parte de la respuesta HTTP/S.</li>\n  <li><strong>Renderizado (Fase 1 - HTML):</strong> El navegador comienza a leer el HTML. Entiende la estructura: aquí va un título, aquí un párrafo, aquí una imagen.</li>\n  <li><strong>Peticiones Adicionales:</strong> Mientras lee el HTML, el navegador encuentra referencias a otros archivos, como hojas de estilo CSS (<code>&lt;link rel="stylesheet" href="style.css"&gt;</code>) y scripts de JavaScript (<code>&lt;script src="app.js"&gt;&lt;/script&gt;</code>). Realiza peticiones HTTP/S adicionales para cada uno de estos archivos.</li>\n  <li><strong>Renderizado (Fase 2 - CSS y JS):</strong> A medida que llegan los archivos CSS y JavaScript, el navegador los aplica. El CSS le da estilo y apariencia visual a la estructura HTML. El JavaScript añade interactividad, como animaciones, validación de formularios o la capacidad de cargar más contenido sin recargar la página.</li>\n</ol>\n<p>Este ciclo completo, desde la petición inicial hasta que la página es completamente visible e interactiva, ocurre en cuestión de segundos o incluso milisegundos, gracias a la eficiencia de esta arquitectura fundamental.</p>\n<hr/>\n<h3>Recursos Complementarios</h3>\n<h4>Videos Recomendados</h4>\n<ul>\n    <li><strong>(Español) ¿Cómo funciona Internet?</strong> - Un excelente resumen visual de Platzi: <a href="https://www.youtube.com/watch?v=sS_o38i2A_w" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>\n    <li><strong>(Inglés) How the Web Works: A Primer for Newcomers to Web Development</strong> - Una explicación clara y concisa de MDN: <a href="https://www.youtube.com/watch?v=hJHvdBlSxug" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>\n    <li><strong>(Inglés, Técnico) HTTP Crash Course & Core Concepts</strong> - Un video más profundo de Traversy Media: <a href="https://www.youtube.com/watch?v=iYM2zFP3Zn0" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>\n</ul>\n<h4>Lecturas Oficiales</h4>\n<ul>\n    <li><strong>MDN Web Docs: ¿Cómo funciona la web?</strong> - La documentación de referencia para desarrolladores: <a href="https://developer.mozilla.org/es/docs/Learn/Getting_started_with_the_web/How_the_Web_works" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>\n</ul>',
         duration: 30,
       },
       {
         id: '1.2',
         title: 'HTML básico: etiquetas, listas, tablas, enlaces',
-        content: `<h2>Los Cimientos de la Web: Estructura con HTML</h2>
-<p>HTML (HyperText Markup Language) no es un lenguaje de programación; es un <strong>lenguaje de marcado</strong>. Su única función es describir y estructurar el contenido de una página web. Le dice al navegador qué es un título, qué es un párrafo, dónde va una imagen, etc.</p>
-
-<h3>1. La Anatomía de una Etiqueta HTML</h3>
-<p>Casi todo en HTML está compuesto por <strong>elementos</strong>, que generalmente consisten en una etiqueta de apertura y una de cierre, envolviendo el contenido.</p>
-<pre><code class="language-html">&lt;p&gt;Este es el contenido de un párrafo.&lt;/p&gt;
-&lt;!--  |   |                       |  --&gt;
-&lt;!--  1   2                       3  --&gt;</code></pre>
-<ol>
-  <li><strong>Etiqueta de apertura:</strong> <code>&lt;p&gt;</code>. Indica el inicio de un elemento.</li>
-  <li><strong>Contenido:</strong> El texto o los otros elementos que van dentro.</li>
-  <li><strong>Etiqueta de cierre:</strong> <code>&lt;/p&gt;</code>. Igual que la de apertura, pero con una barra inclinada (<code>/</code>). Indica el final del elemento.</li>
-</ol>
-<p>Algunos elementos son "vacíos" o "auto-cerrados", lo que significa que no tienen contenido ni etiqueta de cierre, como la etiqueta de imagen <code>&lt;img&gt;</code> o la de salto de línea <code>&lt;br&gt;</code>.</p>
-
-<h3>2. Estructura Básica de un Documento HTML</h3>
-<p>Todo archivo <code>.html</code> sigue una estructura fundamental:</p>
-<pre><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-  &lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Título de la Página&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;!-- El contenido visible va aquí --&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-<ul>
-    <li><code>&lt;!DOCTYPE html&gt;</code>: Declaración que define que el documento es HTML5.</li>
-    <li><code>&lt;html&gt;</code>: El elemento raíz de la página.</li>
-    <li><code>&lt;head&gt;</code>: Contiene metadatos (información sobre el documento), como el título (<code>&lt;title&gt;</code>) que aparece en la pestaña del navegador, enlaces a CSS y el juego de caracteres.</li>
-    <li><code>&lt;body&gt;</code>: Contiene todo el contenido visible de la página web.</li>
-</ul>
-
-<h3>3. Etiquetas Esenciales para Contenido</h3>
-
-<h4>Títulos (Headings)</h4>
-<p>Se usan para titular secciones y subsecciones. Van del <code>&lt;h1&gt;</code> (el más importante) al <code>&lt;h6&gt;</code> (el menos importante).</p>
-<pre><code class="language-html">&lt;h1&gt;Título Principal del Artículo&lt;/h1&gt;
-&lt;h2&gt;Una sección importante&lt;/h2&gt;
-&lt;p&gt;Texto de esta sección...&lt;/p&gt;</code></pre>
-
-<h4>Párrafos (Paragraphs)</h4>
-<p>La etiqueta <code>&lt;p&gt;</code> se usa para bloques de texto.</p>
-
-<h4>Enlaces (Anchors)</h4>
-<p>La etiqueta <code>&lt;a&gt;</code> crea hipervínculos. El atributo <code>href</code> (hypertext reference) especifica la URL de destino.</p>
-<pre><code class="language-html">&lt;a href="https://www.google.com"&gt;Ir a Google&lt;/a&gt;</code></pre>
-
-<h4>Listas</h4>
-<p>Hay dos tipos principales:</p>
-<ul>
-    <li><strong>Listas desordenadas (<code>&lt;ul&gt;</code>):</strong> Para ítems sin un orden particular. Cada ítem se define con <code>&lt;li&gt;</code>.</li>
-    <li><strong>Listas ordenadas (<code>&lt;ol&gt;</code>):</strong> Para ítems secuenciales (1, 2, 3...). Cada ítem también se define con <code>&lt;li&gt;</code>.</li>
-</ul>
-<pre><code class="language-html">&lt;h4&gt;Lista de la compra:&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Leche&lt;/li&gt;
-  &lt;li&gt;Pan&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4&gt;Pasos para hacer café:&lt;/h4&gt;
-&lt;ol&gt;
-  &lt;li&gt;Hervir agua&lt;/li&gt;
-  &lt;li&gt;Añadir café&lt;/li&gt;
-  &lt;li&gt;Servir&lt;/li&gt;
-&lt;/ol&gt;</code></pre>
-
-<h4>Tablas</h4>
-<p>Se usan para mostrar datos tabulares. Son una estructura de filas y celdas.</p>
-<ul>
-    <li><code>&lt;table&gt;</code>: Envuelve toda la tabla.</li>
-    <li><code>&lt;thead&gt;</code>: Contiene la fila de cabecera.</li>
-    <li><code>&lt;tbody&gt;</code>: Contiene el cuerpo de la tabla.</li>
-    <li><code>&lt;tr&gt;</code> (table row): Define una fila.</li>
-    <li><code>&lt;th&gt;</code> (table header): Define una celda de cabecera.</li>
-    <li><code>&lt;td&gt;</code> (table data): Define una celda de datos.</li>
-</ul>
-<pre><code class="language-html">&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Nombre&lt;/th&gt;
-      &lt;th&gt;Edad&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Ana&lt;/td&gt;
-      &lt;td&gt;25&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</code></pre>
-<p>Estas etiquetas son los bloques de construcción fundamentales. Dominarlas te permitirá crear la estructura de cualquier página web que imagines.</p>
-<hr/>
-<h3>Recursos Complementarios</h3>
-<h4>Videos Recomendados</h4>
-<ul>
-    <li><strong>(Español) Curso HTML5 desde cero</strong> - Un curso completo en video por EDteam: <a href="https://www.youtube.com/watch?v=k2IydkL3_oE" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
-    <li><strong>(Inglés) HTML Full Course for Beginners</strong> - Un video exhaustivo de Traversy Media: <a href="https://www.youtube.com/watch?v=mJgBOIoGihA" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
-</ul>
-<h4>Lecturas Oficiales</h4>
-<ul>
-    <li><strong>MDN Web Docs: HTML basics</strong> - La guía de referencia principal para HTML: <a href="https://developer.mozilla.org/es/docs/Learn/Getting_started_with_the_web/HTML_basics" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
-</ul>
-`,
+        content: '<h2>Los Cimientos de la Web: Estructura con HTML</h2>\n<p>HTML (HyperText Markup Language) no es un lenguaje de programación; es un <strong>lenguaje de marcado</strong>. Su única función es describir y estructurar el contenido de una página web. Le dice al navegador qué es un título, qué es un párrafo, dónde va una imagen, etc.</p>\n\n<h3>1. La Anatomía de una Etiqueta HTML</h3>\n<p>Casi todo en HTML está compuesto por <strong>elementos</strong>, que generalmente consisten en una etiqueta de apertura y una de cierre, envolviendo el contenido.</p>\n<pre><code class="language-html">&lt;p&gt;Este es el contenido de un párrafo.&lt;/p&gt;\n&lt;!--  |   |                       |  --&gt;\n&lt;!--  1   2                       3  --&gt;</code></pre>\n<ol>\n  <li><strong>Etiqueta de apertura:</strong> <code>&lt;p&gt;</code>. Indica el inicio de un elemento.</li>\n  <li><strong>Contenido:</strong> El texto o los otros elementos que van dentro.</li>\n  <li><strong>Etiqueta de cierre:</strong> <code>&lt;/p&gt;</code>. Igual que la de apertura, pero con una barra inclinada (<code>/</code>). Indica el final del elemento.</li>\n</ol>\n<p>Algunos elementos son "vacíos" o "auto-cerrados", lo que significa que no tienen contenido ni etiqueta de cierre, como la etiqueta de imagen <code>&lt;img&gt;</code> o la de salto de línea <code>&lt;br&gt;</code>.</p>\n\n<h3>2. Estructura Básica de un Documento HTML</h3>\n<p>Todo archivo <code>.html</code> sigue una estructura fundamental:</p>\n<pre><code class="language-html">&lt;!DOCTYPE html&gt;\n&lt;html lang="es"&gt;\n  &lt;head&gt;\n    &lt;meta charset="UTF-8"&gt;\n    &lt;title&gt;Título de la Página&lt;/title&gt;\n  &lt;/head&gt;\n  &lt;body&gt;\n    &lt;!-- El contenido visible va aquí --&gt;\n  &lt;/body&gt;\n&lt;/html&gt;</code></pre>\n<ul>\n    <li><code>&lt;!DOCTYPE html&gt;</code>: Declaración que define que el documento es HTML5.</li>\n    <li><code>&lt;html&gt;</code>: El elemento raíz de la página.</li>\n    <li><code>&lt;head&gt;</code>: Contiene metadatos (información sobre el documento), como el título (<code>&lt;title&gt;</code>) que aparece en la pestaña del navegador, enlaces a CSS y el juego de caracteres.</li>\n    <li><code>&lt;body&gt;</code>: Contiene todo el contenido visible de la página web.</li>\n</ul>\n\n<h3>3. Etiquetas Esenciales para Contenido</h3>\n\n<h4>Títulos (Headings)</h4>\n<p>Se usan para titular secciones y subsecciones. Van del <code>&lt;h1&gt;</code> (el más importante) al <code>&lt;h6&gt;</code> (el menos importante).</p>\n<pre><code class="language-html">&lt;h1&gt;Título Principal del Artículo&lt;/h1&gt;\n&lt;h2&gt;Una sección importante&lt;/h2&gt;\n&lt;p&gt;Texto de esta sección...&lt;/p&gt;</code></pre>\n\n<h4>Párrafos (Paragraphs)</h4>\n<p>La etiqueta <code>&lt;p&gt;</code> se usa para bloques de texto.</p>\n\n<h4>Enlaces (Anchors)</h4>\n<p>La etiqueta <code>&lt;a&gt;</code> crea hipervínculos. El atributo <code>href</code> (hypertext reference) especifica la URL de destino.</p>\n<pre><code class="language-html">&lt;a href="https://www.google.com"&gt;Ir a Google&lt;/a&gt;</code></pre>\n\n<h4>Listas</h4>\n<p>Hay dos tipos principales:</p>\n<ul>\n    <li><strong>Listas desordenadas (<code>&lt;ul&gt;</code>):</strong> Para ítems sin un orden particular. Cada ítem se define con <code>&lt;li&gt;</code>.</li>\n    <li><strong>Listas ordenadas (<code>&lt;ol&gt;</code>):</strong> Para ítems secuenciales (1, 2, 3...). Cada ítem también se define con <code>&lt;li&gt;</code>.</li>\n</ul>\n<pre><code class="language-html">&lt;h4&gt;Lista de la compra:&lt;/h4&gt;\n&lt;ul&gt;\n  &lt;li&gt;Leche&lt;/li&gt;\n  &lt;li&gt;Pan&lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;h4&gt;Pasos para hacer café:&lt;/h4&gt;\n&lt;ol&gt;\n  &lt;li&gt;Hervir agua&lt;/li&gt;\n  &lt;li&gt;Añadir café&lt;/li&gt;\n  &lt;li&gt;Servir&lt;/li&gt;\n&lt;/ol&gt;</code></pre>\n\n<h4>Tablas</h4>\n<p>Se usan para mostrar datos tabulares. Son una estructura de filas y celdas.</p>\n<ul>\n    <li><code>&lt;table&gt;</code>: Envuelve toda la tabla.</li>\n    <li><code>&lt;thead&gt;</code>: Contiene la fila de cabecera.</li>\n    <li><code>&lt;tbody&gt;</code>: Contiene el cuerpo de la tabla.</li>\n    <li><code>&lt;tr&gt;</code> (table row): Define una fila.</li>\n    <li><code>&lt;th&gt;</code> (table header): Define una celda de cabecera.</li>\n    <li><code>&lt;td&gt;</code> (table data): Define una celda de datos.</li>\n</ul>\n<pre><code class="language-html">&lt;table&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Nombre&lt;/th&gt;\n      &lt;th&gt;Edad&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Ana&lt;/td&gt;\n      &lt;td&gt;25&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;</code></pre>\n<p>Estas etiquetas son los bloques de construcción fundamentales. Dominarlas te permitirá crear la estructura de cualquier página web que imagines.</p>\n<hr/>\n<h3>Recursos Complementarios</h3>\n<h4>Videos Recomendados</h4>\n<ul>\n    <li><strong>(Español) Curso HTML5 desde cero</strong> - Un curso completo en video por EDteam: <a href="https://www.youtube.com/watch?v=k2IydkL3_oE" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>\n    <li><strong>(Inglés) HTML Full Course for Beginners</strong> - Un video exhaustivo de Traversy Media: <a href="https://www.youtube.com/watch?v=mJgBOIoGihA" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>\n</ul>\n<h4>Lecturas Oficiales</h4>\n<ul>\n    <li><strong>MDN Web Docs: HTML basics</strong> - La guía de referencia principal para HTML: <a href="https://developer.mozilla.org/es/docs/Learn/Getting_started_with_the_web/HTML_basics" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>\n</ul>',
         duration: 60,
       },
       {
         id: '1.3',
         title: 'HTML semántico y buenas prácticas',
         content:
-          `<h2>La Magia del Contexto: HTML Semántico</h2>
-<p>Has aprendido a usar etiquetas HTML para estructurar tu contenido. Ahora, demos un paso más allá. El <strong>HTML Semántico</strong> consiste en elegir la etiqueta HTML correcta según el <strong>significado</strong> de su contenido, no por cómo se ve en el navegador.</p>
-<p>Piensa en etiquetas como <code>&lt;div&gt;</code> y <code>&lt;span&gt;</code>. Son "no semánticas"; no nos dicen nada sobre el contenido que envuelven. En cambio, etiquetas como <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code> o <code>&lt;article&gt;</code> le dan un propósito claro a su contenido.</p>
-
-<h3>¿Por qué es tan importante?</h3>
-<ol>
-  <li><strong>Accesibilidad:</strong> Las tecnologías de asistencia, como los lectores de pantalla para personas con discapacidad visual, utilizan la semántica para interpretar y navegar una página. Un lector de pantalla puede anunciar "Navegación principal" si usas una etiqueta <code>&lt;nav&gt;</code>, permitiendo al usuario saltar directamente a ella.</li>
-  <li><strong>SEO (Search Engine Optimization):</strong> Los motores de búsqueda como Google analizan la estructura de tu página para entender de qué trata. Usar <code>&lt;h1&gt;</code> para tu título principal y <code>&lt;section&gt;</code> para agrupar contenido relacionado les ayuda a indexar tu sitio de manera más efectiva, lo que puede mejorar tu ranking en los resultados de búsqueda.</li>
-  <li><strong>Mantenibilidad:</strong> Un código semántico es más fácil de leer y entender para otros desarrolladores (¡y para tu yo del futuro!). Es auto-documentado.</li>
-</ol>
-
-<h3>Las Etiquetas Semánticas de Layout Principales</h3>
-<p>HTML5 introdujo un conjunto de etiquetas diseñadas para estructurar las secciones principales de una página web.</p>
-
-<pre><code class="language-html">&lt;body&gt;
-  &lt;header&gt;
-    &lt;!-- Contenido introductorio o de navegación --&gt;
-    &lt;h1&gt;Mi Blog Increíble&lt;/h1&gt;
-    &lt;nav&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href="/"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="/acerca"&gt;Acerca de&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/nav&gt;
-  &lt;/header&gt;
-
-  &lt;main&gt;
-    &lt;!-- El contenido principal y único de esta página --&gt;
-    &lt;article&gt;
-      &lt;h2&gt;Título del Artículo&lt;/h2&gt;
-      &lt;p&gt;Contenido del artículo...&lt;/p&gt;
-      &lt;section&gt;
-        &lt;h3&gt;Comentarios&lt;/h3&gt;
-        &lt;p&gt;Primer comentario...&lt;/p&gt;
-      &lt;/section&gt;
-    &lt;/article&gt;
-
-    &lt;aside&gt;
-      &lt;h3&gt;Publicidad&lt;/h3&gt;
-      &lt;p&gt;Contenido relacionado pero no esencial.&lt;/p&gt;
-    &lt;/aside&gt;
-  &lt;/main&gt;
-
-  &lt;footer&gt;
-    &lt;!-- Pie de página con info de contacto, copyright, etc. --&gt;
-    &lt;p&gt;&copy; 2024 Mi Blog Increíble&lt;/p&gt;
-  &lt;/footer&gt;
-&lt;/body&gt;
-</code></pre>
-
-<ul>
-    <li><code>&lt;header&gt;</code>: Representa el encabezado de una página o sección. Suele contener el logo, el título principal y la navegación.</li>
-    <li><code>&lt;nav&gt;</code>: Define un bloque de enlaces de navegación principal.</li>
-    <li><code>&lt;main&gt;</code>: ¡Crucial! Envuelve el contenido <strong>principal y único</strong> del documento. Solo debe haber uno por página y no debe estar anidado dentro de otras etiquetas de layout como <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>, o <code>&lt;header&gt;</code>.</li>
-    <li><code>&lt;article&gt;</code>: Representa un bloque de contenido independiente y auto-contenido que podría existir por sí solo y tener sentido, como una entrada de blog, un post en un foro o un artículo de noticias.</li>
-    <li><code>&lt;section&gt;</code>: Agrupa contenido temáticamente relacionado. Es una forma más genérica de agrupar contenido que <code>&lt;article&gt;</code>. Generalmente, una sección debe tener su propio encabezado (h2-h6).</li>
-    <li><code>&lt;aside&gt;</code>: Para contenido tangencialmente relacionado con el contenido principal, como barras laterales, publicidad o biografías de autor.</li>
-    <li><code>&lt;footer&gt;</code>: Define el pie de página de un documento o sección. Suele contener información de autoría, copyright, enlaces a políticas, etc.</li>
-</ul>
-
-<h3>Buenas Prácticas</h3>
-<ul>
-    <li><strong>No abuses de los <code>&lt;div&gt;</code>:</strong> Antes de usar un <code>&lt;div&gt;</code>, pregúntate: "¿Hay una etiqueta semántica más apropiada para este contenido?". Usa los <code>div</code> principalmente para fines de estilado cuando no hay otra opción.</li>
-    <li><strong>Jerarquía de Títulos:</strong> Usa los títulos (<code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code>) en orden lógico. No saltes de un <code>&lt;h1&gt;</code> a un <code>&lt;h3&gt;</code> porque te gusta cómo se ve. La apariencia se controla con CSS; el HTML es para la estructura.</li>
-    <li><strong>El atributo <code>alt</code> en imágenes:</strong> Siempre incluye un texto alternativo (<code>alt</code>) en tus etiquetas <code>&lt;img&gt;</code>. Describe la imagen para usuarios de lectores de pantalla y también se muestra si la imagen no puede cargar.</li>
-</ul>
-<pre><code class="language-html">&lt;img src="perrito.jpg" alt="Un cachorro de Golden Retriever jugando en la hierba."&gt;
-</code></pre>
-<p>Adoptar el HTML semántico desde el principio es una de las marcas de un desarrollador web profesional. Tu código será más robusto, accesible y comprensible.</p>
-<hr/>
-<h3>Recursos Complementarios</h3>
-<h4>Videos Recomendados</h4>
-<ul>
-    <li><strong>(Español) ¿Qué es HTML Semántico?</strong> - Una explicación clara de la Universidad JavaScript: <a href="https://www.youtube.com/watch?v=T1itpKr822o" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
-</ul>
-<h4>Lecturas Oficiales</h4>
-<ul>
-    <li><strong>MDN Web Docs: HTML Semántico</strong> - Artículo de referencia sobre el tema: <a href="https://developer.mozilla.org/es/docs/Glossary/Semantics" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
-</ul>
-`,
+          '<h2>La Magia del Contexto: HTML Semántico</h2>\n<p>Has aprendido a usar etiquetas HTML para estructurar tu contenido. Ahora, demos un paso más allá. El <strong>HTML Semántico</strong> consiste en elegir la etiqueta HTML correcta según el <strong>significado</strong> de su contenido, no por cómo se ve en el navegador.</p>\n<p>Piensa en etiquetas como <code>&lt;div&gt;</code> y <code>&lt;span&gt;</code>. Son "no semánticas"; no nos dicen nada sobre el contenido que envuelven. En cambio, etiquetas como <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code> o <code>&lt;article&gt;</code> le dan un propósito claro a su contenido.</p>\n\n<h3>¿Por qué es tan importante?</h3>\n<ol>\n  <li><strong>Accesibilidad:</strong> Las tecnologías de asistencia, como los lectores de pantalla para personas con discapacidad visual, utilizan la semántica para interpretar y navegar una página. Un lector de pantalla puede anunciar "Navegación principal" si usas una etiqueta <code>&lt;nav&gt;</code>, permitiendo al usuario saltar directamente a ella.</li>\n  <li><strong>SEO (Search Engine Optimization):</strong> Los motores de búsqueda como Google analizan la estructura de tu página para entender de qué trata. Usar <code>&lt;h1&gt;</code> para tu título principal y <code>&lt;section&gt;</code> para agrupar contenido relacionado les ayuda a indexar tu sitio de manera más efectiva, lo que puede mejorar tu ranking en los resultados de búsqueda.</li>\n  <li><strong>Mantenibilidad:</strong> Un código semántico es más fácil de leer y entender para otros desarrolladores (¡y para tu yo del futuro!). Es auto-documentado.</li>\n</ol>\n\n<h3>Las Etiquetas Semánticas de Layout Principales</h3>\n<p>HTML5 introdujo un conjunto de etiquetas diseñadas para estructurar las secciones principales de una página web.</p>\n\n<pre><code class="language-html">&lt;body&gt;\n  &lt;header&gt;\n    &lt;!-- Contenido introductorio o de navegación --&gt;\n    &lt;h1&gt;Mi Blog Increíble&lt;/h1&gt;\n    &lt;nav&gt;\n      &lt;ul&gt;\n        &lt;li&gt;&lt;a href="/"&gt;Inicio&lt;/a&gt;&lt;/li&gt;\n        &lt;li&gt;&lt;a href="/acerca"&gt;Acerca de&lt;/a&gt;&lt;/li&gt;\n      &lt;/ul&gt;\n    &lt;/nav&gt;\n  &lt;/header&gt;\n\n  &lt;main&gt;\n    &lt;!-- El contenido principal y único de esta página --&gt;\n    &lt;article&gt;\n      &lt;h2&gt;Título del Artículo&lt;/h2&gt;\n      &lt;p&gt;Contenido del artículo...&lt;/p&gt;\n      &lt;section&gt;\n        &lt;h3&gt;Comentarios&lt;/h3&gt;\n        &lt;p&gt;Primer comentario...&lt;/p&gt;\n      &lt;/section&gt;\n    &lt;/article&gt;\n\n    &lt;aside&gt;\n      &lt;h3&gt;Publicidad&lt;/h3&gt;\n      &lt;p&gt;Contenido relacionado pero no esencial.&lt;/p&gt;\n    &lt;/aside&gt;\n  &lt;/main&gt;\n\n  &lt;footer&gt;\n    &lt;!-- Pie de página con info de contacto, copyright, etc. --&gt;\n    &lt;p&gt;&copy; 2024 Mi Blog Increíble&lt;/p&gt;\n  &lt;/footer&gt;\n&lt;/body&gt;\n</code></pre>\n\n<ul>\n    <li><code>&lt;header&gt;</code>: Representa el encabezado de una página o sección. Suele contener el logo, el título principal y la navegación.</li>\n    <li><code>&lt;nav&gt;</code>: Define un bloque de enlaces de navegación principal.</li>\n    <li><code>&lt;main&gt;</code>: ¡Crucial! Envuelve el contenido <strong>principal y único</strong> del documento. Solo debe haber uno por página y no debe estar anidado dentro de otras etiquetas de layout como <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>, o <code>&lt;header&gt;</code>.</li>\n    <li><code>&lt;article&gt;</code>: Representa un bloque de contenido independiente y auto-contenido que podría existir por sí solo y tener sentido, como una entrada de blog, un post en un foro o un artículo de noticias.</li>\n    <li><code>&lt;section&gt;</code>: Agrupa contenido temáticamente relacionado. Es una forma más genérica de agrupar contenido que <code>&lt;article&gt;</code>. Generalmente, una sección debe tener su propio encabezado (h2-h6).</li>\n    <li><code>&lt;aside&gt;</code>: Para contenido tangencialmente relacionado con el contenido principal, como barras laterales, publicidad o biografías de autor.</li>\n    <li><code>&lt;footer&gt;</code>: Define el pie de página de un documento o sección. Suele contener información de autoría, copyright, enlaces a políticas, etc.</li>\n</ul>\n\n<h3>Buenas Prácticas</h3>\n<ul>\n    <li><strong>No abuses de los <code>&lt;div&gt;</code>:</strong> Antes de usar un <code>&lt;div&gt;</code>, pregúntate: "¿Hay una etiqueta semántica más apropiada para este contenido?". Usa los <code>div</code> principalmente para fines de estilado cuando no hay otra opción.</li>\n    <li><strong>Jerarquía de Títulos:</strong> Usa los títulos (<code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code>) en orden lógico. No saltes de un <code>&lt;h1&gt;</code> a un <code>&lt;h3&gt;</code> porque te gusta cómo se ve. La apariencia se controla con CSS; el HTML es para la estructura.</li>\n    <li><strong>El atributo <code>alt</code> en imágenes:</strong> Siempre incluye un texto alternativo (<code>alt</code>) en tus etiquetas <code>&lt;img&gt;</code>. Describe la imagen para usuarios de lectores de pantalla y también se muestra si la imagen no puede cargar.</li>\n</ul>\n<pre><code class="language-html">&lt;img src="perrito.jpg" alt="Un cachorro de Golden Retriever jugando en la hierba."&gt;\n</code></pre>\n<p>Adoptar el HTML semántico desde el principio es una de las marcas de un desarrollador web profesional. Tu código será más robusto, accesible y comprensible.</p>\n<hr/>\n<h3>Recursos Complementarios</h3>\n<h4>Videos Recomendados</h4>\n<ul>\n    <li><strong>(Español) ¿Qué es HTML Semántico?</strong> - Una explicación clara de la Universidad JavaScript: <a href="https://www.youtube.com/watch?v=T1itpKr822o" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>\n</ul>\n<h4>Lecturas Oficiales</h4>\n<ul>\n    <li><strong>MDN Web Docs: HTML Semántico</strong> - Artículo de referencia sobre el tema: <a href="https://developer.mozilla.org/es/docs/Glossary/Semantics" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>\n</ul>',
         duration: 45,
       },
       {
         id: '1.4',
         title: 'CSS básico: selectores, propiedades, colores',
         content:
-          `<h2>Dando Vida a la Web: Introducción a CSS</h2>
-<p>Si HTML es el esqueleto de una página web, <strong>CSS (Cascading Style Sheets)</strong> es la piel, la ropa y el maquillaje. Es el lenguaje que usamos para describir cómo se deben presentar visualmente los elementos HTML, controlando todo, desde los colores y las fuentes hasta la disposición de los elementos en la página.</p>
-
-<h3>1. ¿Cómo se conecta el CSS al HTML?</h3>
-<p>La forma más común y recomendada es usar una hoja de estilos externa. Esto implica crear un archivo separado con la extensión <code>.css</code> (por ejemplo, <code>style.css</code>) y enlazarlo desde el <code>&lt;head&gt;</code> de tu documento HTML.</p>
-<pre><code class="language-html">&lt;!-- En tu archivo index.html --&gt;
-&lt;head&gt;
-  &lt;title&gt;Mi Página con Estilo&lt;/title&gt;
-  &lt;link rel="stylesheet" href="style.css"&gt;
-&lt;/head&gt;</code></pre>
-<p>Esta práctica mantiene la estructura (HTML) y la presentación (CSS) separadas, lo que hace que el código sea mucho más fácil de mantener.</p>
-
-<h3>2. La Sintaxis de una Regla CSS</h3>
-<p>Una regla CSS consta de dos partes principales: un <strong>selector</strong> y un <strong>bloque de declaración</strong>.</p>
-<pre><code class="language-css">h1 {
-  color: #0A2342;
-  font-size: 2.5rem;
-}
-/* |  |      |      | */
-/* 1  2      3      4 */
-</code></pre>
-<ol>
-  <li><strong>Selector:</strong> Apunta al elemento(s) HTML que quieres estilizar. En este caso, <code>h1</code> selecciona todos los elementos <code>&lt;h1&gt;</code>.</li>
-  <li><strong>Bloque de declaración:</strong> Envuelto en llaves <code>{ }</code>, contiene una o más declaraciones.</li>
-  <li><strong>Propiedad:</strong> El aspecto que deseas cambiar (ej., <code>color</code>, <code>font-size</code>).</li>
-  <li><strong>Valor:</strong> El valor que quieres asignar a la propiedad (ej., <code>#0A2342</code>, <code>2.5rem</code>). Cada declaración termina con un punto y coma <code>;</code>.</li>
-</ol>
-
-<h3>3. Selectores Fundamentales</h3>
-<p>Para estilizar algo, primero debes seleccionarlo. Aquí están los selectores más básicos:</p>
-<ul>
-    <li><strong>Selector de Etiqueta (o Tipo):</strong> Selecciona todos los elementos de un tipo específico.</li>
-    <pre><code class="language-css">/* Estiliza todos los párrafos */
-p {
-  line-height: 1.6;
-}</code></pre>
-    <li><strong>Selector de Clase:</strong> Selecciona todos los elementos que tienen un atributo <code>class</code> específico. Es el selector más versátil y utilizado. Se denota con un punto (<code>.</code>).</li>
-    <pre><code class="language-html">&lt;p class="destacado"&gt;Este párrafo es importante.&lt;/p&gt;</code></pre>
-    <pre><code class="language-css">.destacado {
-  font-weight: bold;
-  color: hsl(var(--accent));
-}</code></pre>
-    <li><strong>Selector de ID:</strong> Selecciona <strong>un único elemento</strong> que tiene un atributo <code>id</code> específico. Un ID debe ser único en toda la página. Se denota con una almohadilla (<code>#</code>).</li>
-    <pre><code class="language-html">&lt;header id="encabezado-principal"&gt;...&lt;/header&gt;</code></pre>
-    <pre><code class="language-css">#encabezado-principal {
-  background-color: #f0f0f0;
-}</code></pre>
-</ul>
-
-<h3>4. Propiedades Básicas y Colores</h3>
-<p>Algunas propiedades comunes para empezar:</p>
-<ul>
-  <li><code>color</code>: Establece el color del texto.</li>
-  <li><code>background-color</code>: Establece el color de fondo de un elemento.</li>
-  <li><code>font-size</code>: Define el tamaño del texto.</li>
-  <li><code>font-family</code>: Define el tipo de letra (fuente) para el texto.</li>
-  <li><code>font-weight</code>: Define el grosor del texto (normal, bold).</li>
-  <li><code>text-align</code>: Alinea el texto (left, center, right).</li>
-</ul>
-
-<h4>Definición de Colores</h4>
-<p>Puedes especificar colores de varias maneras:</p>
-<ul>
-  <li><strong>Nombres de color:</strong> <code>red</code>, <code>blue</code>, <code>green</code> (limitado).</li>
-  <li><strong>HEX:</strong> <code>#RRGGBB</code> (Rojo, Verde, Azul en hexadecimal). Por ejemplo, <code>#FFFFFF</code> es blanco y <code>#0A2342</code> es un azul oscuro.</li>
-  <li><strong>RGB:</strong> <code>rgb(rojo, verde, azul)</code> donde cada valor va de 0 a 255. Por ejemplo, <code>rgb(10, 35, 66)</code>.</li>
-  <li><strong>HSL (Recomendado):</strong> <code>hsl(tono, saturación, luminosidad)</code>. Es muy intuitivo. El tono es un ángulo en la rueda de color (0-360), la saturación es un porcentaje (0% gris, 100% color puro), y la luminosidad es un porcentaje (0% negro, 100% blanco).</li>
-</ul>
-<p>CSS es un lenguaje vasto, pero dominar estos fundamentos (cómo enlazar, la sintaxis de las reglas y los selectores básicos) te da el poder de transformar documentos HTML simples en diseños web atractivos y legibles.</p>
-<hr/>
-<h3>Recursos Complementarios</h3>
-<h4>Videos Recomendados</h4>
-<ul>
-    <li><strong>(Español) Curso CSS desde Cero</strong> - Un excelente curso en video de freeCodeCamp en Español: <a href="https://www.youtube.com/watch?v=Lztd_g_fxw4" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
-    <li><strong>(Inglés) CSS Full Course for Beginners</strong> - Un curso completo de SuperSimpleDev: <a href="https://www.youtube.com/watch?v=G3e-cpL7ofc" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
-</ul>
-<h4>Lecturas Oficiales</h4>
-<ul>
-    <li><strong>MDN Web Docs: Primeros pasos en CSS</strong> - La guía fundamental para empezar: <a href="https://developer.mozilla.org/es/docs/Learn/CSS/First_steps" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
-</ul>
-`,
+          '<h2>Dando Vida a la Web: Introducción a CSS</h2>\n<p>Si HTML es el esqueleto de una página web, <strong>CSS (Cascading Style Sheets)</strong> es la piel, la ropa y el maquillaje. Es el lenguaje que usamos para describir cómo se deben presentar visualmente los elementos HTML, controlando todo, desde los colores y las fuentes hasta la disposición de los elementos en la página.</p>\n\n<h3>1. ¿Cómo se conecta el CSS al HTML?</h3>\n<p>La forma más común y recomendada es usar una hoja de estilos externa. Esto implica crear un archivo separado con la extensión <code>.css</code> (por ejemplo, <code>style.css</code>) y enlazarlo desde el <code>&lt;head&gt;</code> de tu documento HTML.</p>\n<pre><code class="language-html">&lt;!-- En tu archivo index.html --&gt;\n&lt;head&gt;\n  &lt;title&gt;Mi Página con Estilo&lt;/title&gt;\n  &lt;link rel="stylesheet" href="style.css"&gt;\n&lt;/head&gt;</code></pre>\n<p>Esta práctica mantiene la estructura (HTML) y la presentación (CSS) separadas, lo que hace que el código sea mucho más fácil de mantener.</p>\n\n<h3>2. La Sintaxis de una Regla CSS</h3>\n<p>Una regla CSS consta de dos partes principales: un <strong>selector</strong> y un <strong>bloque de declaración</strong>.</p>\n<pre><code class="language-css">h1 {\n  color: #0A2342;\n  font-size: 2.5rem;\n}\n/* |  |      |      | */\n/* 1  2      3      4 */\n</code></pre>\n<ol>\n  <li><strong>Selector:</strong> Apunta al elemento(s) HTML que quieres estilizar. En este caso, <code>h1</code> selecciona todos los elementos <code>&lt;h1&gt;</code>.</li>\n  <li><strong>Bloque de declaración:</strong> Envuelto en llaves <code>{ }</code>, contiene una o más declaraciones.</li>\n  <li><strong>Propiedad:</strong> El aspecto que deseas cambiar (ej., <code>color</code>, <code>font-size</code>).</li>\n  <li><strong>Valor:</strong> El valor que quieres asignar a la propiedad (ej., <code>#0A2342</code>, <code>2.5rem</code>). Cada declaración termina con un punto y coma <code>;</code>.</li>\n</ol>\n\n<h3>3. Selectores Fundamentales</h3>\n<p>Para estilizar algo, primero debes seleccionarlo. Aquí están los selectores más básicos:</p>\n<ul>\n    <li><strong>Selector de Etiqueta (o Tipo):</strong> Selecciona todos los elementos de un tipo específico.</li>\n    <pre><code class="language-css">/* Estiliza todos los párrafos */\np {\n  line-height: 1.6;\n}</code></pre>\n    <li><strong>Selector de Clase:</strong> Selecciona todos los elementos que tienen un atributo <code>class</code> específico. Es el selector más versátil y utilizado. Se denota con un punto (<code>.</code>).</li>\n    <pre><code class="language-html">&lt;p class="destacado"&gt;Este párrafo es importante.&lt;/p&gt;</code></pre>\n    <pre><code class="language-css">.destacado {\n  font-weight: bold;\n  color: hsl(var(--accent));\n}</code></pre>\n    <li><strong>Selector de ID:</strong> Selecciona <strong>un único elemento</strong> que tiene un atributo <code>id</code> específico. Un ID debe ser único en toda la página. Se denota con una almohadilla (<code>#</code>).</li>\n    <pre><code class="language-html">&lt;header id="encabezado-principal"&gt;...&lt;/header&gt;</code></pre>\n    <pre><code class="language-css">#encabezado-principal {\n  background-color: #f0f0f0;\n}</code></pre>\n</ul>\n\n<h3>4. Propiedades Básicas y Colores</h3>\n<p>Algunas propiedades comunes para empezar:</p>\n<ul>\n  <li><code>color</code>: Establece el color del texto.</li>\n  <li><code>background-color</code>: Establece el color de fondo de un elemento.</li>\n  <li><code>font-size</code>: Define el tamaño del texto.</li>\n  <li><code>font-family</code>: Define el tipo de letra (fuente) para el texto.</li>\n  <li><code>font-weight</code>: Define el grosor del texto (normal, bold).</li>\n  <li><code>text-align</code>: Alinea el texto (left, center, right).</li>\n</ul>\n\n<h4>Definición de Colores</h4>\n<p>Puedes especificar colores de varias maneras:</p>\n<ul>\n  <li><strong>Nombres de color:</strong> <code>red</code>, <code>blue</code>, <code>green</code> (limitado).</li>\n  <li><strong>HEX:</strong> <code>#RRGGBB</code> (Rojo, Verde, Azul en hexadecimal). Por ejemplo, <code>#FFFFFF</code> es blanco y <code>#0A2342</code> es un azul oscuro.</li>\n  <li><strong>RGB:</strong> <code>rgb(rojo, verde, azul)</code> donde cada valor va de 0 a 255. Por ejemplo, <code>rgb(10, 35, 66)</code>.</li>\n  <li><strong>HSL (Recomendado):</strong> <code>hsl(tono, saturación, luminosidad)</code>. Es muy intuitivo. El tono es un ángulo en la rueda de color (0-360), la saturación es un porcentaje (0% gris, 100% color puro), y la luminosidad es un porcentaje (0% negro, 100% blanco).</li>\n</ul>\n<p>CSS es un lenguaje vasto, pero dominar estos fundamentos (cómo enlazar, la sintaxis de las reglas y los selectores básicos) te da el poder de transformar documentos HTML simples en diseños web atractivos y legibles.</p>\n<hr/>\n<h3>Recursos Complementarios</h3>\n<h4>Videos Recomendados</h4>\n<ul>\n    <li><strong>(Español) Curso CSS desde Cero</strong> - Un excelente curso en video de freeCodeCamp en Español: <a href="https://www.youtube.com/watch?v=Lztd_g_fxw4" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>\n    <li><strong>(Inglés) CSS Full Course for Beginners</strong> - Un curso completo de SuperSimpleDev: <a href="https://www.youtube.com/watch?v=G3e-cpL7ofc" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>\n</ul>\n<h4>Lecturas Oficiales</h4>\n<ul>\n    <li><strong>MDN Web Docs: Primeros pasos en CSS</strong> - La guía fundamental para empezar: <a href="https://developer.mozilla.org/es/docs/Learn/CSS/First_steps" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>\n</ul>',
         duration: 60,
       },
       {
         id: '1.5',
         title: 'Box model y layout',
-        content: `<h2>El Concepto Fundamental de Diseño Web: El Modelo de Caja (Box Model)</h2>
-<p>En CSS, todo elemento HTML es tratado como una caja rectangular. El <strong>Modelo de Caja</strong> es la regla que define cómo se calcula el tamaño de esta caja y cómo interactúa con los demás elementos. Comprenderlo es absolutamente esencial para maquetar (hacer el layout) de cualquier página web.</p>
-<p>Cada caja está compuesta de cuatro partes, ordenadas desde adentro hacia afuera:</p>
-<img src="https://placehold.co/600x400.png" data-ai-hint="css box model diagram" alt="Diagrama del Modelo de Caja de CSS" style="width:100%; max-width:500px; margin: 20px auto; display: block;" />
-
-<h3>1. Content (Contenido)</h3>
-<p>Es el área donde se muestra tu contenido real: texto, una imagen, un video, etc. Sus dimensiones son el <code>width</code> (ancho) y el <code>height</code> (alto) que defines en tu CSS.</p>
-
-<h3>2. Padding (Relleno)</h3>
-<p>Es un espacio transparente que rodea el contenido, separándolo del borde. El padding "empuja" el borde hacia afuera. Es como el margen interior de una hoja de papel.</p>
-<pre><code class="language-css">.mi-caja {
-  padding: 20px; /* 20px de relleno en los 4 lados */
-  padding-top: 10px; /* Relleno solo arriba */
-  padding-left: 15px; /* Relleno solo a la izquierda */
-  /* shorthand: arriba, derecha, abajo, izquierda */
-  padding: 10px 20px 10px 20px; 
-}</code></pre>
-
-<h3>3. Border (Borde)</h3>
-<p>Es una línea que se dibuja alrededor del padding y el contenido. El borde tiene un grosor, un estilo y un color.</p>
-<pre><code class="language-css">.mi-caja {
-  border: 2px solid #36454F; /* grosor, estilo, color */
-}</code></pre>
-
-<h3>4. Margin (Margen)</h3>
-<p>Es un espacio transparente que rodea el borde, "empujando" a los otros elementos para crear espacio entre ellos. Es el espacio <em>exterior</em> de la caja.</p>
-<pre><code class="language-css">.mi-caja {
-  margin: 30px; /* 30px de margen en los 4 lados */
-  margin-bottom: 40px; /* Margen solo abajo */
-}</code></pre>
-
-<h3>El Tamaño Total de un Elemento</h3>
-<p>Por defecto, el ancho total de una caja es la suma de: <code>width</code> + <code>padding-left</code> + <code>padding-right</code> + <code>border-left</code> + <code>border-right</code>.</p>
-<p>Esto puede ser poco intuitivo. Si defines <code>width: 200px</code> y luego añades <code>padding: 20px</code>, ¡el ancho visible total será de 240px! Esto causaba muchos dolores de cabeza a los desarrolladores.</p>
-
-<h4>La Solución: \`box-sizing: border-box\`</h4>
-<p>Para solucionar esto, usamos una regla mágica en CSS que simplifica enormemente el cálculo del tamaño. <code>box-sizing: border-box;</code> le dice al navegador: "Cuando yo defina un <code>width</code> de 200px, quiero que ese sea el ancho <strong>total</strong>, incluyendo el padding y el borde". El navegador entonces ajustará el espacio del contenido hacia adentro para hacerle campo al padding y al borde.</p>
-<p>Es una práctica estándar y altamente recomendada incluir esta regla al inicio de tu CSS para todos los elementos:</p>
-<pre><code class="language-css">*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}</code></pre>
-<p>Con esta simple regla, si declaras <code>width: 200px;</code>, la caja ocupará exactamente 200px de ancho en la pantalla, facilitando enormemente la creación de layouts precisos.</p>
-<p>Dominar el Modelo de Caja es el primer gran paso para dejar de "luchar" con CSS y empezar a decirle exactamente qué hacer y cómo posicionar los elementos con predictibilidad y control.</p>
-<hr/>
-<h3>Recursos Complementarios</h3>
-<h4>Videos Recomendados</h4>
-<ul>
-    <li><strong>(Español) El Modelo de Caja (Box Model) en CSS</strong> - Explicación detallada de FalconMasters: <a href="https://www.youtube.com/watch?v=j352-T4bE0o" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
-</ul>
-<h4>Lecturas Oficiales</h4>
-<ul>
-    <li><strong>MDN Web Docs: El Modelo de Caja</strong> - La documentación oficial sobre este concepto: <a href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
-</ul>
-`,
+        content: '<h2>El Concepto Fundamental de Diseño Web: El Modelo de Caja (Box Model)</h2>\n<p>En CSS, todo elemento HTML es tratado como una caja rectangular. El <strong>Modelo de Caja</strong> es la regla que define cómo se calcula el tamaño de esta caja y cómo interactúa con los demás elementos. Comprenderlo es absolutamente esencial para maquetar (hacer el layout) de cualquier página web.</p>\n<p>Cada caja está compuesta de cuatro partes, ordenadas desde adentro hacia afuera:</p>\n<img src="https://placehold.co/600x400.png" data-ai-hint="css box model diagram" alt="Diagrama del Modelo de Caja de CSS" style="width:100%; max-width:500px; margin: 20px auto; display: block;" />\n\n<h3>1. Content (Contenido)</h3>\n<p>Es el área donde se muestra tu contenido real: texto, una imagen, un video, etc. Sus dimensiones son el <code>width</code> (ancho) y el <code>height</code> (alto) que defines en tu CSS.</p>\n\n<h3>2. Padding (Relleno)</h3>\n<p>Es un espacio transparente que rodea el contenido, separándolo del borde. El padding "empuja" el borde hacia afuera. Es como el margen interior de una hoja de papel.</p>\n<pre><code class="language-css">.mi-caja {\n  padding: 20px; /* 20px de relleno en los 4 lados */\n  padding-top: 10px; /* Relleno solo arriba */\n  padding-left: 15px; /* Relleno solo a la izquierda */\n  /* shorthand: arriba, derecha, abajo, izquierda */\n  padding: 10px 20px 10px 20px; \n}</code></pre>\n\n<h3>3. Border (Borde)</h3>\n<p>Es una línea que se dibuja alrededor del padding y el contenido. El borde tiene un grosor, un estilo y un color.</p>\n<pre><code class="language-css">.mi-caja {\n  border: 2px solid #36454F; /* grosor, estilo, color */\n}</code></pre>\n\n<h3>4. Margin (Margen)</h3>\n<p>Es un espacio transparente que rodea el borde, "empujando" a los otros elementos para crear espacio entre ellos. Es el espacio <em>exterior</em> de la caja.</p>\n<pre><code class="language-css">.mi-caja {\n  margin: 30px; /* 30px de margen en los 4 lados */\n  margin-bottom: 40px; /* Margen solo abajo */\n}</code></pre>\n\n<h3>El Tamaño Total de un Elemento</h3>\n<p>Por defecto, el ancho total de una caja es la suma de: <code>width</code> + <code>padding-left</code> + <code>padding-right</code> + <code>border-left</code> + <code>border-right</code>.</p>\n<p>Esto puede ser poco intuitivo. Si defines <code>width: 200px</code> y luego añades <code>padding: 20px</code>, ¡el ancho visible total será de 240px! Esto causaba muchos dolores de cabeza a los desarrolladores.</p>\n\n<h4>La Solución: `box-sizing: border-box`</h4>\n<p>Para solucionar esto, usamos una regla mágica en CSS que simplifica enormemente el cálculo del tamaño. <code>box-sizing: border-box;</code> le dice al navegador: "Cuando yo defina un <code>width</code> de 200px, quiero que ese sea el ancho <strong>total</strong>, incluyendo el padding y el borde". El navegador entonces ajustará el espacio del contenido hacia adentro para hacerle campo al padding y al borde.</p>\n<p>Es una práctica estándar y altamente recomendada incluir esta regla al inicio de tu CSS para todos los elementos:</p>\n<pre><code class="language-css">*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}</code></pre>\n<p>Con esta simple regla, si declaras <code>width: 200px;</code>, la caja ocupará exactamente 200px de ancho en la pantalla, facilitando enormemente la creación de layouts precisos.</p>\n<p>Dominar el Modelo de Caja es el primer gran paso para dejar de "luchar" con CSS y empezar a decirle exactamente qué hacer y cómo posicionar los elementos con predictibilidad y control.</p>\n<hr/>\n<h3>Recursos Complementarios</h3>\n<h4>Videos Recomendados</h4>\n<ul>\n    <li><strong>(Español) El Modelo de Caja (Box Model) en CSS</strong> - Explicación detallada de FalconMasters: <a href="https://www.youtube.com/watch?v=j352-T4bE0o" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>\n</ul>\n<h4>Lecturas Oficiales</h4>\n<ul>\n    <li><strong>MDN Web Docs: El Modelo de Caja</strong> - La documentación oficial sobre este concepto: <a href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>\n</ul>',
         duration: 50,
       },
       {
         id: '1.6',
         title: 'Flexbox y Grid',
-        content: `<h2>Layouts Modernos: Flexbox y Grid</h2>
-<p>Hasta ahora, has aprendido a tratar cada elemento como una caja individual. Flexbox y Grid son tecnologías de CSS que te permiten ir más allá, dándote el poder de controlar cómo se organizan y alinean grupos de cajas. Son las herramientas fundamentales para crear cualquier layout moderno y responsivo.</p>
-
-<h3>1. Flexbox: El Poder del Eje Único</h3>
-<p><strong>Flexbox (Flexible Box Layout)</strong> está diseñado para maquetar elementos en una sola dimensión, ya sea una fila o una columna. Es perfecto para alinear ítems, distribuirlos y controlar su orden dentro de un contenedor.</p>
-
-<h4>Conceptos Clave de Flexbox</h4>
-<ul>
-    <li><strong>Contenedor Flex (Flex Container):</strong> Es el elemento padre al que le aplicas <code>display: flex;</code>.</li>
-    <li><strong>Ítems Flex (Flex Items):</strong> Son los hijos directos del contenedor flex.</li>
-    <li><strong>Eje Principal (Main Axis):</strong> La dirección en la que se colocan los ítems flex (por defecto, horizontal).</li>
-    <li><strong>Eje Cruzado (Cross Axis):</strong> El eje perpendicular al eje principal (por defecto, vertical).</li>
-</ul>
-
-<h4>Propiedades del Contenedor (Padre)</h4>
-<ul>
-    <li><code>display: flex;</code>: Activa el contexto de Flexbox.</li>
-    <li><code>flex-direction: row | column;</code>: Establece la dirección del eje principal.</li>
-    <li><code>justify-content</code>: Alinea los ítems a lo largo del eje principal (<code>flex-start</code>, <code>center</code>, <code>flex-end</code>, <code>space-between</code>).</li>
-    <li><code>align-items</code>: Alinea los ítems a lo largo del eje cruzado (<code>flex-start</code>, <code>center</code>, <code>flex-end</code>, <code>stretch</code>).</li>
-    <li><code>flex-wrap: nowrap | wrap;</code>: Permite que los ítems salten a la siguiente línea si no caben.</li>
-</ul>
-
-<pre><code class="language-css">.contenedor-flex {
-  display: flex;
-  justify-content: space-between; /* Distribuye el espacio entre los ítems */
-  align-items: center; /* Centra los ítems verticalmente */
-}</code></pre>
-
-<h3>2. CSS Grid: El Poder de las Dos Dimensiones</h3>
-<p><strong>Grid Layout</strong> es un sistema de maquetación bidimensional. Te permite crear una cuadrícula de filas y columnas donde puedes posicionar elementos de forma precisa. Es ideal para layouts de página complejos.</p>
-
-<h4>Conceptos Clave de Grid</h4>
-<ul>
-    <li><strong>Contenedor Grid (Grid Container):</strong> El elemento padre al que aplicas <code>display: grid;</code>.</li>
-    <li><strong>Ítems Grid (Grid Items):</strong> Los hijos directos del contenedor.</li>
-    <li><strong>Líneas de Grid (Grid Lines):</strong> Las líneas horizontales y verticales que dividen la cuadrícula.</li>
-    <li><strong>Celdas de Grid (Grid Cells):</strong> El espacio entre cuatro líneas de grid.</li>
-    <li><strong>Áreas de Grid (Grid Areas):</strong> Un espacio rectangular que puede abarcar múltiples celdas.</li>
-</ul>
-
-<h4>Propiedades del Contenedor (Padre)</h4>
-<ul>
-    <li><code>display: grid;</code>: Activa el contexto de Grid.</li>
-    <li><code>grid-template-columns</code>: Define el número y tamaño de las columnas (ej: <code>1fr 1fr 2fr;</code> crea tres columnas, la última el doble de ancha).</li>
-    <li><code>grid-template-rows</code>: Define el número y tamaño de las filas (ej: <code>auto 100px;</code>).</li>
-    <li><code>gap</code>: Define el espacio entre filas y columnas (ej: <code>20px;</code>).</li>
-</ul>
-
-<h4>Propiedades de los Ítems (Hijos)</h4>
-<ul>
-    <li><code>grid-column-start / grid-column-end</code>: Define en qué línea de columna empieza y termina un ítem.</li>
-    <li><code>grid-row-start / grid-row-end</code>: Define en qué línea de fila empieza y termina un ítem.</li>
-    <li><code>grid-column</code> y <code>grid-row</code> (shorthand): Abreviaturas para las propiedades anteriores (ej: <code>grid-column: 1 / span 2;</code> abarca desde la línea 1 a la 3).</li>
-</ul>
-
-<pre><code class="language-css">.contenedor-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
-  gap: 1rem;
-}
-
-.item-destacado {
-  grid-column: 1 / span 2; /* Ocupa dos columnas */
-  grid-row: 1;
-}</code></pre>
-
-<h3>¿Cuándo usar Flexbox y cuándo usar Grid?</h3>
-<ul>
-    <li>Usa <strong>Flexbox</strong> para componentes y alineación en una dimensión: barras de navegación, alineación de ítems dentro de una tarjeta, centrado de contenido.</li>
-    <li>Usa <strong>Grid</strong> para el layout general de la página en dos dimensiones: la estructura principal de tu sitio web con encabezado, contenido, barra lateral y pie de página.</li>
-</ul>
-<p>La verdadera maestría viene de combinar ambos. Puedes tener un layout principal hecho con Grid, y dentro de una de las áreas de ese grid, usar Flexbox para alinear los elementos de un componente.</p>
-<hr/>
-<h3>Recursos Complementarios</h3>
-<h4>Videos Recomendados</h4>
-<ul>
-    <li><strong>(Español) Guía Completa de Flexbox y CSS Grid</strong> - Un video que compara y explica ambos, por Dorian Desings: <a href="https://www.youtube.com/watch?v=R-lJofc_I7s" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
-</ul>
-<h4>Juegos Interactivos (¡La mejor forma de aprender!)</h4>
-<ul>
-    <li><strong>Flexbox Froggy:</strong> Un juego para aprender Flexbox de forma interactiva: <a href="https://flexboxfroggy.com/#es" target="_blank" rel="noopener noreferrer">Jugar ahora</a></li>
-    <li><strong>CSS Grid Garden:</strong> El equivalente para aprender CSS Grid: <a href="https://cssgridgarden.com/#es" target="_blank" rel="noopener noreferrer">Jugar ahora</a></li>
-</ul>
-`,
+        content: '<h2>Layouts Modernos: Flexbox y Grid</h2>\n<p>Hasta ahora, has aprendido a tratar cada elemento como una caja individual. Flexbox y Grid son tecnologías de CSS que te permiten ir más allá, dándote el poder de controlar cómo se organizan y alinean grupos de cajas. Son las herramientas fundamentales para crear cualquier layout moderno y responsivo.</p>\n\n<h3>1. Flexbox: El Poder del Eje Único</h3>\n<p><strong>Flexbox (Flexible Box Layout)</strong> está diseñado para maquetar elementos en una sola dimensión, ya sea una fila o una columna. Es perfecto para alinear ítems, distribuirlos y controlar su orden dentro de un contenedor.</p>\n\n<h4>Conceptos Clave de Flexbox</h4>\n<ul>\n    <li><strong>Contenedor Flex (Flex Container):</strong> Es el elemento padre al que le aplicas <code>display: flex;</code>.</li>\n    <li><strong>Ítems Flex (Flex Items):</strong> Son los hijos directos del contenedor flex.</li>\n    <li><strong>Eje Principal (Main Axis):</strong> La dirección en la que se colocan los ítems flex (por defecto, horizontal).</li>\n    <li><strong>Eje Cruzado (Cross Axis):</strong> El eje perpendicular al eje principal (por defecto, vertical).</li>\n</ul>\n\n<h4>Propiedades del Contenedor (Padre)</h4>\n<ul>\n    <li><code>display: flex;</code>: Activa el contexto de Flexbox.</li>\n    <li><code>flex-direction: row | column;</code>: Establece la dirección del eje principal.</li>\n    <li><code>justify-content</code>: Alinea los ítems a lo largo del eje principal (<code>flex-start</code>, <code>center</code>, <code>flex-end</code>, <code>space-between</code>).</li>\n    <li><code>align-items</code>: Alinea los ítems a lo largo del eje cruzado (<code>flex-start</code>, <code>center</code>, <code>flex-end</code>, <code>stretch</code>).</li>\n    <li><code>flex-wrap: nowrap | wrap;</code>: Permite que los ítems salten a la siguiente línea si no caben.</li>\n</ul>\n\n<pre><code class="language-css">.contenedor-flex {\n  display: flex;\n  justify-content: space-between; /* Distribuye el espacio entre los ítems */\n  align-items: center; /* Centra los ítems verticalmente */\n}</code></pre>\n\n<h3>2. CSS Grid: El Poder de las Dos Dimensiones</h3>\n<p><strong>Grid Layout</strong> es un sistema de maquetación bidimensional. Te permite crear una cuadrícula de filas y columnas donde puedes posicionar elementos de forma precisa. Es ideal para layouts de página complejos.</p>\n\n<h4>Conceptos Clave de Grid</h4>\n<ul>\n    <li><strong>Contenedor Grid (Grid Container):</strong> El elemento padre al que aplicas <code>display: grid;</code>.</li>\n    <li><strong>Ítems Grid (Grid Items):</strong> Los hijos directos del contenedor.</li>\n    <li><strong>Líneas de Grid (Grid Lines):</strong> Las líneas horizontales y verticales que dividen la cuadrícula.</li>\n    <li><strong>Celdas de Grid (Grid Cells):</strong> El espacio entre cuatro líneas de grid.</li>\n    <li><strong>Áreas de Grid (Grid Areas):</strong> Un espacio rectangular que puede abarcar múltiples celdas.</li>\n</ul>\n\n<h4>Propiedades del Contenedor (Padre)</h4>\n<ul>\n    <li><code>display: grid;</code>: Activa el contexto de Grid.</li>\n    <li><code>grid-template-columns</code>: Define el número y tamaño de las columnas (ej: <code>1fr 1fr 2fr;</code> crea tres columnas, la última el doble de ancha).</li>\n    <li><code>grid-template-rows</code>: Define el número y tamaño de las filas (ej: <code>auto 100px;</code>).</li>\n    <li><code>gap</code>: Define el espacio entre filas y columnas (ej: <code>20px;</code>).</li>\n</ul>\n\n<h4>Propiedades de los Ítems (Hijos)</h4>\n<ul>\n    <li><code>grid-column-start / grid-column-end</code>: Define en qué línea de columna empieza y termina un ítem.</li>\n    <li><code>grid-row-start / grid-row-end</code>: Define en qué línea de fila empieza y termina un ítem.</li>\n    <li><code>grid-column</code> y <code>grid-row</code> (shorthand): Abreviaturas para las propiedades anteriores (ej: <code>grid-column: 1 / span 2;</code> abarca desde la línea 1 a la 3).</li>\n</ul>\n\n<pre><code class="language-css">.contenedor-grid {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */\n  gap: 1rem;\n}\n\n.item-destacado {\n  grid-column: 1 / span 2; /* Ocupa dos columnas */\n  grid-row: 1;\n}</code></pre>\n\n<h3>¿Cuándo usar Flexbox y cuándo usar Grid?</h3>\n<ul>\n    <li>Usa <strong>Flexbox</strong> para componentes y alineación en una dimensión: barras de navegación, alineación de ítems dentro de una tarjeta, centrado de contenido.</li>\n    <li>Usa <strong>Grid</strong> para el layout general de la página en dos dimensiones: la estructura principal de tu sitio web con encabezado, contenido, barra lateral y pie de página.</li>\n</ul>\n<p>La verdadera maestría viene de combinar ambos. Puedes tener un layout principal hecho con Grid, y dentro de una de las áreas de ese grid, usar Flexbox para alinear los elementos de un componente.</p>\n<hr/>\n<h3>Recursos Complementarios</h3>\n<h4>Videos Recomendados</h4>\n<ul>\n    <li><strong>(Español) Guía Completa de Flexbox y CSS Grid</strong> - Un video que compara y explica ambos, por Dorian Desings: <a href="https://www.youtube.com/watch?v=R-lJofc_I7s" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>\n</ul>\n<h4>Juegos Interactivos (¡La mejor forma de aprender!)</h4>\n<ul>\n    <li><strong>Flexbox Froggy:</strong> Un juego para aprender Flexbox de forma interactiva: <a href="https://flexboxfroggy.com/#es" target="_blank" rel="noopener noreferrer">Jugar ahora</a></li>\n    <li><strong>CSS Grid Garden:</strong> El equivalente para aprender CSS Grid: <a href="https://cssgridgarden.com/#es" target="_blank" rel="noopener noreferrer">Jugar ahora</a></li>\n</ul>',
         duration: 90,
       },
       {
         id: '1.7',
         title: 'Introducción a Git y GitHub',
-        content: `<h2>La Red de Seguridad del Desarrollador: Git y GitHub</h2>
-<p>Imagina que estás escribiendo un documento muy importante. Cada cierto tiempo, guardas una copia con un nombre diferente: "documento_v1", "documento_v2", "documento_final", "documento_final_de_verdad". Esto es engorroso y propenso a errores. El <strong>Control de Versiones</strong> es un sistema que soluciona este problema de manera profesional.</p>
-
-<h3>1. ¿Qué es el Control de Versiones?</h3>
-<p>Es un sistema que registra los cambios realizados en un archivo o conjunto de archivos a lo largo del tiempo, de modo que puedas recuperar versiones específicas más adelante. Es como una máquina del tiempo para tu código. Te permite:</p>
-<ul>
-    <li>Revertir archivos a un estado anterior.</li>
-    <li>Revertir todo el proyecto a un estado anterior.</li>
-    <li>Comparar cambios a lo largo del tiempo.</li>
-    <li>Ver quién modificó algo por última vez que podría estar causando un problema.</li>
-    <li>Trabajar en paralelo con otros desarrolladores sin sobrescribir el trabajo de los demás.</li>
-</ul>
-
-<h3>2. Git: Tu Base de Datos de Cambios Local</h3>
-<p><strong>Git</strong> es el software de control de versiones más popular del mundo. Es un <strong>Sistema de Control de Versiones Distribuido (DVCS)</strong>. Esto significa que no dependes de un servidor central. Cada desarrollador tiene una copia completa del historial del proyecto en su propia máquina.</p>
-<p>Con Git, el flujo de trabajo básico es:</p>
-<ol>
-    <li>Modificas archivos en tu copia de trabajo.</li>
-    <li>Seleccionas los cambios que quieres "guardar" (esto se llama <em>staging</em>).</li>
-    <li>Creas un <em>commit</em>: una instantánea permanente de tus archivos en ese momento, con un mensaje que describe los cambios.</li>
-</ol>
-<p>Toda esta actividad ocurre en tu ordenador, de forma local. Es rápido y no necesitas conexión a internet para ver el historial o hacer commits.</p>
-
-<h3>3. GitHub: Tu Repositorio en la Nube y Plataforma Social</h3>
-<p>Si Git es el software, ¿dónde guardas una copia de seguridad o compartes tu trabajo con otros? Ahí es donde entra <strong>GitHub</strong>.</p>
-<p>GitHub es una plataforma web que aloja repositorios de Git en la nube. Ofrece:</p>
-<ul>
-    <li><strong>Alojamiento de Repositorios Remotos:</strong> Un lugar central (un "remoto") donde puedes "empujar" (<em>push</em>) tus commits. Es la copia de seguridad y la fuente de verdad para el equipo.</li>
-    <li><strong>Colaboración:</strong> Permite que múltiples personas trabajen en el mismo proyecto. Pueden "clonar" (<em>clone</em>) el repositorio, hacer sus cambios y luego proponer integrarlos al proyecto principal a través de un <em>Pull Request</em>.</li>
-    <li><strong>Revisión de Código:</strong> Los Pull Requests son la herramienta clave para la colaboración, permitiendo a otros revisar tus cambios, dejar comentarios y aprobar la integración.</li>
-    <li><strong>Gestión de Proyectos:</strong> Incluye herramientas para seguimiento de errores (<em>Issues</em>), tableros Kanban (<em>Projects</em>) y documentación (<em>Wikis</em>).</li>
-    <li><strong>Portafolio Profesional:</strong> Tu perfil de GitHub se convierte en tu currículum como desarrollador. Muestra los proyectos en los que has trabajado y tus contribuciones a proyectos de código abierto.</li>
-</ul>
-
-<h3>En Resumen: Git vs. GitHub</h3>
-<p>Una analogía útil:</p>
-<ul>
-    <li><strong>Git</strong> es como Microsoft Word: el programa que usas en tu ordenador para escribir y guardar el historial de un documento.</li>
-    <li><strong>GitHub</strong> es como Google Docs o Dropbox: el servicio en la nube donde subes tu documento para tener una copia de seguridad, compartirlo y colaborar con otras personas en tiempo real.</li>
-</ul>
-<p>No se puede ser un desarrollador moderno sin saber Git. Es una habilidad no negociable. GitHub (o alternativas como GitLab o Bitbucket) es el estándar de la industria para trabajar con Git en un entorno profesional y colaborativo.</p>
-<hr/>
-<h3>Recursos Complementarios</h3>
-<h4>Videos Recomendados</h4>
-<ul>
-    <li><strong>(Español) ¿Qué es Git y GitHub? ¡La guía para principiantes!</strong> - Un video introductorio de HolaMundo: <a href="https://www.youtube.com/watch?v=3GymExBkKjE" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
-</ul>
-<h4>Lecturas Oficiales</h4>
-<ul>
-    <li><strong>Libro Pro Git:</strong> El libro oficial y de referencia, disponible gratis online: <a href="https://git-scm.com/book/es/v2" target="_blank" rel="noopener noreferrer">Leer online</a></li>
-</ul>
-`,
+        content: '<h2>La Red de Seguridad del Desarrollador: Git y GitHub</h2>\n<p>Imagina que estás escribiendo un documento muy importante. Cada cierto tiempo, guardas una copia con un nombre diferente: "documento_v1", "documento_v2", "documento_final", "documento_final_de_verdad". Esto es engorroso y propenso a errores. El <strong>Control de Versiones</strong> es un sistema que soluciona este problema de manera profesional.</p>\n\n<h3>1. ¿Qué es el Control de Versiones?</h3>\n<p>Es un sistema que registra los cambios realizados en un archivo o conjunto de archivos a lo largo del tiempo, de modo que puedas recuperar versiones específicas más adelante. Es como una máquina del tiempo para tu código. Te permite:</p>\n<ul>\n    <li>Revertir archivos a un estado anterior.</li>\n    <li>Revertir todo el proyecto a un estado anterior.</li>\n    <li>Comparar cambios a lo largo del tiempo.</li>\n    <li>Ver quién modificó algo por última vez que podría estar causando un problema.</li>\n    <li>Trabajar en paralelo con otros desarrolladores sin sobrescribir el trabajo de los demás.</li>\n</ul>\n\n<h3>2. Git: Tu Base de Datos de Cambios Local</h3>\n<p><strong>Git</strong> es el software de control de versiones más popular del mundo. Es un <strong>Sistema de Control de Versiones Distribuido (DVCS)</strong>. Esto significa que no dependes de un servidor central. Cada desarrollador tiene una copia completa del historial del proyecto en su propia máquina.</p>\n<p>Con Git, el flujo de trabajo básico es:</p>\n<ol>\n    <li>Modificas archivos en tu copia de trabajo.</li>\n    <li>Seleccionas los cambios que quieres "guardar" (esto se llama <em>staging</em>).</li>\n    <li>Creas un <em>commit</em>: una instantánea permanente de tus archivos en ese momento, con un mensaje que describe los cambios.</li>\n</ol>\n<p>Toda esta actividad ocurre en tu ordenador, de forma local. Es rápido y no necesitas conexión a internet para ver el historial o hacer commits.</p>\n\n<h3>3. GitHub: Tu Repositorio en la Nube y Plataforma Social</h3>\n<p>Si Git es el software, ¿dónde guardas una copia de seguridad o compartes tu trabajo con otros? Ahí es donde entra <strong>GitHub</strong>.</p>\n<p>GitHub es una plataforma web que aloja repositorios de Git en la nube. Ofrece:</p>\n<ul>\n    <li><strong>Alojamiento de Repositorios Remotos:</strong> Un lugar central (un "remoto") donde puedes "empujar" (<em>push</em>) tus commits. Es la copia de seguridad y la fuente de verdad para el equipo.</li>\n    <li><strong>Colaboración:</strong> Permite que múltiples personas trabajen en el mismo proyecto. Pueden "clonar" (<em>clone</em>) el repositorio, hacer sus cambios y luego proponer integrarlos al proyecto principal a través de un <em>Pull Request</em>.</li>\n    <li><strong>Revisión de Código:</strong> Los Pull Requests son la herramienta clave para la colaboración, permitiendo a otros revisar tus cambios, dejar comentarios y aprobar la integración.</li>\n    <li><strong>Gestión de Proyectos:</strong> Incluye herramientas para seguimiento de errores (<em>Issues</em>), tableros Kanban (<em>Projects</em>) y documentación (<em>Wikis</em>).</li>\n    <li><strong>Portafolio Profesional:</strong> Tu perfil de GitHub se convierte en tu currículum como desarrollador. Muestra los proyectos en los que has trabajado y tus contribuciones a proyectos de código abierto.</li>\n</ul>\n\n<h3>En Resumen: Git vs. GitHub</h3>\n<p>Una analogía útil:</p>\n<ul>\n    <li><strong>Git</strong> es como Microsoft Word: el programa que usas en tu ordenador para escribir y guardar el historial de un documento.</li>\n    <li><strong>GitHub</strong> es como Google Docs o Dropbox: el servicio en la nube donde subes tu documento para tener una copia de seguridad, compartirlo y colaborar con otras personas en tiempo real.</li>\n</ul>\n<p>No se puede ser un desarrollador moderno sin saber Git. Es una habilidad no negociable. GitHub (o alternativas como GitLab o Bitbucket) es el estándar de la industria para trabajar con Git en un entorno profesional y colaborativo.</p>\n<hr/>\n<h3>Recursos Complementarios</h3>\n<h4>Videos Recomendados</h4>\n<ul>\n    <li><strong>(Español) ¿Qué es Git y GitHub? ¡La guía para principiantes!</strong> - Un video introductorio de HolaMundo: <a href="https://www.youtube.com/watch?v=3GymExBkKjE" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>\n    <li><strong>(Inglés) Learn Git In 15 Minutes</strong> - Un video conciso y directo de Colt Steele: <a href="https://www.youtube.com/watch?v=USjZgo0sTCA" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>\n</ul>\n<h4>Lecturas Oficiales</h4>\n<ul>\n    <li><strong>Libro Pro Git:</strong> El libro oficial y de referencia, disponible gratis online: <a href="https://git-scm.com/book/es/v2" target="_blank" rel="noopener noreferrer">Leer online</a></li>\n</ul>',
         duration: 45,
       },
       {
         id: '1.8',
         title: 'Git básico: commits, ramas, merge',
-        content: `<h2>Manos a la Obra: Comandos Esenciales de Git</h2>
-<p>Has entendido qué es Git y GitHub. Ahora, es momento de abrir la terminal y aprender los comandos que usarás todos los días. Esta será una guía práctica para el flujo de trabajo básico.</p>
-
-<h3>Configuración Inicial (Solo se hace una vez)</h3>
-<p>Antes de nada, debes decirle a Git quién eres. Esto es importante porque cada commit que hagas usará esta información.</p>
-<pre><code class="language-shell">git config --global user.name "Tu Nombre Completo"
-git config --global user.email "tu_email@example.com"</code></pre>
-
-<h3>1. Inicializar un Repositorio: \`git init\`</h3>
-<p>Para empezar a usar Git en un proyecto, navega a la carpeta de tu proyecto en la terminal y ejecuta:</p>
-<pre><code class="language-shell">git init</code></pre>
-<p>Esto crea una subcarpeta oculta llamada <code>.git</code> donde Git almacenará todo el historial y la configuración del proyecto. ¡Tu proyecto ahora es un repositorio de Git!</p>
-
-<h3>2. El Ciclo Básico: Modificar, Añadir, Comprometer</h3>
-<p>Este es el ciclo que repetirás constantemente.</p>
-<h4>Paso A: Revisa el Estado con \`git status\`</h4>
-<p>Este es tu comando más importante. Te dice qué archivos han sido modificados, cuáles están en el área de preparación (staging) y en qué rama estás.</p>
-<pre><code class="language-shell">git status</code></pre>
-
-<h4>Paso B: Prepara los Cambios con \`git add\`</h4>
-<p>Git no guarda automáticamente todos los archivos que modificas. Debes decirle explícitamente qué cambios incluir en el próximo "punto de guardado" (commit). Esto se llama <em>staging</em> o preparar los cambios.</p>
-<pre><code class="language-shell"># Prepara un archivo específico
-git add index.html
-
-# Prepara todos los archivos modificados y nuevos en el directorio actual
-git add .</code></pre>
-
-<h4>Paso C: Guarda los Cambios con \`git commit\`</h4>
-<p>Un commit es una instantánea de tus archivos preparados. Cada commit tiene un mensaje que describe los cambios realizados. ¡Los buenos mensajes son cruciales!</p>
-<pre><code class="language-shell">git commit -m "Añade la estructura HTML inicial para la página de inicio"</code></pre>
-
-<h3>3. Ramas (Branches): Trabajando en Paralelo</h3>
-<p>Una rama es una línea de desarrollo independiente. La rama por defecto se llama <code>main</code> (o <code>master</code>). Se crean ramas para trabajar en nuevas funcionalidades o corregir errores sin afectar la versión estable (<code>main</code>).</p>
-<h4>Crear y Cambiar de Rama: \`git branch\` y \`git checkout\`</h4>
-<pre><code class="language-shell"># Crea una nueva rama llamada 'nueva-funcionalidad'
-git branch nueva-funcionalidad
-
-# Muévete a esa rama para empezar a trabajar en ella
-git checkout nueva-funcionalidad
-
-# O, un atajo para crear y cambiarte a la rama en un solo paso:
-git checkout -b nueva-funcionalidad</code></pre>
-
-<h3>4. Fusionar (Merge): Integrando Cambios</h3>
-<p>Una vez que has terminado tu trabajo en una rama, querrás integrar esos cambios de vuelta a tu rama principal (<code>main</code>).</p>
-<pre><code class="language-shell"># 1. Primero, vuelve a tu rama principal
-git checkout main
-
-# 2. Luego, fusiona los cambios de la otra rama en main
-git merge nueva-funcionalidad</code></pre>
-<p>Git intentará combinar los cambios automáticamente. A veces, si dos personas han modificado la misma línea de un archivo, ocurrirá un "conflicto de merge", que tendrás que resolver manualmente.</p>
-
-<h3>5. Trabajando con GitHub: \`push\`</h3>
-<p>Hasta ahora, todos tus commits y ramas están solo en tu máquina. Para subirlos a tu repositorio remoto en GitHub, usas <code>git push</code>.</p>
-<pre><code class="language-shell"># Sube tu rama 'main' al remoto llamado 'origin'
-git push origin main
-
-# Si estás subiendo una rama nueva por primera vez
-git push --set-upstream origin nueva-funcionalidad</code></pre>
-<p><code>origin</code> es el nombre por defecto que Git le da al repositorio remoto desde el que clonaste. Ahora tus cambios están seguros en la nube y disponibles para tus colaboradores.</p>
-<hr/>
-<h3>Recursos Complementarios</h3>
-<h4>Videos Recomendados</h4>
-<ul>
-    <li><strong>(Español) Git y GitHub - Curso práctico para principiantes</strong> - Un curso práctico de MoureDev: <a href="https://www.youtube.com/watch?v=mBYSUbws4IQ" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
-</ul>
-<h4>Herramientas Interactivas</h4>
-<ul>
-    <li><strong>Learn Git Branching:</strong> Una herramienta visual e interactiva para aprender los comandos de Git, especialmente el manejo de ramas: <a href="https://learngitbranching.js.org/?locale=es_ES" target="_blank" rel="noopener noreferrer">Empezar a aprender</a></li>
-</ul>
-`,
+        content:
+          '<h2>Manos a la Obra: Comandos Esenciales de Git</h2>\n<p>Has entendido qué es Git y GitHub. Ahora, es momento de abrir la terminal y aprender los comandos que usarás todos los días. Esta será una guía práctica para el flujo de trabajo básico.</p>\n\n<h3>Configuración Inicial (Solo se hace una vez)</h3>\n<p>Antes de nada, debes decirle a Git quién eres. Esto es importante porque cada commit que hagas usará esta información.</p>\n<pre><code class="language-shell">git config --global user.name "Tu Nombre Completo"\ngit config --global user.email "tu_email@example.com"</code></pre>\n\n<h3>1. Inicializar un Repositorio: `git init`</h3>\n<p>Para empezar a usar Git en un proyecto, navega a la carpeta de tu proyecto en la terminal y ejecuta:</p>\n<pre><code class="language-shell">git init</code></pre>\n<p>Esto crea una subcarpeta oculta llamada <code>.git</code> donde Git almacenará todo el historial y la configuración del proyecto. ¡Tu proyecto ahora es un repositorio de Git!</p>\n\n<h3>2. El Ciclo Básico: Modificar, Añadir, Comprometer</h3>\n<p>Este es el ciclo que repetirás constantemente.</p>\n<h4>Paso A: Revisa el Estado con `git status`</h4>\n<p>Este es tu comando más importante. Te dice qué archivos han sido modificados, cuáles están en el área de preparación (staging) y en qué rama estás.</p>\n<pre><code class="language-shell">git status</code></pre>\n\n<h4>Paso B: Prepara los Cambios con `git add`</h4>\n<p>Git no guarda automáticamente todos los archivos que modificas. Debes decirle explícitamente qué cambios incluir en el próximo "punto de guardado" (commit). Esto se llama <em>staging</em> o preparar los cambios.</p>\n<pre><code class="language-shell"># Prepara un archivo específico\ngit add index.html\n\n# Prepara todos los archivos modificados y nuevos en el directorio actual\ngit add .</code></pre>\n\n<h4>Paso C: Guarda los Cambios con `git commit`</h4>\n<p>Un commit es una instantánea de tus archivos preparados. Cada commit tiene un mensaje que describe los cambios realizados. ¡Los buenos mensajes son cruciales!</p>\n<pre><code class="language-shell">git commit -m "Añade la estructura HTML inicial para la página de inicio"</code></pre>\n\n<h3>3. Ramas (Branches): Trabajando en Paralelo</h3>\n<p>Una rama es una línea de desarrollo independiente. La rama por defecto se llama <code>main</code> (o <code>master</code>). Se crean ramas para trabajar en nuevas funcionalidades o corregir errores sin afectar la versión estable (<code>main</code>).</p>\n<h4>Crear y Cambiar de Rama: `git branch` y `git checkout`</h4>\n<pre><code class="language-shell"># Crea una nueva rama llamada \'nueva-funcionalidad\'\ngit branch nueva-funcionalidad\n\n# Muévete a esa rama para empezar a trabajar en ella\ngit checkout nueva-funcionalidad\n\n# O, un atajo para crear y cambiarte a la rama en un solo paso:\ngit checkout -b nueva-funcionalidad</code></pre>\n\n<h3>4. Fusionar (Merge): Integrando Cambios</h3>\n<p>Una vez que has terminado tu trabajo en una rama, querrás integrar esos cambios de vuelta a tu rama principal (<code>main</code>).</p>\n<pre><code class="language-shell"># 1. Primero, vuelve a tu rama principal\ngit checkout main\n\n# 2. Luego, fusiona los cambios de la otra rama en main\ngit merge nueva-funcionalidad</code></pre>\n<p>Git intentará combinar los cambios automáticamente. A veces, si dos personas han modificado la misma línea de un archivo, ocurrirá un "conflicto de merge", que tendrás que resolver manualmente.</p>\n\n<h3>5. Trabajando con GitHub: `push`</h3>\n<p>Hasta ahora, todos tus commits y ramas están solo en tu máquina. Para subirlos a tu repositorio remoto en GitHub, usas <code>git push</code>.</p>\n<pre><code class="language-shell"># Sube tu rama \'main\' al remoto llamado \'origin\'\ngit push origin main\n\n# Si estás subiendo una rama nueva por primera vez\ngit push --set-upstream origin nueva-funcionalidad</code></pre>\n<p><code>origin</code> es el nombre por defecto que Git le da al repositorio remoto desde el que clonaste. Ahora tus cambios están seguros en la nube y disponibles para tus colaboradores.</p>\n<hr/>\n<h3>Recursos Complementarios</h3>\n<h4>Videos Recomendados</h4>\n<ul>\n    <li><strong>(Español) Git y GitHub - Curso práctico para principiantes</strong> - Un curso práctico de MoureDev: <a href="https://www.youtube.com/watch?v=mBYSUbws4IQ" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>\n</ul>\n<h4>Herramientas Interactivas</h4>\n<ul>\n    <li><strong>Learn Git Branching:</strong> Una herramienta visual e interactiva para aprender los comandos de Git, especialmente el manejo de ramas: <a href="https://learngitbranching.js.org/?locale=es_ES" target="_blank" rel="noopener noreferrer">Empezar a aprender</a></li>\n</ul>',
         duration: 60,
       },
     ],
     project: {
       title: 'Página de perfil personal',
-      description: 'Crea tu propia página de perfil usando HTML y CSS, y súbela a un repositorio de GitHub.',
+      description:
+        'Crea tu propia página de perfil usando HTML y CSS, y súbela a un repositorio de GitHub.',
     },
     quizId: 'quiz_1',
   },
   {
     id: '2',
     title: 'MÓDULO 2: JavaScript a Profundidad',
-    objective: 'Dominar JavaScript, su asincronismo y sus paradigmas para resolver problemas complejos.',
+    objective:
+      'Dominar JavaScript, su asincronismo y sus paradigmas para resolver problemas complejos.',
     classes: [
-        {
-          id: '2.1', 
-          title: 'Tipos, Coerción y Comparaciones Estrictas', 
-          content: `<h2>La Verdad sobre JavaScript: Tipos, Coerción y Comparaciones</h2>
-<p>JavaScript es un lenguaje de "tipado dinámico", lo que significa que no tienes que declarar el tipo de una variable. Esto ofrece flexibilidad, pero también es una fuente común de errores si no se entienden los conceptos de <strong>coerción de tipo</strong> y <strong>comparación estricta</strong>.</p>
-
-<h3>1. El Sistema de Tipos de JavaScript</h3>
-<p>Los tipos primitivos son la base:</p>
-<ul>
-    <li><strong>String:</strong> <code>"hola"</code></li>
-    <li><strong>Number:</strong> <code>42</code>, <code>3.14</code> (no hay distinción entre enteros y flotantes)</li>
-    <li><strong>Boolean:</strong> <code>true</code>, <code>false</code></li>
-    <li><strong>null:</strong> Un valor asignado que significa "sin valor". Es un objeto (un error histórico, pero así funciona).</li>
-    <li><strong>undefined:</strong> Una variable que no ha sido asignada.</li>
-    <li><strong>Symbol:</strong> Un identificador único e inmutable.</li>
-    <li><strong>BigInt:</strong> Para números enteros más grandes de lo que <code>Number</code> puede manejar.</li>
-</ul>
-<p>Y luego tenemos los <strong>Objetos</strong>, que son colecciones de propiedades (incluyendo funciones, que son objetos de primera clase).</p>
-<pre><code class="language-javascript">console.log(typeof 42);         // "number"
-console.log(typeof "Alberto");  // "string"
-console.log(typeof true);       // "boolean"
-console.log(typeof undefined);  // "undefined"
-console.log(typeof null);       // "object" (¡la trampa!)
-console.log(typeof {});         // "object"
-</code></pre>
-
-<h3>2. Coerción de Tipo: La Conversión Automática</h3>
-<p>La coerción es la conversión automática de valores de un tipo de dato a otro. Ocurre cuando se usan operadores con valores de tipos diferentes. Es una de las características más potentes y peligrosas de JS.</p>
-<pre><code class="language-javascript">console.log(10 + "5"); // "105" (Number se convierte a String)
-console.log(10 - "5"); // 5     (String se convierte a Number)
-console.log(10 * "5"); // 50    (String se convierte a Number)
-console.log(true + 1); // 2     (Boolean 'true' se convierte a 1)
-</code></pre>
-<p>Aunque a veces es útil, depender de la coerción implícita puede llevar a resultados inesperados y errores difíciles de depurar.</p>
-
-<h3>3. Comparaciones: El Doble vs. el Triple Igual</h3>
-<p>Aquí es donde la coerción causa más problemas. JavaScript tiene dos operadores de igualdad:</p>
-<h4><code>==</code> (Igualdad Débil o Abstracta)</h4>
-<p>Este operador <strong>permite la coerción de tipo</strong> antes de comparar. Intenta convertir los operandos a un tipo común antes de hacer la comparación.</p>
-<pre><code class="language-javascript">console.log(5 == "5");        // true (coerción)
-console.log(0 == false);      // true (coerción)
-console.log(null == undefined); // true (una regla especial del lenguaje)
-console.log("" == 0);         // true (coerción)
-</code></pre>
-<p><strong>Regla general: Evita usar <code>==</code> casi siempre.</strong> Las reglas de coerción son complejas y pueden ocultar errores en tu lógica.</p>
-
-<h4><code>===</code> (Igualdad Estricta)</h4>
-<p>Este operador es tu mejor amigo. Compara los valores <strong>sin permitir coerción de tipo</strong>. Si los tipos son diferentes, inmediatamente devuelve <code>false</code>.</p>
-<pre><code class="language-javascript">console.log(5 === "5");        // false (Number vs String)
-console.log(0 === false);      // false (Number vs Boolean)
-console.log(null === undefined); // false (tipos diferentes)
-</code></pre>
-<p><strong>Usa siempre la igualdad estricta (<code>===</code> y <code>!==</code>).</strong> Te forzará a ser explícito sobre los tipos con los que trabajas, resultando en un código más predecible, robusto y fácil de entender. Si necesitas convertir un tipo, hazlo tú mismo de forma explícita (p. ej., usando <code>Number(value)</code> o <code>String(value)</code>) en lugar de dejar que JS lo adivine por ti.</p>
-<hr/>
-<h3>Recursos Complementarios</h3>
-<h4>Videos Recomendados</h4>
-<ul>
-    <li><strong>(Inglés) JavaScript Showdown: == vs ===</strong> - Un video conciso y claro de Fireship: <a href="https://www.youtube.com/watch?v=s55t64Mma14" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
-</ul>
-<h4>Lecturas Oficiales</h4>
-<ul>
-    <li><strong>MDN Web Docs: Igualdad en JS</strong> - La guía definitiva sobre las comparaciones en JavaScript: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Equality_comparisons_and_sameness" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
-</ul>
-`,
-          duration: 60
-        },
-        { id: '2.2', title: 'El Contexto de `this` y Prototipos', content: `<h2>El Corazón de JavaScript: Prototipos y el Contexto 'this'</h2>
-<p>Para dominar realmente JavaScript, es crucial entender dos de sus conceptos más fundamentales y, a menudo, más confusos: el sistema de herencia basado en <strong>prototipos</strong> y la palabra clave contextual <strong><code>this</code></strong>.</p>
-
-<h3>1. Herencia Prototípica: La Cadena de Objetos</h3>
-<p>A diferencia de lenguajes como Java o C# que usan "clases", JavaScript utiliza un mecanismo llamado <strong>herencia prototípica</strong>. Cada objeto en JavaScript tiene una propiedad interna oculta (<code>[[Prototype]]</code>) que es una referencia (un "prototipo") a otro objeto. Cuando intentas acceder a una propiedad de un objeto, si el objeto no la tiene, JavaScript busca en su prototipo. Si el prototipo tampoco la tiene, busca en el prototipo del prototipo, y así sucesivamente, hasta llegar a un objeto cuyo prototipo es <code>null</code>. Esta secuencia se conoce como la <strong>cadena de prototipos (prototype chain)</strong>.</p>
-<p>Esto es increíblemente poderoso. Significa que puedes tener un objeto (p. ej., <code>animal</code>) con un método <code>respirar()</code>. Luego, puedes crear otro objeto (p. ej., <code>perro</code>) y establecer su prototipo como <code>animal</code>. Ahora, aunque <code>perro</code> no tenga definido el método <code>respirar()</code>, puedes llamar a <code>perro.respirar()</code> y JavaScript lo encontrará en la cadena de prototipos.</p>
-<pre><code class="language-javascript">const animal = {
-  respirar: function() {
-    console.log("Respirando...");
-  }
-};
-
-// Creamos un objeto 'perro' cuyo prototipo es 'animal'
-const perro = Object.create(animal);
-perro.ladrar = function() {
-  console.log("¡Guau!");
-};
-
-perro.ladrar();    // "¡Guau!" (propiedad propia de 'perro')
-perro.respirar();  // "Respirando..." (heredada de 'animal')
-</code></pre>
-<p>Las "clases" de JavaScript (introducidas en ES6 con la palabra clave <code>class</code>) son, en gran medida, "azúcar sintáctico" sobre este sistema de prototipos. Simplifican la sintaxis, pero por debajo, la herencia prototípica sigue siendo el motor.</p>
-
-<h3>2. El Contexto Dinámico: \`this\`</h3>
-<p>La palabra clave <code>this</code> es una de las características más incomprendidas de JavaScript porque su valor no se determina donde se escribe la función, sino <strong>cómo se llama a la función</strong>. Se refiere al "contexto de ejecución" de la función.</p>
-<p>Aquí están las reglas principales que determinan el valor de <code>this</code>:</p>
-<ol>
-    <li><strong>Llamada a Método (Method Invocation):</strong> Si una función se llama como una propiedad de un objeto, <code>this</code> se enlaza a ese objeto.</li>
-    <pre><code class="language-javascript">const persona = {
-  nombre: "Alberto",
-  saludar: function() {
-    console.log("Hola, soy " + this.nombre);
-  }
-};
-persona.saludar(); // this es 'persona'. Imprime "Hola, soy Alberto"
-</code></pre>
-
-    <li><strong>Llamada a Función Simple (Simple Function Invocation):</strong> Si una función se llama directamente (no como propiedad de un objeto), <code>this</code> se enlaza al objeto global (<code>window</code> en los navegadores) o es <code>undefined</code> en modo estricto ('use strict'). Este es el origen de muchos errores.</li>
-    <pre><code class="language-javascript">'use strict';
-function quienSoy() {
-  console.log(this);
-}
-quienSoy(); // undefined
-</code></pre>
-
-    <li><strong>Funciones de Flecha (Arrow Functions):</strong> ¡La excepción a la regla! Las funciones de flecha <strong>no tienen su propio <code>this</code></strong>. En su lugar, "heredan" el valor de <code>this</code> del contexto en el que fueron creadas. Esto las hace increíblemente útiles para callbacks y para evitar problemas con el contexto.</li>
-    <pre><code class="language-javascript">const miObjeto = {
-  valor: 42,
-  metodoNormal: function() {
-    setTimeout(function() {
-      // 'this' aquí es 'window' o undefined, ¡perdimos el contexto!
-      console.log(this.valor); // undefined
-    }, 1000);
-  },
-  metodoConFlecha: function() {
-    setTimeout(() => {
-      // La flecha hereda el 'this' de 'metodoConFlecha', que es 'miObjeto'
-      console.log(this.valor); // 42 ¡Funciona!
-    }, 1000);
-  }
-};
-miObjeto.metodoConFlecha();
-</code></pre>
-    <li><strong>Llamada Explícita (<code>.call</code>, <code>.apply</code>, <code>.bind</code>):</strong> Puedes forzar explícitamente el valor de <code>this</code> en una función usando estos métodos.</li>
-</ol>
-<p>Entender que <code>this</code> es dinámico y que las funciones de flecha se comportan de manera diferente es un salto cualitativo en tu habilidad para escribir JavaScript robusto y predecible.</p>
-<hr/>
-<h3>Recursos Complementarios</h3>
-<h4>Videos Recomendados</h4>
-<ul>
-    <li><strong>(Inglés) The JavaScript \`this\` keyword explained in 100 seconds</strong> - Video de Fireship: <a href="https://www.youtube.com/watch?v=gvicrj31JOM" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
-</ul>
-<h4>Lecturas Oficiales</h4>
-<ul>
-    <li><strong>MDN Web Docs: Herencia y la cadena de prototipos</strong>: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Inheritance_and_the_prototype_chain" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
-    <li><strong>MDN Web Docs: El operador \`this\`</strong>: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/this" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
-</ul>`, duration: 90 },
-        { id: '2.3', title: 'Asincronismo: Callbacks, Promesas y Async/Await', content: `<h2>Manejando el Tiempo: El Modelo Asíncrono de JavaScript</h2>
-<p>JavaScript en su núcleo es un lenguaje <strong>síncrono y de un solo hilo (single-threaded)</strong>. Esto significa que solo puede hacer una cosa a la vez. Si una tarea tarda mucho en completarse (como una petición a un servidor), bloquearía todo el programa. Para solucionar esto, JavaScript utiliza un <strong>modelo de concurrencia asíncrono</strong>, basado en un "event loop" (bucle de eventos).</p>
-
-<h3>1. El Problema: El Código Bloqueante</h3>
-<p>Imagina que pides datos a una API. Si el código fuera puramente síncrono, la interfaz de usuario se congelaría hasta que llegara la respuesta. No podrías hacer clic en botones ni interactuar con la página. El asincronismo nos permite iniciar una tarea de larga duración y continuar con otras cosas mientras esperamos que termine.</p>
-
-<h3>2. La Evolución del Asincronismo en JS</h3>
-
-<h4>Fase 1: Callbacks</h4>
-<p>La forma original de manejar operaciones asíncronas era a través de <strong>funciones de callback</strong>. Pasabas una función como argumento a otra función, y esta se "llamaba de vuelta" (called back) una vez que la tarea asíncrona había finalizado.</p>
-<pre><code class="language-javascript">function descargarDatos(url, callback) {
-  console.log("Iniciando descarga de " + url);
-  setTimeout(() => { // Simulamos una petición de red
-    const datos = "Estos son los datos";
-    callback(datos);
-  }, 2000);
-}
-
-descargarDatos("mi-api.com/datos", function(resultado) {
-  console.log("Descarga completada:", resultado);
-});
-
-console.log("Esta línea se ejecuta antes de que la descarga termine.");
-</code></pre>
-<p>El problema con los callbacks surge cuando necesitas encadenar varias operaciones asíncronas, una después de la otra. Esto lleva a una anidación profunda de funciones, conocida como el <strong>"Callback Hell"</strong> o "Pyramid of Doom", que es difícil de leer y mantener.</p>
-
-<h4>Fase 2: Promesas (Promises)</h4>
-<p>Las promesas (introducidas en ES6) son objetos que representan la eventual finalización (o fallo) de una operación asíncrona. Una promesa puede estar en uno de tres estados:</p>
-<ul>
-    <li><strong>Pending (Pendiente):</strong> El estado inicial; la operación aún no ha terminado.</li>
-    <li><strong>Fulfilled (Cumplida):</strong> La operación se completó con éxito.</li>
-    <li><strong>Rejected (Rechazada):</strong> La operación falló.</li>
-</ul>
-<p>Las promesas nos permiten encadenar operaciones asíncronas de una manera mucho más limpia usando los métodos <code>.then()</code> (para el éxito) y <code>.catch()</code> (para el error).</p>
-<pre><code class="language-javascript">function descargarDatosConPromesa(url) {
-  return new Promise((resolve, reject) => {
-    console.log("Iniciando descarga con promesa...");
-    setTimeout(() => {
-      const exito = true; // Simular éxito o fracaso
-      if (exito) {
-        resolve("Datos descargados exitosamente");
-      } else {
-        reject("Error en la descarga");
-      }
-    }, 2000);
-  });
-}
-
-descargarDatosConPromesa("mi-api.com/datos")
-  .then(resultado => {
-    console.log("Éxito:", resultado);
-    return "Procesando " + resultado; // Puedes encadenar más .then
-  })
-  .then(nuevoResultado => {
-    console.log(nuevoResultado);
-  })
-  .catch(error => {
-    console.error("Fallo:", error);
-  });
-</code></pre>
-
-<h4>Fase 3: Async/Await</h4>
-<p><code>async/await</code> (introducido en ES2017) es "azúcar sintáctico" sobre las promesas. No introduce nueva funcionalidad, pero nos permite escribir código asíncrono que <strong>parece síncrono</strong>. Es la forma moderna y preferida de manejar el asincronismo.</p>
-<ul>
-    <li>La palabra clave <code>async</code> se pone antes de una función para declarar que es una función asíncrona. Estas funciones siempre devuelven una promesa implícitamente.</li>
-    <li>La palabra clave <code>await</code> se usa <strong>dentro</strong> de una función <code>async</code> para pausar la ejecución de la función y esperar a que una promesa se resuelva.</li>
-</ul>
-<pre><code class="language-javascript">async function gestionarDescarga() {
-  try {
-    console.log("Vamos a descargar los datos...");
-    const resultado = await descargarDatosConPromesa("mi-api.com/datos");
-    console.log("Éxito:", resultado);
-    const nuevoResultado = "Procesando " + resultado;
-    console.log(nuevoResultado);
-    console.log("Todo terminado.");
-  } catch (error) {
-    console.error("Fallo:", error);
-  }
-}
-
-gestionarDescarga();
-</code></pre>
-<p>Como puedes ver, el código con <code>async/await</code> es mucho más plano, legible y fácil de razonar, especialmente cuando se manejan errores con bloques <code>try...catch</code>. Entender esta evolución es clave para escribir aplicaciones web modernas y eficientes.</p>
-<hr/>
-<h3>Recursos Complementarios</h3>
-<h4>Videos Recomendados</h4>
-<ul>
-    <li><strong>(Español) La GUÍA DEFINITIVA sobre ASINCRONÍA en JAVASCRIPT</strong> - Un video muy completo de La Cocina del Código: <a href="https://www.youtube.com/watch?v=SPv-Sj1p2wA" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
-</ul>
-<h4>Lecturas Oficiales</h4>
-<ul>
-    <li><strong>MDN Web Docs: JavaScript Asíncrono</strong> - La guía de referencia de MDN sobre este tema: <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Asynchronous" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
-</ul>`, duration: 90 },
-        { id: '2.4', title: 'Gestión de Errores y Depuración', content: `<h2>El Arte de la Resiliencia: Gestión de Errores y Depuración</h2>
-<p>Escribir código que funciona cuando todo va bien es solo la mitad del trabajo. Un desarrollador profesional se distingue por su habilidad para anticipar, manejar y corregir errores. Un programa robusto no es aquel que nunca falla, sino aquel que falla de manera predecible y controlada.</p>
-
-<h3>1. Tipos de Errores</h3>
-<p>En JavaScript, podemos clasificar los errores en varias categorías:</p>
-<ul>
-    <li><strong>Errores de Sintaxis (Syntax Errors):</strong> Ocurren cuando escribes código que no sigue las reglas gramaticales de JavaScript. El intérprete ni siquiera puede empezar a ejecutar el código. Por ejemplo, olvidar una llave de cierre <code>}</code>.</li>
-    <li><strong>Errores en Tiempo de Ejecución (Runtime Errors):</strong> Ocurren mientras el código se está ejecutando. El código es sintácticamente válido, pero sucede algo inesperado. Por ejemplo, intentar llamar a un método en una variable <code>null</code> (p. ej., <code>null.toString()</code>).</li>
-    <li><strong>Errores de Lógica (Logic Errors):</strong> Son los más difíciles de encontrar. El código es válido y se ejecuta sin fallar, pero no produce el resultado esperado. Por ejemplo, un cálculo incorrecto en un carrito de la compra.</li>
-</ul>
-
-<h3>2. Gestión de Errores en Tiempo de Ejecución: \`try...catch...finally\`</h3>
-<p>Para manejar los errores que pueden ocurrir en tiempo de ejecución (como una respuesta fallida de una API), usamos el bloque <strong><code>try...catch</code></strong>.</p>
-<ul>
-    <li><strong><code>try</code>:</strong> Envuelves el código que sospechas que podría lanzar un error dentro de este bloque.</li>
-    <li><strong><code>catch</code>:</strong> Si se produce un error dentro del bloque <code>try</code>, la ejecución salta inmediatamente a este bloque, pasándole un objeto de error con información sobre lo que salió mal.</li>
-    <li><strong><code>finally</code>:</strong> Este bloque (opcional) se ejecuta siempre, sin importar si hubo un error o no. Es perfecto para tareas de "limpieza", como cerrar una conexión o quitar un indicador de carga.</li>
-</ul>
-<pre><code class="language-javascript">async function obtenerDatosDeUsuario(id) {
-  try {
-    console.log("Intentando obtener datos...");
-    const respuesta = await fetch(\`https://api.example.com/users/\${id}\`);
-
-    if (!respuesta.ok) {
-      // Lanzamos un error manualmente para ser capturado por el catch
-      throw new Error(\`Error de red: \${respuesta.status}\`);
-    }
-
-    const datos = await respuesta.json();
-    console.log("Datos obtenidos:", datos);
-    return datos;
-  } catch (error) {
-    console.error("Ha ocurrido un problema:", error.message);
-    // Aquí podríamos mostrar un mensaje de error al usuario
-  } finally {
-    console.log("La operación ha finalizado (con o sin éxito).");
-  }
-}
-</code></pre>
-<p>La palabra clave <code>throw</code> te permite crear y lanzar tus propios errores personalizados.</p>
-
-<h3>3. Depuración (Debugging): El Trabajo de Detective</h3>
-<p>La depuración es el proceso de encontrar y corregir errores, especialmente los de lógica. Las herramientas del desarrollador de tu navegador son tu mejor aliado.</p>
-<h4>La Consola (<code>console</code>)</h4>
-<p>Ya la has estado usando. Es más que solo <code>console.log()</code>. Puedes usar:</p>
-<ul>
-    <li><code>console.error('Mensaje de error')</code>: Para errores.</li>
-    <li><code>console.warn('Advertencia')</code>: Para advertencias.</li>
-    <li><code>console.table(miArrayDeObjetos)</code>: Para mostrar datos tabulares de forma legible.</li>
-</ul>
-
-<h4>El Depurador (Debugger)</h4>
-<p>Es la herramienta más potente. Te permite pausar la ejecución de tu código en puntos específicos y examinar el estado de tu programa línea por línea.</p>
-<ol>
-    <li><strong>Breakpoints (Puntos de Ruptura):</strong> Puedes establecer un breakpoint haciendo clic en el número de línea en la pestaña "Sources" (Fuentes) de las herramientas del desarrollador. Cuando el código llegue a esa línea, la ejecución se detendrá.</li>
-    <li><strong>Inspección de Variables:</strong> Una vez pausado, puedes pasar el ratón por encima de cualquier variable en tu código para ver su valor actual. También puedes ver todas las variables accesibles en el panel "Scope".</li>
-    <li><strong>Control de Flujo:</strong> Puedes avanzar a la siguiente línea (step over), entrar en una función que se está llamando (step into), o continuar la ejecución hasta el siguiente breakpoint.</li>
-</ol>
-<p>Aprender a usar el depurador de manera efectiva te ahorrará incontables horas de frustración. En lugar de llenar tu código de <code>console.log</code>, puedes detener el tiempo y ver exactamente qué está pasando.</p>
-<hr/>
-<h3>Recursos Complementarios</h3>
-<h4>Videos Recomendados</h4>
-<ul>
-    <li><strong>(Español) Cómo DEPURAR CÓDIGO JavaScript</strong> - Guía práctica de La Cocina del Código: <a href="https://www.youtube.com/watch?v=F0sA2vD0A0s" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li>
-</ul>
-<h4>Lecturas Oficiales</h4>
-<ul>
-    <li><strong>MDN Web Docs: try...catch</strong>: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/try...catch" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
-    <li><strong>MDN Web Docs: Depuración de JavaScript en el navegador</strong>: <a href="https://developer.mozilla.org/es/docs/Learn/Common_questions/Tools_and_setup/What_are_browser_developer_tools#el_depurador_de_javascript" target="_blank" rel="noopener noreferrer">Leer artículo</a></li>
-</ul>`, duration: 75 },
+      {
+        id: '2.1',
+        title: 'Variables, tipos de datos y operadores',
+        content:
+          '<h2>La Verdad sobre JavaScript: Tipos, Coerción y Comparaciones</h2><p>JavaScript es un lenguaje de "tipado dinámico", lo que significa que no tienes que declarar el tipo de una variable. Esto ofrece flexibilidad, pero también es una fuente común de errores si no se entienden los conceptos de <strong>coerción de tipo</strong> y <strong>comparación estricta</strong>.</p><h3>1. El Sistema de Tipos de JavaScript</h3><p>Los tipos primitivos son la base:</p><ul><li><strong>String:</strong> <code>"hola"</code></li><li><strong>Number:</strong> <code>42</code>, <code>3.14</code> (no hay distinción entre enteros y flotantes)</li><li><strong>Boolean:</strong> <code>true</code>, <code>false</code></li><li><strong>null:</strong> Un valor asignado que significa "sin valor". Es un objeto (un error histórico, pero así funciona).</li><li><strong>undefined:</strong> Una variable que no ha sido asignada.</li><li><strong>Symbol:</strong> Un identificador único e inmutable.</li><li><strong>BigInt:</strong> Para números enteros más grandes de lo que <code>Number</code> puede manejar.</li></ul><p>Y luego tenemos los <strong>Objetos</strong>, que son colecciones de propiedades (incluyendo funciones, que son objetos de primera clase).</p><pre><code class="language-javascript">console.log(typeof 42);         // "number"\nconsole.log(typeof "Alberto");  // "string"\nconsole.log(typeof true);       // "boolean"\nconsole.log(typeof undefined);  // "undefined"\nconsole.log(typeof null);       // "object" (¡la trampa!)\nconsole.log(typeof {});         // "object"\n</code></pre><h3>2. Coerción de Tipo: La Conversión Automática</h3><p>La coerción es la conversión automática de valores de un tipo de dato a otro. Ocurre cuando se usan operadores con valores de tipos diferentes. Es una de las características más potentes y peligrosas de JS.</p><pre><code class="language-javascript">console.log(10 + "5"); // "105" (Number se convierte a String)\nconsole.log(10 - "5"); // 5     (String se convierte a Number)\nconsole.log(10 * "5"); // 50    (String se convierte a Number)\nconsole.log(true + 1); // 2     (Boolean \'true\' se convierte a 1)\n</code></pre><p>Aunque a veces es útil, depender de la coerción implícita puede llevar a resultados inesperados y errores difíciles de depurar.</p><h3>3. Comparaciones: El Doble vs. el Triple Igual</h3><p>Aquí es donde la coerción causa más problemas. JavaScript tiene dos operadores de igualdad:</p><h4><code>==</code> (Igualdad Débil o Abstracta)</h4><p>Este operador <strong>permite la coerción de tipo</strong> antes de comparar. Intenta convertir los operandos a un tipo común antes de hacer la comparación.</p><pre><code class="language-javascript">console.log(5 == "5");        // true (coerción)\nconsole.log(0 == false);      // true (coerción)\nconsole.log(null == undefined); // true (una regla especial del lenguaje)\nconsole.log("" == 0);         // true (coerción)\n</code></pre><p><strong>Regla general: Evita usar <code>==</code> casi siempre.</strong> Las reglas de coerción son complejas y pueden ocultar errores en tu lógica.</p><h4><code>===</code> (Igualdad Estricta)</h4><p>Este operador es tu mejor amigo. Compara los valores <strong>sin permitir coerción de tipo</strong>. Si los tipos son diferentes, inmediatamente devuelve <code>false</code>.</p><pre><code class="language-javascript">console.log(5 === "5");        // false (Number vs String)\nconsole.log(0 === false);      // false (Number vs Boolean)\nconsole.log(null === undefined); // false (tipos diferentes)\n</code></pre><p><strong>Usa siempre la igualdad estricta (<code>===</code> y <code>!==</code>).</strong> Te forzará a ser explícito sobre los tipos con los que trabajas, resultando en un código más predecible, robusto y fácil de entender. Si necesitas convertir un tipo, hazlo tú mismo de forma explícita (p. ej., usando <code>Number(value)</code> o <code>String(value)</code>) en lugar de dejar que JS lo adivine por ti.</p><hr/><h3>Recursos Complementarios</h3><h4>Videos Recomendados</h4><ul><li><strong>(Inglés) JavaScript Showdown: == vs ===</strong> - Un video conciso y claro de Fireship: <a href="https://www.youtube.com/watch?v=s55t64Mma14" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li></ul><h4>Lecturas Oficiales</h4><ul><li><strong>MDN Web Docs: Igualdad en JS</strong> - La guía definitiva sobre las comparaciones en JavaScript: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Equality_comparisons_and_sameness" target="_blank" rel="noopener noreferrer">Leer artículo</a></li></ul>',
+        duration: 60,
+      },
+      {
+        id: '2.2',
+        title: 'El Contexto de `this` y Prototipos',
+        content:
+          '<h2>El Corazón de JavaScript: Prototipos y el Contexto \'this\'</h2><p>Para dominar realmente JavaScript, es crucial entender dos de sus conceptos más fundamentales y, a menudo, más confusos: el sistema de herencia basado en <strong>prototipos</strong> y la palabra clave contextual <strong><code>this</code></strong>.</p><h3>1. Herencia Prototípica: La Cadena de Objetos</h3><p>A diferencia de lenguajes como Java o C# que usan "clases", JavaScript utiliza un mecanismo llamado <strong>herencia prototípica</strong>. Cada objeto en JavaScript tiene una propiedad interna oculta (<code>[[Prototype]]</code>) que es una referencia (un "prototipo") a otro objeto. Cuando intentas acceder a una propiedad de un objeto, si el objeto no la tiene, JavaScript busca en su prototipo. Si el prototipo tampoco la tiene, busca en el prototipo del prototipo, y así sucesivamente, hasta llegar a un objeto cuyo prototipo es <code>null</code>. Esta secuencia se conoce como la <strong>cadena de prototipos (prototype chain)</strong>.</p><p>Esto es increíblemente poderoso. Significa que puedes tener un objeto (p. ej., <code>animal</code>) con un método <code>respirar()</code>. Luego, puedes crear otro objeto (p. ej., <code>perro</code>) y establecer su prototipo como <code>animal</code>. Ahora, aunque <code>perro</code> no tenga definido el método <code>respirar()</code>, puedes llamar a <code>perro.respirar()</code> y JavaScript lo encontrará en la cadena de prototipos.</p><pre><code class="language-javascript">const animal = {\n  respirar: function() {\n    console.log("Respirando...");\n  }\n};\n\n// Creamos un objeto \'perro\' cuyo prototipo es \'animal\'\nconst perro = Object.create(animal);\nperro.ladrar = function() {\n  console.log("¡Guau!");\n};\n\nperro.ladrar();    // "¡Guau!" (propiedad propia de \'perro\')\nperro.respirar();  // "Respirando..." (heredada de \'animal\')\n</code></pre><p>Las "clases" de JavaScript (introducidas en ES6 con la palabra clave <code>class</code>) son, en gran medida, "azúcar sintáctico" sobre este sistema de prototipos. Simplifican la sintaxis, pero por debajo, la herencia prototípica sigue siendo el motor.</p><h3>2. El Contexto Dinámico: `this`</h3><p>La palabra clave <code>this</code> es una de las características más incomprendidas de JavaScript porque su valor no se determina donde se escribe la función, sino <strong>cómo se llama a la función</strong>. Se refiere al "contexto de ejecución" de la función.</p><p>Aquí están las reglas principales que determinan el valor de <code>this</code>:</p><ol>    <li><strong>Llamada a Método (Method Invocation):</strong> Si una función se llama como una propiedad de un objeto, <code>this</code> se enlaza a ese objeto.</li>    <pre><code class="language-javascript">const persona = {\n  nombre: "Alberto",\n  saludar: function() {\n    console.log("Hola, soy " + this.nombre);\n  }\n};\npersona.saludar(); // this es \'persona\'. Imprime "Hola, soy Alberto"\n</code></pre>    <li><strong>Llamada a Función Simple (Simple Function Invocation):</strong> Si una función se llama directamente (no como propiedad de un objeto), <code>this</code> se enlaza al objeto global (<code>window</code> en los navegadores) o es <code>undefined</code> en modo estricto (\'use strict\'). Este es el origen de muchos errores.</li>    <pre><code class="language-javascript">\'use strict\';\nfunction quienSoy() {\n  console.log(this);\n}\nquienSoy(); // undefined\n</code></pre>    <li><strong>Funciones de Flecha (Arrow Functions):</strong> ¡La excepción a la regla! Las funciones de flecha <strong>no tienen su propio <code>this</code></strong>. En su lugar, "heredan" el valor de <code>this</code> del contexto en el que fueron creadas. Esto las hace increíblemente útiles para callbacks y para evitar problemas con el contexto.</li>    <pre><code class="language-javascript">const miObjeto = {\n  valor: 42,\n  metodoNormal: function() {\n    setTimeout(function() {\n      // \'this\' aquí es \'window\' o undefined, ¡perdimos el contexto!\n      console.log(this.valor); // undefined\n    }, 1000);\n  },\n  metodoConFlecha: function() {\n    setTimeout(() => {\n      // La flecha hereda el \'this\' de \'metodoConFlecha\', que es \'miObjeto\'\n      console.log(this.valor); // 42 ¡Funciona!\n    }, 1000);\n  }\n};\nmiObjeto.metodoConFlecha();\n</code></pre>    <li><strong>Llamada Explícita (<code>.call</code>, <code>.apply</code>, <code>.bind</code>):</strong> Puedes forzar explícitamente el valor de <code>this</code> en una función usando estos métodos.</li></ol><p>Entender que <code>this</code> es dinámico y que las funciones de flecha se comportan de manera diferente es un salto cualitativo en tu habilidad para escribir JavaScript robusto y predecible.</p><hr/><h3>Recursos Complementarios</h3><h4>Videos Recomendados</h4><ul><li><strong>(Inglés) The JavaScript `this` keyword explained in 100 seconds</strong> - Video de Fireship: <a href="https://www.youtube.com/watch?v=gvicrj31JOM" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li></ul><h4>Lecturas Oficiales</h4><ul><li><strong>MDN Web Docs: Herencia y la cadena de prototipos</strong>: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Inheritance_and_the_prototype_chain" target="_blank" rel="noopener noreferrer">Leer artículo</a></li><li><strong>MDN Web Docs: El operador `this`</strong>: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/this" target="_blank" rel="noopener noreferrer">Leer artículo</a></li></ul>',
+        duration: 90,
+      },
+      {
+        id: '2.3',
+        title: 'Asincronismo: Callbacks, Promesas y Async/Await',
+        content:
+          '<h2>Manejando el Tiempo: El Modelo Asíncrono de JavaScript</h2><p>JavaScript en su núcleo es un lenguaje <strong>síncrono y de un solo hilo (single-threaded)</strong>. Esto significa que solo puede hacer una cosa a la vez. Si una tarea tarda mucho en completarse (como una petición a un servidor), bloquearía todo el programa. Para solucionar esto, JavaScript utiliza un <strong>modelo de concurrencia asíncrono</strong>, basado en un "event loop" (bucle de eventos).</p><h3>1. El Problema: El Código Bloqueante</h3><p>Imagina que pides datos a una API. Si el código fuera puramente síncrono, la interfaz de usuario se congelaría hasta que llegara la respuesta. No podrías hacer clic en botones ni interactuar con la página. El asincronismo nos permite iniciar una tarea de larga duración y continuar con otras cosas mientras esperamos que termine.</p><h3>2. La Evolución del Asincronismo en JS</h3><h4>Fase 1: Callbacks</h4><p>La forma original de manejar operaciones asíncronas era a través de <strong>funciones de callback</strong>. Pasabas una función como argumento a otra función, y esta se "llamaba de vuelta" (called back) una vez que la tarea asíncrona había finalizado.</p><pre><code class="language-javascript">function descargarDatos(url, callback) {\n  console.log("Iniciando descarga de " + url);\n  setTimeout(() => { // Simulamos una petición de red\n    const datos = "Estos son los datos";\n    callback(datos);\n  }, 2000);\n}\n\ndescargarDatos("mi-api.com/datos", function(resultado) {\n  console.log("Descarga completada:", resultado);\n});\n\nconsole.log("Esta línea se ejecuta antes de que la descarga termine.");\n</code></pre><p>El problema con los callbacks surge cuando necesitas encadenar varias operaciones asíncronas, una después de la otra. Esto lleva a una anidación profunda de funciones, conocida como el <strong>"Callback Hell"</strong> o "Pyramid of Doom", que es difícil de leer y mantener.</p><h4>Fase 2: Promesas (Promises)</h4><p>Las promesas (introducidas en ES6) son objetos que representan la eventual finalización (o fallo) de una operación asíncrona. Una promesa puede estar en uno de tres estados:</p><ul>    <li><strong>Pending (Pendiente):</strong> El estado inicial; la operación aún no ha terminado.</li>    <li><strong>Fulfilled (Cumplida):</strong> La operación se completó con éxito.</li>    <li><strong>Rejected (Rechazada):</strong> La operación falló.</li></ul><p>Las promesas nos permiten encadenar operaciones asíncronas de una manera mucho más limpia usando los métodos <code>.then()</code> (para el éxito) y <code>.catch()</code> (para el error).</p><pre><code class="language-javascript">function descargarDatosConPromesa(url) {\n  return new Promise((resolve, reject) => {\n    console.log("Iniciando descarga con promesa...");\n    setTimeout(() => {\n      const exito = true; // Simular éxito o fracaso\n      if (exito) {\n        resolve("Datos descargados exitosamente");\n      } else {\n        reject("Error en la descarga");\n      }\n    }, 2000);\n  });\n}\n\ndescargarDatosConPromesa("mi-api.com/datos")\n  .then(resultado => {\n    console.log("Éxito:", resultado);\n    return "Procesando " + resultado; // Puedes encadenar más .then\n  })\n  .then(nuevoResultado => {\n    console.log(nuevoResultado);\n  })\n  .catch(error => {\n    console.error("Fallo:", error);\n  });\n</code></pre><h4>Fase 3: Async/Await</h4><p><code>async/await</code> (introducido en ES2017) es "azúcar sintáctico" sobre las promesas. No introduce nueva funcionalidad, pero nos permite escribir código asíncrono que <strong>parece síncrono</strong>. Es la forma moderna y preferida de manejar el asincronismo.</p><ul>    <li>La palabra clave <code>async</code> se pone antes de una función para declarar que es una función asíncrona. Estas funciones siempre devuelven una promesa implícitamente.</li>    <li>La palabra clave <code>await</code> se usa <strong>dentro</strong> de una función <code>async</code> para pausar la ejecución de la función y esperar a que una promesa se resuelva.</li></ul><pre><code class="language-javascript">async function gestionarDescarga() {\n  try {\n    console.log("Vamos a descargar los datos...");\n    const resultado = await descargarDatosConPromesa("mi-api.com/datos");\n    console.log("Éxito:", resultado);\n    const nuevoResultado = "Procesando " + resultado;\n    console.log(nuevoResultado);\n    console.log("Todo terminado.");\n  } catch (error) {\n    console.error("Fallo:", error);\n  }\n}\n\ngestionarDescarga();\n</code></pre><p>Como puedes ver, el código con <code>async/await</code> es mucho más plano, legible y fácil de razonar, especialmente cuando se manejan errores con bloques <code>try...catch</code>. Entender esta evolución es clave para escribir aplicaciones web modernas y eficientes.</p><hr/><h3>Recursos Complementarios</h3><h4>Videos Recomendados</h4><ul><li><strong>(Español) La GUÍA DEFINITIVA sobre ASINCRONÍA en JAVASCRIPT</strong> - Un video muy completo de La Cocina del Código: <a href="https://www.youtube.com/watch?v=SPv-Sj1p2wA" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li></ul><h4>Lecturas Oficiales</h4><ul><li><strong>MDN Web Docs: JavaScript Asíncrono</strong> - La guía de referencia de MDN sobre este tema: <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Asynchronous" target="_blank" rel="noopener noreferrer">Leer artículo</a></li></ul>',
+        duration: 90,
+      },
+      {
+        id: '2.4',
+        title: 'Gestión de Errores y Depuración',
+        content:
+          '<h2>El Arte de la Resiliencia: Gestión de Errores y Depuración</h2><p>Escribir código que funciona cuando todo va bien es solo la mitad del trabajo. Un desarrollador profesional se distingue por su habilidad para anticipar, manejar y corregir errores. Un programa robusto no es aquel que nunca falla, sino aquel que falla de manera predecible y controlada.</p><h3>1. Tipos de Errores</h3><p>En JavaScript, podemos clasificar los errores en varias categorías:</p><ul>    <li><strong>Errores de Sintaxis (Syntax Errors):</strong> Ocurren cuando escribes código que no sigue las reglas gramaticales de JavaScript. El intérprete ni siquiera puede empezar a ejecutar el código. Por ejemplo, olvidar una llave de cierre <code>}</code>.</li>    <li><strong>Errores en Tiempo de Ejecución (Runtime Errors):</strong> Ocurren mientras el código se está ejecutando. El código es sintácticamente válido, pero sucede algo inesperado. Por ejemplo, intentar llamar a un método en una variable <code>null</code> (p. ej., <code>null.toString()</code>).</li>    <li><strong>Errores de Lógica (Logic Errors):</strong> Son los más difíciles de encontrar. El código es válido y se ejecuta sin fallar, pero no produce el resultado esperado. Por ejemplo, un cálculo incorrecto en un carrito de la compra.</li></ul><h3>2. Gestión de Errores en Tiempo de Ejecución: `try...catch...finally`</h3><p>Para manejar los errores que pueden ocurrir en tiempo de ejecución (como una respuesta fallida de una API), usamos el bloque <strong><code>try...catch</code></strong>.</p><ul>    <li><strong><code>try</code>:</strong> Envuelves el código que sospechas que podría lanzar un error dentro de este bloque.</li>    <li><strong><code>catch</code>:</strong> Si se produce un error dentro del bloque <code>try</code>, la ejecución salta inmediatamente a este bloque, pasándole un objeto de error con información sobre lo que salió mal.</li>    <li><strong><code>finally</code>:</strong> Este bloque (opcional) se ejecuta siempre, sin importar si hubo un error o no. Es perfecto para tareas de "limpieza", como cerrar una conexión o quitar un indicador de carga.</li></ul><pre><code class="language-javascript">async function obtenerDatosDeUsuario(id) {\n  try {\n    console.log("Intentando obtener datos...");\n    const respuesta = await fetch(`https://api.example.com/users/${id}`);\n\n    if (!respuesta.ok) {\n      // Lanzamos un error manualmente para ser capturado por el catch\n      throw new Error(`Error de red: ${respuesta.status}`);\n    }\n\n    const datos = await respuesta.json();\n    console.log("Datos obtenidos:", datos);\n    return datos;\n  } catch (error) {\n    console.error("Ha ocurrido un problema:", error.message);\n    // Aquí podríamos mostrar un mensaje de error al usuario\n  } finally {\n    console.log("La operación ha finalizado (con o sin éxito).");\n  }\n}\n</code></pre><p>La palabra clave <code>throw</code> te permite crear y lanzar tus propios errores personalizados.</p><h3>3. Depuración (Debugging): El Trabajo de Detective</h3><p>La depuración es el proceso de encontrar y corregir errores, especialmente los de lógica. Las herramientas del desarrollador de tu navegador son tu mejor aliado.</p><h4>La Consola (<code>console</code>)</h4><p>Ya la has estado usando. Es más que solo <code>console.log()</code>. Puedes usar:</p><ul>    <li><code>console.error(\'Mensaje de error\')</code>: Para errores.</li>    <li><code>console.warn(\'Advertencia\')</code>: Para advertencias.</li>    <li><code>console.table(miArrayDeObjetos)</code>: Para mostrar datos tabulares de forma legible.</li></ul><h4>El Depurador (Debugger)</h4><p>Es la herramienta más potente. Te permite pausar la ejecución de tu código en puntos específicos y examinar el estado de tu programa línea por línea.</p><ol>    <li><strong>Breakpoints (Puntos de Ruptura):</strong> Puedes establecer un breakpoint haciendo clic en el número de línea en la pestaña "Sources" (Fuentes) de las herramientas del desarrollador. Cuando el código llegue a esa línea, la ejecución se detendrá.</li>    <li><strong>Inspección de Variables:</strong> Una vez pausado, puedes pasar el ratón por encima de cualquier variable en tu código para ver su valor actual. También puedes ver todas las variables accesibles en el panel "Scope".</li>    <li><strong>Control de Flujo:</strong> Puedes avanzar a la siguiente línea (step over), entrar en una función que se está llamando (step into), o continuar la ejecución hasta el siguiente breakpoint.</li></ol><p>Aprender a usar el depurador de manera efectiva te ahorrará incontables horas de frustración. En lugar de llenar tu código de <code>console.log</code>, puedes detener el tiempo y ver exactamente qué está pasando.</p><hr/><h3>Recursos Complementarios</h3><h4>Videos Recomendados</h4><ul><li><strong>(Español) Cómo DEPURAR CÓDIGO JavaScript</strong> - Guía práctica de La Cocina del Código: <a href="https://www.youtube.com/watch?v=F0sA2vD0A0s" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></li></ul><h4>Lecturas Oficiales</h4><ul><li><strong>MDN Web Docs: try...catch</strong>: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/try...catch" target="_blank" rel="noopener noreferrer">Leer artículo</a></li><li><strong>MDN Web Docs: Depuración de JavaScript en el navegador</strong>: <a href="https://developer.mozilla.org/es/docs/Learn/Common_questions/Tools_and_setup/What_are_browser_developer_tools#el_depurador_de_javascript" target="_blank" rel="noopener noreferrer">Leer artículo</a></li></ul>',
+        duration: 75,
+      },
     ],
     project: {
-        title: 'Aplicación de Tareas con API Externa',
-        description: 'Crea una ToDo List que obtiene y guarda sus datos de una API REST pública (como JSONPlaceholder), gestionando estados de carga y errores.'
+      title: 'Aplicación de Tareas con API Externa',
+      description:
+        'Crea una ToDo List que obtiene y guarda sus datos de una API REST pública (como JSONPlaceholder), gestionando estados de carga y errores.',
     },
-    quizId: 'quiz_2'
+    quizId: 'quiz_2',
   },
   {
     id: '3',
     title: 'MÓDULO 3: Desarrollo Front-End con Frameworks',
     objective: 'Aprender React y fundamentos de otros frameworks populares',
     classes: [
-        { id: '3.1', title: '¿Qué es un framework y por qué usar React?', content: 'Contenido sobre frameworks y React.', duration: 45 },
-        { id: '3.2', title: 'Componentes, props y JSX', content: 'Contenido sobre componentes y JSX en React.', duration: 90 },
-        { id: '3.3', title: 'State y ciclo de vida', content: 'Contenido sobre state y ciclo de vida en React.', duration: 90 },
-        { id: '3.4', title: 'React Router', content: 'Contenido sobre React Router.', duration: 75 },
-        { id: '3.5', title: 'Hooks (useState, useEffect, custom hooks)', content: 'Contenido sobre React Hooks.', duration: 120 },
-        { id: '3.6', title: 'Manejo de formularios y validaciones', content: 'Contenido sobre formularios en React.', duration: 90 },
-        { id: '3.7', title: 'Introducción a Vue.js', content: 'Contenido sobre Vue.js.', duration: 60 },
-        { id: '3.8', title: 'Introducción a Angular', content: 'Contenido sobre Angular.', duration: 60 },
+      {
+        id: '3.1',
+        title: '¿Qué es un framework y por qué usar React?',
+        content: 'Contenido sobre frameworks y React.',
+        duration: 45,
+      },
+      {
+        id: '3.2',
+        title: 'Componentes, props y JSX',
+        content: 'Contenido sobre componentes y JSX en React.',
+        duration: 90,
+      },
+      {
+        id: '3.3',
+        title: 'State y ciclo de vida',
+        content: 'Contenido sobre state y ciclo de vida en React.',
+        duration: 90,
+      },
+      {
+        id: '3.4',
+        title: 'React Router',
+        content: 'Contenido sobre React Router.',
+        duration: 75,
+      },
+      {
+        id: '3.5',
+        title: 'Hooks (useState, useEffect, custom hooks)',
+        content: 'Contenido sobre React Hooks.',
+        duration: 120,
+      },
+      {
+        id: '3.6',
+        title: 'Manejo de formularios y validaciones',
+        content: 'Contenido sobre formularios en React.',
+        duration: 90,
+      },
+      {
+        id: '3.7',
+        title: 'Introducción a Vue.js',
+        content: 'Contenido sobre Vue.js.',
+        duration: 60,
+      },
+      {
+        id: '3.8',
+        title: 'Introducción a Angular',
+        content: 'Contenido sobre Angular.',
+        duration: 60,
+      },
     ],
     project: {
-        title: 'App de notas con React',
-        description: 'Desarrolla una aplicación de notas completa utilizando React, manejando estado, componentes y routing.'
+      title: 'App de notas con React',
+      description:
+        'Desarrolla una aplicación de notas completa utilizando React, manejando estado, componentes y routing.',
     },
-    quizId: 'quiz_3'
-  }
-]
-    
+    quizId: 'quiz_3',
+  },
+];
