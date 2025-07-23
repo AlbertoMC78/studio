@@ -80,7 +80,8 @@ export const courseData: CourseModule[] = [
       title: 'Página de perfil personal',
       description:
         'Crea tu propia página de perfil usando HTML y CSS, y súbela a un repositorio de GitHub.',
-    }
+    },
+    quizId: 'quiz_1',
   },
   {
     id: '2',
@@ -143,7 +144,7 @@ export const courseData: CourseModule[] = [
     },
     quizId: 'quiz_2',
   },
-   {
+  {
     id: '3',
     title: 'MÓDULO 3: Desarrollo Front-End con Frameworks',
     objective: 'Aprender React y fundamentos de otros frameworks populares',
@@ -169,31 +170,31 @@ export const courseData: CourseModule[] = [
       {
         id: '3.4',
         title: 'React Router',
-        content: '<h2>Navegando en Aplicaciones de Página Única (SPA)</h2><p>En una SPA, el enrutamiento del lado del cliente permite cambiar de "página" sin recargar todo el HTML. La librería más popular para esto en React es <strong>React Router</strong>.</p><h3>Conceptos Clave</h3><ul><li><strong><code>BrowserRouter</code>:</strong> Envuelve tu aplicación para habilitar el enrutamiento.</li><li><strong><code>Routes</code> y <code>Route</code>:</strong> Definen qué componente se debe renderizar para cada ruta (URL).</li><li><strong><code>Link</code>:</strong> Se usa en lugar de la etiqueta <code><a></code> para la navegación interna sin recargas de página.</li></ul><p><strong>Nota:</strong> Next.js (el framework que usamos) tiene su propio sistema de enrutamiento basado en archivos (App Router) que abstrae estos conceptos, pero entender React Router es fundamental en el ecosistema de React.</p>',
+        content: '<h2>Navegando en Aplicaciones de Página Única (SPA) con Next.js</h2>\n<p>En las aplicaciones web modernas, no queremos que la página se recargue completamente cada vez que el usuario navega a una nueva sección. Este concepto se llama <strong>Single Page Application (SPA)</strong>, y el proceso de cambiar las vistas sin recargar la página se conoce como <strong>enrutamiento del lado del cliente</strong>.</p>\n<h3>El Enrutamiento Basado en Archivos de Next.js</h3>\n<p>Mientras que en React puro se usa una librería como <code>react-router-dom</code>, <strong>Next.js integra su propio sistema de enrutamiento potente y optimizado</strong>, conocido como el <strong>App Router</strong>. Este sistema se basa en el sistema de archivos, lo que lo hace muy intuitivo:</p>\n<ul>\n    <li><strong>Las carpetas definen las rutas:</strong> Cada carpeta dentro del directorio <code>src/app/</code> se convierte en un segmento de la URL. Por ejemplo, <code>src/app/dashboard/settings/page.tsx</code> se accederá en <code>http://tuweb.com/dashboard/settings</code>.</li>\n    <li><strong>El archivo <code>page.tsx</code> es la UI:</strong> El componente de React exportado desde un archivo <code>page.tsx</code> es lo que se renderizará para esa ruta específica.</li>\n    <li><strong>El archivo <code>layout.tsx</code> define la UI compartida:</strong> Un layout es un componente que envuelve a varias páginas. Es perfecto para elementos comunes como la barra de navegación (<code>Sidebar</code>), el pie de página o cualquier estructura que se repita. El layout del directorio raíz (<code>src/app/layout.tsx</code>) aplica a toda la aplicación.</li>\n</ul>\n<h3>Navegación entre Páginas</h3>\n<p>Para navegar entre las rutas de tu aplicación sin una recarga completa, Next.js proporciona el componente <strong><code>&lt;Link&gt;</code></strong>. Debes usarlo siempre en lugar de la etiqueta <code>&lt;a&gt;</code> tradicional para la navegación interna.</p>\n<pre><code class="language-jsx">\nimport Link from "next/link";\n\nfunction Navegacion() {\n  return (\n    <nav>\n      <Link href="/">Inicio</Link>\n      <Link href="/dashboard">Ir al Dashboard</Link>\n    </nav>\n  );\n}\n</code></pre>\n<p>Next.js automáticamente pre-carga el código de la página enlazada cuando el componente <code>&lt;Link&gt;</code> aparece en la pantalla, haciendo que la navegación se sienta instantánea.</p>',
         duration: 60,
       },
       {
         id: '3.5',
         title: 'Hooks (useState, useEffect, custom hooks)',
-        content: '<h2>Enganchándose al Poder de React: Hooks</h2><p>Los <strong>Hooks</strong> son funciones que te permiten usar el estado y otras características de React en componentes de función.</p><ul><li><strong><code>useState</code>:</strong> Para declarar variables de estado.</li><li><strong><code>useEffect</code>:</strong> Para manejar "efectos secundarios" (operaciones que interactúan con el mundo exterior, como llamadas a APIs). Su segundo argumento, el array de dependencias, controla cuándo se ejecuta el efecto.</li></ul><h3>Custom Hooks</h3><p>Cuando repites lógica de estado y efectos en varios componentes, puedes extraerla a tu propia función (que debe empezar con `use`). Esto se llama un <strong>Hook personalizado</strong> y es una de las herramientas más potentes de React para escribir código limpio y reutilizable.</p>',
+        content: '<h2>Enganchándose al Poder de React: Hooks Esenciales</h2>\n<p>Los <strong>Hooks</strong> son funciones especiales que te permiten "engancharte" a las características de React desde tus componentes de función. Son la base del desarrollo moderno en React.</p>\n\n<h3>1. <code>useState</code>: La Memoria del Componente</h3>\n<p>Como ya vimos, <code>useState</code> es el hook que nos permite añadir estado (variables que persisten entre renderizados) a nuestros componentes. Es la piedra angular de la interactividad.</p>\n\n<h3>2. <code>useEffect</code>: Manejando Efectos Secundarios</h3>\n<p>Un componente React idealmente solo calcula y devuelve JSX. Cualquier otra acción que interactúe con el "mundo exterior" es un <strong>efecto secundario</strong>. Ejemplos comunes incluyen:</p>\n<ul>\n    <li>Realizar una petición a una API (<code>fetch</code>).</li>\n    <li>Manipular directamente el DOM (aunque debe evitarse en lo posible).</li>\n    <li>Establecer suscripciones (como a un temporizador con <code>setInterval</code>).</li>\n</ul>\n<p><code>useEffect</code> te permite ejecutar estos efectos después de que el componente se haya renderizado. Su sintaxis es: <code>useEffect(funcionDelEfecto, [dependencias])</code>.</p>\n<ul>\n    <li><strong>La función de efecto:</strong> Es el código que se ejecutará.</li>\n    <li><strong>El array de dependencias:</strong> Controla <em>cuándo</em> se vuelve a ejecutar el efecto. Si una de las variables en este array cambia entre renderizados, el efecto se ejecuta de nuevo. Si se deja vacío (<code>[]</code>), el efecto se ejecuta solo una vez, cuando el componente se "monta" (aparece por primera vez).</li>\n</ul>\n\n<h3>3. Hooks Personalizados (Custom Hooks): La Clave de la Reutilización</h3>\n<p>Cuando te encuentras repitiendo la misma lógica de estado y efectos (por ejemplo, lógica para hacer un fetch de datos, o para leer del Local Storage) en varios componentes, puedes extraer esa lógica a tu propia función. Si esa función utiliza otros hooks (como <code>useState</code> o <code>useEffect</code>), se convierte en un <strong>Hook Personalizado</strong>. Por convención, sus nombres siempre deben empezar con <code>use</code>.</p>\n<p>En nuestro proyecto, <code>useLocalStorage</code> es un ejemplo perfecto de un hook personalizado. Encapsula toda la lógica de leer y escribir en el almacenamiento local del navegador, permitiéndonos usarlo en cualquier componente con una sola línea de código.</p>\n<pre><code class="language-jsx">\n// En use-local-storage.ts (nuestro custom hook)\nexport function useLocalStorage(key, initialValue) {\n  const [storedValue, setStoredValue] = useState(...);\n  useEffect(...);\n  return [storedValue, setStoredValue];\n}\n\n// En cualquier componente\nfunction MiComponente() {\n  const [nombre, setNombre] = useLocalStorage("nombre", "Invitado");\n  // ...\n}\n</code></pre>',
         duration: 120,
       },
       {
         id: '3.6',
         title: 'Manejo de formularios y validaciones',
-        content: '<h2>La Interfaz entre Usuario y Aplicación: Formularios en React</h2><p>El patrón estándar para manejar formularios en React se llama <strong>componentes controlados</strong>. Esto significa que el estado del componente React es la "única fuente de verdad".</p><p>El valor de cada input se enlaza a una variable de estado, y su evento <code>onChange</code> se usa para actualizar esa variable de estado. Esto te da control total sobre los datos del formulario.</p><p>Para formularios complejos con validaciones, librerías como <strong>React Hook Form</strong> o <strong>Formik</strong> simplifican enormemente el proceso y optimizan el rendimiento.</p>',
+        content: '<h2>La Interfaz entre Usuario y Aplicación: Formularios en React</h2>\n<p>El patrón estándar y más robusto para manejar formularios en React se conoce como <strong>componentes controlados</strong>. Esto significa que el estado del componente React se convierte en la "única fuente de verdad" para los datos del formulario.</p>\n\n<h3>¿Cómo funciona?</h3>\n<ol>\n    <li>Se declara una variable de estado con <code>useState</code> para cada campo del formulario.</li>\n    <li>La prop <code>value</code> de cada input se enlaza directamente a su correspondiente variable de estado.</li>\n    <li>Se define una función manejadora (handler) para el evento <code>onChange</code> de cada input. Esta función se encarga de llamar a la función `set` del estado para actualizar el valor con cada pulsación de tecla (<code>e.target.value</code>).</li>\n</ol>\n\n<pre><code class="language-jsx">\nfunction FormularioSimple() {\n  const [nombre, setNombre] = useState("");\n\n  const handleSubmit = (e) => {\n    e.preventDefault(); // Previene la recarga de la página\n    alert(`Hola, ${nombre}`);\n  };\n\n  return (\n    <form onSubmit={handleSubmit}>\n      <label>Nombre:</label>\n      <input \n        type="text" \n        value={nombre} \n        onChange={(e) => setNombre(e.target.value)} \n      />\n      <button type="submit">Enviar</button>\n    </form>\n  );\n}\n</code></pre>\n\n<h3>Validación y Librerías</h3>\n<p>Manejar formularios más complejos con múltiples campos, validaciones y mensajes de error puede volverse tedioso. Para estos casos, la comunidad de React ha creado librerías excelentes que simplifican enormemente el proceso.</p>\n<p>En nuestro proyecto, utilizamos <strong>React Hook Form</strong> en conjunto con <strong>Zod</strong>:</p>\n<ul>\n    <li><strong>React Hook Form:</strong> Es una librería de alto rendimiento para la gestión de formularios. Optimiza los re-renderizados y simplifica el manejo del estado del formulario.</li>\n    <li><strong>Zod:</strong> Es una librería para la declaración y validación de esquemas de datos. Defines la "forma" que deben tener tus datos y Zod se encarga de validar que se cumpla, generando errores descriptivos.</li>\n</ul>\n<p>La combinación de ambas (a través del resolver <code>@hookform/resolvers/zod</code>) es una práctica profesional estándar para construir formularios robustos, seguros y fáciles de mantener.</p>',
         duration: 90,
       },
       {
         id: '3.7',
         title: 'Introducción a Vue.js',
-        content: '<h2>Una Alternativa Progresiva: Introducción a Vue.js</h2><p>Vue.js es otro framework de JavaScript extremadamente popular, conocido por su curva de aprendizaje más suave. Características principales:</p><ul><li><strong>Sintaxis Basada en Plantillas:</strong> Utiliza plantillas que se asemejan al HTML clásico.</li><li><strong>Reactividad:</strong> Su sistema de reactividad actualiza la UI automáticamente cuando los datos cambian, de forma muy eficiente.</li><li><strong>Componentes de un Solo Archivo (.vue):</strong> Encapsulan HTML, CSS y JavaScript en un único archivo.</li></ul>',
+        content: '<h2>Una Alternativa Progresiva: Introducción a Vue.js</h2><p>Vue.js es otro framework de JavaScript extremadamente popular, conocido por su curva de aprendizaje más suave y su excelente documentación. Características principales:</p><ul><li><strong>Sintaxis Basada en Plantillas:</strong> Utiliza plantillas que se asemejan al HTML clásico, lo que puede resultar muy familiar para desarrolladores que vienen de ese mundo.</li><li><strong>Reactividad:</strong> Su sistema de reactividad actualiza la UI automáticamente cuando los datos cambian, de forma muy eficiente.</li><li><strong>Componentes de un Solo Archivo (.vue):</strong> Encapsulan HTML, CSS y JavaScript en un único archivo, promoviendo una excelente organización.</li><li><strong>Progresivo:</strong> Puedes usar Vue para controlar solo una pequeña parte de una página existente o para construir una SPA completa desde cero.</li></ul>',
         duration: 60,
       },
       {
         id: '3.8',
         title: 'Introducción a Angular',
-        content: '<h2>El Framework Todo Incluido: Introducción a Angular</h2><p>Angular (de Google) es una "plataforma" completa para construir aplicaciones a gran escala. Características principales:</p><ul><li><strong>Basado en TypeScript:</strong> Impone el uso de TypeScript, aportando robustez.</li><li><strong>Arquitectura Opinada:</strong> Tiene una estructura muy definida (Módulos, Componentes, Servicios), ideal para equipos grandes.</li><li><strong>Inyección de Dependencias:</strong> Un patrón de diseño central que facilita la gestión y el testeo.</li></ul>',
+        content: '<h2>El Framework Todo Incluido: Introducción a Angular</h2><p>Angular (desarrollado y mantenido por Google) no es solo una librería, sino una "plataforma" completa y opinada para construir aplicaciones a gran escala y nivel empresarial. Características principales:</p><ul><li><strong>Basado en TypeScript:</strong> Impone el uso de TypeScript desde el principio, aportando robustez, autocompletado y detección temprana de errores.</li><li><strong>Arquitectura Opinada:</strong> Tiene una estructura muy definida (Módulos, Componentes, Servicios, Inyección de Dependencias), lo que es ideal para estandarizar el código en equipos grandes.</li><li><strong>Inyección de Dependencias:</strong> Un patrón de diseño central en el framework que facilita la gestión del código, su reutilización y, sobre todo, el testing.</li><li><strong>Ecosistema Completo:</strong> Angular viene con soluciones integradas para enrutamiento, cliente HTTP, gestión de formularios y más.</li></ul>',
         duration: 60,
       },
     ],
@@ -206,21 +207,34 @@ export const courseData: CourseModule[] = [
   },
   {
     id: '4',
-    title: 'MÓDULO 4: Desarrollo Back-End (Node.js, Express, Bases de Datos)',
-    objective: 'Crear servidores, APIs REST y manejar datos con MongoDB y PostgreSQL',
+    title: 'MÓDULO 4: Desarrollo Back-End con Next.js',
+    objective: 'Crear APIs, manejar datos y lógica de servidor directamente en Next.js',
     classes: [
-      { id: '4.1', title: 'Introducción al desarrollo back-end', content: '', duration: 60 },
-      { id: '4.2', title: 'Node.js: conceptos básicos y configuración', content: '', duration: 60 },
-      { id: '4.3', title: 'Express.js: creación de rutas y middlewares', content: '', duration: 90 },
-      { id: '4.4', title: 'Controladores y organización del proyecto', content: '', duration: 60 },
-      { id: '4.5', title: 'Bases de datos relacionales (PostgreSQL)', content: '', duration: 90 },
-      { id: '4.6', title: 'Bases de datos NoSQL (MongoDB)', content: '', duration: 90 },
-      { id: '4.7', title: 'Autenticación con JWT y Bcrypt', content: '', duration: 120 },
-      { id: '4.8', title: 'Consumo de APIs y testing básico', content: '', duration: 60 },
+      {
+        id: '4.1',
+        title: 'Introducción al desarrollo back-end en el Front-end',
+        content: '<h2>El Paradigma Full-Stack de Next.js</h2>\n<p>Tradicionalmente, el "back-end" era un servidor completamente separado, construido con tecnologías como Node.js/Express, Python/Django o Java/Spring. Su responsabilidad era manejar la lógica de negocio, la autenticación y la comunicación con la base de datos, exponiendo los datos a través de una API REST o GraphQL.</p>\n<p>Next.js, con la introducción del <strong>App Router</strong>, revoluciona este concepto. Permite escribir código de back-end directamente dentro de tu proyecto de React, difuminando las fronteras entre el front-end y el back-end.</p>\n<h3>Componentes de Servidor (Server Components)</h3>\n<p>Por defecto, todos los componentes en el App Router de Next.js son <strong>Componentes de Servidor</strong>. Esto significa que:</p>\n<ul>\n    <li>Se renderizan en el servidor, no en el navegador del cliente.</li>\n    <li>Pueden acceder directamente a recursos de back-end (como bases de datos o APIs internas) de forma segura, sin necesidad de una petición <code>fetch</code> explícita. ¡Tus claves de API y credenciales nunca se envían al cliente!</li>\n    <li>No se incluye su código JavaScript en el paquete que se envía al navegador, lo que resulta en páginas mucho más ligeras y rápidas.</li>\n    <li>No pueden usar estado (<code>useState</code>) ni efectos (<code>useEffect</code>), ya que no existen en el entorno del cliente.</li>\n</ul>\n<h3>Componentes de Cliente (Client Components)</h3>\n<p>Para añadir interactividad (manejar clics, estado, etc.), necesitas un <strong>Componente de Cliente</strong>. Para convertir un componente, simplemente añades la directiva <code>"use client";</code> al principio del archivo.</p>\n<p>Este modelo te permite construir aplicaciones increíblemente rápidas por defecto, y "optar por la interactividad" solo donde sea necesario.</p>',
+        duration: 60,
+      },
+      {
+        id: '4.2',
+        title: 'Route Handlers: Creando Endpoints de API',
+        content: '<h2>Tu API REST, directamente en Next.js: Route Handlers</h2>\n<p>Si bien los Server Components son excelentes para obtener datos para renderizar una página, a menudo necesitas crear endpoints de API tradicionales. Por ejemplo, para que tu aplicación móvil pueda consumir datos, para que un servicio de terceros te envíe un webhook, o para manejar envíos de formularios desde componentes de cliente.</p>\n<p>Para esto, Next.js ofrece los <strong>Route Handlers</strong>. Funcionan de una manera muy similar al enrutamiento de páginas:</p>\n<ol>\n    <li>Creas una carpeta para definir la ruta de tu API (ej: <code>src/app/api/users/</code>).</li>\n    <li>Dentro de esa carpeta, en lugar de un archivo <code>page.tsx</code>, creas un archivo <code>route.ts</code>.</li>\n    <li>Dentro de <code>route.ts</code>, exportas funciones asíncronas con nombres que corresponden a los métodos HTTP: <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code>, etc.</li>\n</ol>\n\n<pre><code class="language-typescript">\n// En: src/app/api/hello/route.ts\nimport { NextResponse } from \'next/server\';\n\nexport async function GET(request: Request) {\n  return NextResponse.json({ message: "Hola, Mundo!" });\n}\n</code></pre>\n<p>Ahora, si visitas <code>http://tuweb.com/api/hello</code> en tu navegador o realizas una petición GET desde cualquier cliente, recibirás la respuesta JSON. Estos Route Handlers se ejecutan exclusivamente en el servidor, por lo que puedes acceder a tu base de datos o a cualquier otro servicio de back-end de forma segura.</p>',
+        duration: 90,
+      },
+      {
+        id: '4.3',
+        title: 'Server Actions: Mutaciones de Datos Seguras',
+        content: '<h2>La Evolución de los Formularios: Server Actions</h2>\n<p>Las <strong>Server Actions</strong> son una de las características más potentes de React y Next.js. Permiten que los componentes de cliente (e incluso los de servidor) llamen directamente a funciones que se ejecutan de forma segura en el servidor. Son la forma recomendada para manejar mutaciones de datos (crear, actualizar, eliminar).</p>\n<h3>¿Cómo funcionan?</h3>\n<ol>\n    <li>Creas una función asíncrona en cualquier archivo y le añades la directiva <code>"use server";</code> al principio.</li>\n    <li>Esta función ahora puede ser importada y llamada directamente desde un evento como el <code>onSubmit</code> de un formulario o el <code>onClick</code> de un botón.</li>\n    <li>React y Next.js se encargan de toda la comunicación de red por debajo. No necesitas crear un Route Handler, ni hacer una petición <code>fetch</code>, ni manejar estados de carga manualmente.</li>\n</ol>\n<p>Las Server Actions simplifican enormemente el código para las mutaciones de datos, mejoran la seguridad al no exponer endpoints de API innecesariamente y proporcionan una experiencia de usuario optimista por defecto.</p>\n<pre><code class="language-typescript">\n// En un archivo (ej: src/app/actions.ts)\n"use server";\n\nexport async function createTask(formData: FormData) {\n  const taskName = formData.get("taskName") as string;\n  // ...lógica para guardar la tarea en la base de datos...\n}\n\n// En tu componente de cliente\nimport { createTask } from "./actions";\n\nexport function TaskForm() {\n  return (\n    <form action={createTask}>\n      <input type="text" name="taskName" />\n      <button type="submit">Crear Tarea</button>\n    </form>\n  );\n}\n</code></pre>',
+        duration: 90,
+      },
+      { id: '4.4', title: 'Conectando a Bases de Datos (Prisma)', content: '', duration: 120 },
+      { id: '4.5', title: 'Autenticación en Next.js (NextAuth.js)', content: '', duration: 120 },
+      { id: '4.6', title: 'Middleware: Modificando Peticiones', content: '', duration: 60 },
     ],
     project: {
-      title: 'API REST de tareas',
-      description: 'Crear una API REST completa para la aplicación de tareas, con endpoints para crear, leer, actualizar y eliminar tareas.',
+      title: 'API de Tareas con Route Handlers y Server Actions',
+      description: 'Crear los endpoints de API y las acciones de servidor para gestionar las tareas del proyecto ToDo List del módulo 2, pero esta vez del lado del servidor.',
     },
     quizId: 'quiz_4'
   },
@@ -242,7 +256,7 @@ export const courseData: CourseModule[] = [
     },
     quizId: 'quiz_5',
   },
-  {
+   {
     id: '6',
     title: 'MÓDULO 6: Proyecto Intermedio',
     objective: 'Construir una app completa full-stack y desplegarla',
@@ -250,8 +264,7 @@ export const courseData: CourseModule[] = [
     project: {
       title: 'Sistema de gestión de usuarios (CRUD, login, dashboard, etc.)',
       description: 'Entregable: Repositorio Git + Deploy en Render/Vercel + Documentación',
-    },
-    quizId: 'quiz_6',
+    }
   },
   {
     id: '7',
@@ -271,7 +284,7 @@ export const courseData: CourseModule[] = [
     },
     quizId: 'quiz_7',
   },
-  {
+   {
     id: '8',
     title: 'MÓDULO 8: Introducción a la Inteligencia Artificial',
     objective: 'Aplicar IA a productos web',
@@ -330,8 +343,7 @@ export const courseData: CourseModule[] = [
     project: {
       title: 'App full stack con IA o Web3 integrada',
       description: 'Incluye: diseño, frontend, backend, seguridad, deploy, documentación y defensa oral del proyecto.',
-    },
-    quizId: 'quiz_11',
+    }
   },
   {
     id: '12',
