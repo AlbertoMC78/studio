@@ -278,7 +278,7 @@ export const courseData: CourseModule[] = [
     classes: [],
     project: {
       title: 'Sistema de gestión de usuarios (CRUD, login, dashboard, etc.)',
-      description: 'Entregable: Repositorio Git + Deploy en Render/Vercel + Documentación',
+      description: 'Entregable: Repositorio Git + Deploy en Render/Vercel + Documentación.<br/><br/><strong>Criterios de Evaluación:</strong><ul><li><strong>Funcionalidad:</strong> Cumplimiento de todos los requisitos (CRUD, auth, rutas protegidas).</li><li><strong>Calidad de Código:</strong> Arquitectura de componentes, uso correcto de Server/Client components, hooks, Server Actions/Route Handlers, legibilidad.</li><li><strong>Gestión de Versiones:</strong> Historial de commits limpio y semántico, README profesional.</li><li><strong>Despliegue:</strong> App desplegada y accesible públicamente.</li></ul>',
     }
   },
   {
@@ -394,6 +394,7 @@ export const courseData: CourseModule[] = [
     quizId: 'quiz_13',
   },
 ];
+
 
 
 
