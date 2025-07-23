@@ -1,12 +1,4 @@
 
-
-
-
-
-
-
-
-
 export interface CourseClass {
   id: string;
   title: string;
@@ -305,7 +297,7 @@ export const courseData: CourseModule[] = [
       {
         id: '5.3',
         title: 'Smart Contracts e Interacción con la Blockchain',
-        content: '',
+        content: '<h2>El Cerebro de Web3: Smart Contracts</h2><p>Si la blockchain es una base de datos global y descentralizada, los <strong>smart contracts (contratos inteligentes)</strong> son los programas que se ejecutan sobre ella. Son la pieza que transforma a una blockchain de un simple sistema de registro a un "ordenador mundial" programable.</p><h3>1. ¿Qué es un Smart Contract?</h3><p>Un smart contract es un programa informático que se almacena en una blockchain y se ejecuta automáticamente cuando se cumplen unas condiciones predeterminadas. Es un código <strong>inmutable</strong> (una vez desplegado, no se puede cambiar) y <strong>determinista</strong> (siempre produce el mismo resultado si se le da la misma entrada).</p><p>Piensa en una máquina expendedora:</p><ol><li><strong>Condición:</strong> Si introduces 1 euro...</li><li><strong>Ejecución:</strong> ...la máquina te entrega una lata de refresco.</li></ol><p>Un smart contract funciona de manera similar, pero con código. Sus reglas están escritas en el contrato y son aplicadas por la red de la blockchain, eliminando la necesidad de un intermediario. Esto permite crear interacciones "sin confianza" (trustless), donde no necesitas confiar en la otra parte, solo en la lógica del código.</p><h3>2. Solidity: El Lenguaje de los Smart Contracts</h3><p><strong>Solidity</strong> es el lenguaje de programación de alto nivel más popular para escribir smart contracts en la blockchain de Ethereum y otras cadenas compatibles con la EVM (Ethereum Virtual Machine). Su sintaxis es similar a la de JavaScript y C++, lo que facilita su aprendizaje para los desarrolladores web.</p><h4>Anatomía de un Contrato Simple en Solidity</h4><pre><code class="language-solidity">// Especifica la versión del compilador de Solidity\\npragma solidity ^0.8.20;\\n\\n// Definición del contrato\\ncontract Saludo {\\n    // Variable de estado: se almacena permanentemente en la blockchain\\n    string public mensaje;\\n\\n    // Constructor: se ejecuta solo una vez, cuando se despliega el contrato\\n    constructor(string memory mensajeInicial) {\\n        mensaje = mensajeInicial;\\n    }\\n\\n    // Función para leer el estado (no cuesta gas)\\n    function verMensaje() public view returns (string memory) {\\n        return mensaje;\\n    }\\n\\n    // Función para modificar el estado (cuesta gas)\\n    function cambiarMensaje(string memory nuevoMensaje) public {\\n        mensaje = nuevoMensaje;\\n    }\\n}\\n</code></pre><p>En este ejemplo, creamos un contrato que almacena un saludo en la blockchain. Cualquiera puede leer el saludo, y cualquiera (pagando la tasa de gas) puede cambiarlo.</p><h3>3. Interactuando desde el Front-End: Ethers.js</h3><p>¿Cómo interactúa nuestra aplicación Next.js con un smart contract que vive en la blockchain? Necesitamos una librería que actúe como puente. La librería más popular y robusta para esto es <strong>Ethers.js</strong>.</p><p>Ethers.js nos permite:</p><ul><li><strong>Conectar a la Blockchain:</strong> A través de un "proveedor" (Provider), que puede ser la wallet del usuario (como MetaMask) o un servicio de nodo como Infura o Alchemy.</li><li><strong>Obtener el "Firmante" (Signer):</strong> Representa la cuenta del usuario, con la capacidad de firmar transacciones (es decir, autorizar operaciones que cambian el estado).</li><li><strong>Instanciar un Contrato:</strong> Crear un objeto en JavaScript que representa al smart contract en la blockchain, permitiéndonos llamar a sus funciones como si fueran métodos de un objeto normal.</li></ul><pre><code class="language-javascript">import { ethers } from "ethers";\\n\\n// 1. Conectar al proveedor de la wallet (MetaMask inyecta `window.ethereum`)\\nconst provider = new ethers.BrowserProvider(window.ethereum);\\n\\n// 2. Obtener la cuenta del usuario para firmar transacciones\\nconst signer = await provider.getSigner();\\n\\n// 3. Crear una instancia del contrato\\nconst contractAddress = "0x..."; // La dirección del contrato desplegado\\nconst contractABI = [...]; // El "manual de instrucciones" del contrato\\nconst saludoContract = new ethers.Contract(contractAddress, contractABI, signer);\\n\\n// 4. Interactuar con el contrato\\nasync function leerSaludo() {\\n  const mensajeActual = await saludoContract.verMensaje();\\n  console.log(mensajeActual);\\n}\\n\\nasync function escribirNuevoSaludo(nuevoMensaje) {\\n  // Esto abrirá MetaMask para que el usuario firme y pague la transacción\\n  const tx = await saludoContract.cambiarMensaje(nuevoMensaje);\\n  await tx.wait(); // Esperar a que la transacción se confirme en la blockchain\\n  console.log("¡Mensaje cambiado!");\\n}\\n</code></pre><p>Dominar esta interacción entre el front-end y un smart contract es la habilidad clave para construir aplicaciones descentralizadas (dApps) completas.</p>',
         duration: 90,
       },
       {
@@ -322,6 +314,3 @@ export const courseData: CourseModule[] = [
     quizId: 'quiz_5',
   },
 ];
-
-    
-
