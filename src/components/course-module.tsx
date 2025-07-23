@@ -103,7 +103,7 @@ export function CourseModuleItem({ module, isLocked }: { module: CourseModule; i
                 <h4 className="font-semibold flex items-center gap-2"><Trophy className="h-5 w-5 text-accent"/>{module.project.title}</h4>
                 <p className="text-sm text-muted-foreground pl-7">{module.project.description}</p>
               </div>
-              {!hasProjectAndNoClasses && (
+              {!hasProjectAndNoClasses && module.quizId && (
                 <Link href={`/quiz/${module.id}`} passHref>
                   <Button>
                     <FileQuestion className="mr-2 h-4 w-4" />

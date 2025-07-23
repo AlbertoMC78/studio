@@ -20,13 +20,18 @@ export default function DashboardPage() {
   const isModuleLocked = (moduleId: string): boolean => {
     const numericModuleId = parseInt(moduleId, 10);
     if (numericModuleId === 1) {
-      return false; 
+      return false; // Module 1 is never locked
     }
     const previousModuleId = String(numericModuleId - 1);
+    // If the previous module doesn't have a quiz, it's considered "passed" for unlocking purposes
+    const previousModuleHasQuiz = courseData.find(m => m.id === previousModuleId)?.quizId;
+    if (!previousModuleHasQuiz) {
+        return false;
+    }
     return !quizResults[previousModuleId];
   };
 
-  const allModulesCompleted = courseData.every(module => quizResults[module.id] || module.classes.length === 0);
+  const allModulesCompleted = courseData.every(module => !module.quizId || quizResults[module.id]);
 
   return (
     <div className="space-y-8">

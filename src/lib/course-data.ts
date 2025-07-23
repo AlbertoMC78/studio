@@ -15,7 +15,7 @@ export interface CourseModule {
     title: string;
     description: string;
   };
-  quizId: string;
+  quizId?: string;
 }
 
 export const courseData: CourseModule[] = [
@@ -80,8 +80,7 @@ export const courseData: CourseModule[] = [
       title: 'Página de perfil personal',
       description:
         'Crea tu propia página de perfil usando HTML y CSS, y súbela a un repositorio de GitHub.',
-    },
-    quizId: 'quiz_1',
+    }
   },
   {
     id: '2',
