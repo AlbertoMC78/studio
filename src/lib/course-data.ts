@@ -91,13 +91,13 @@ export const courseData: CourseModule[] = [
       {
         id: '2.1',
         title: 'Variables, tipos de datos y operadores',
-        content: '<h2>La Verdad sobre JavaScript: Tipos, Coerción y Comparaciones</h2><p>JavaScript es un lenguaje de "tipado dinámico". Es crucial entender sus tipos primitivos (String, Number, Boolean, null, undefined) y cómo funciona la <strong>coerción de tipo</strong> (conversión automática de tipos).</p><p>Para evitar errores, la regla de oro es usar siempre el operador de <strong>igualdad estricta (<code>===</code>)</strong> y el de desigualdad estricta (<code>!==</code>), que comparan valor y tipo sin realizar coerción.</p><pre><code class="language-javascript">console.log(5 == "5");  // true (débil, con coerción)\\nconsole.log(5 === "5"); // false (estricta, sin coerción)</code></pre>',
+        content: '<h2>La Verdad sobre JavaScript: Tipos, Coerción y Comparaciones</h2><p>JavaScript es un lenguaje de "tipado dinámico". Es crucial entender sus tipos primitivos (String, Number, Boolean, null, undefined) y cómo funciona la <strong>coerción de tipo</strong> (conversión automática de tipos).</p><p>Para evitar errores, la regla de oro es usar siempre el operador de <strong>igualdad estricta (<code>===</code>)</strong> y el de desigualdad estricta (<code>!==</code>), que comparan valor y tipo sin realizar coerción.</p><pre><code class="language-javascript">console.log(5 == "5");  // true (débil, con coerción)\nconsole.log(5 === "5"); // false (estricta, sin coerción)</code></pre>',
         duration: 45,
       },
       {
         id: '2.2',
         title: 'Condicionales y bucles',
-        content: '<h2>Tomando Decisiones y Repitiendo Tareas</h2><h3>Condicionales</h3><p>Permiten que tu código ejecute diferentes bloques según una condición. Los principales son <code>if</code>, <code>else if</code>, y <code>else</code>.</p><pre><code class="language-javascript">if (edad >= 18) {\\n  console.log("Es mayor de edad");\\n} else {\\n  console.log("Es menor de edad");\\n}</code></pre><h3>Bucles</h3><p>Permiten ejecutar un bloque de código múltiples veces. Los más comunes son:</p><ul><li><strong><code>for</code>:</strong> Cuando sabes de antemano cuántas veces quieres repetir.</li><li><strong><code>while</code>:</strong> Cuando la repetición depende de una condición que puede cambiar.</li><li><strong><code>for...of</code>:</strong> Para iterar sobre los elementos de un array.</li></ul>',
+        content: '<h2>Tomando Decisiones y Repitiendo Tareas</h2><h3>Condicionales</h3><p>Permiten que tu código ejecute diferentes bloques según una condición. Los principales son <code>if</code>, <code>else if</code>, y <code>else</code>.</p><pre><code class="language-javascript">if (edad >= 18) {\n  console.log("Es mayor de edad");\n} else {\n  console.log("Es menor de edad");\n}</code></pre><h3>Bucles</h3><p>Permiten ejecutar un bloque de código múltiples veces. Los más comunes son:</p><ul><li><strong><code>for</code>:</strong> Cuando sabes de antemano cuántas veces quieres repetir.</li><li><strong><code>while</code>:</strong> Cuando la repetición depende de una condición que puede cambiar.</li><li><strong><code>for...of</code>:</strong> Para iterar sobre los elementos de un array.</li></ul>',
         duration: 45,
       },
       {
@@ -109,7 +109,7 @@ export const courseData: CourseModule[] = [
       {
         id: '2.4',
         title: 'Arreglos y objetos',
-        content: '<h2>Colecciones de Datos</h2><h3>Arreglos (Arrays)</h3><p>Son listas ordenadas de valores. Puedes acceder a sus elementos por su índice (empezando en 0).</p><pre><code class="language-javascript">const frutas = ["manzana", "plátano", "naranja"];\\nconsole.log(frutas[1]); // "plátano"</code></pre><h3>Objetos (Objects)</h3><p>Son colecciones de pares clave-valor. Se usan para agrupar datos relacionados.</p><pre><code class="language-javascript">const usuario = {\\n  nombre: "Alberto",\\n  edad: 30,\\n  esEstudiante: true\\n};\\nconsole.log(usuario.nombre); // "Alberto"</code></pre>',
+        content: '<h2>Colecciones de Datos</h2><h3>Arreglos (Arrays)</h3><p>Son listas ordenadas de valores. Puedes acceder a sus elementos por su índice (empezando en 0).</p><pre><code class="language-javascript">const frutas = ["manzana", "plátano", "naranja"];\nconsole.log(frutas[1]); // "plátano"</code></pre><h3>Objetos (Objects)</h3><p>Son colecciones de pares clave-valor. Se usan para agrupar datos relacionados.</p><pre><code class="language-javascript">const usuario = {\n  nombre: "Alberto",\n  edad: 30,\n  esEstudiante: true\n};\nconsole.log(usuario.nombre); // "Alberto"</code></pre>',
         duration: 50,
       },
       {
@@ -121,19 +121,19 @@ export const courseData: CourseModule[] = [
       {
         id: '2.6',
         title: 'Eventos y formularios',
-        content: '<h2>Haciendo Páginas Interactivas: Eventos</h2><p>Los <strong>eventos</strong> son acciones que ocurren en el navegador, como un clic de un usuario, el envío de un formulario o la finalización de la carga de una imagen. Podemos "escuchar" estos eventos y ejecutar código en respuesta.</p><pre><code class="language-javascript">const miBoton = document.getElementById("miBoton");\\n\\nmiBoton.addEventListener("click", function() {\\n  alert("¡Botón presionado!");\\n});</code></pre><p>Para los formularios, es común escuchar el evento <code>submit</code> y usar <code>event.preventDefault()</code> para evitar que la página se recargue, permitiéndonos manejar los datos con JavaScript.</p>',
+        content: '<h2>Haciendo Páginas Interactivas: Eventos</h2><p>Los <strong>eventos</strong> son acciones que ocurren en el navegador, como un clic de un usuario, el envío de un formulario o la finalización de la carga de una imagen. Podemos "escuchar" estos eventos y ejecutar código en respuesta.</p><pre><code class="language-javascript">const miBoton = document.getElementById("miBoton");\n\nmiBoton.addEventListener("click", function() {\n  alert("¡Botón presionado!");\n});</code></pre><p>Para los formularios, es común escuchar el evento <code>submit</code> y usar <code>event.preventDefault()</code> para evitar que la página se recargue, permitiéndonos manejar los datos con JavaScript.</p>',
         duration: 60,
       },
        {
         id: '2.7',
         title: 'JSON y almacenamiento local',
-        content: '<h2>Persistencia de Datos en el Navegador</h2><h3>JSON (JavaScript Object Notation)</h3><p>Es un formato de texto ligero para el intercambio de datos. A pesar de su nombre, es independiente del lenguaje, pero su sintaxis es un subconjunto de la de los objetos de JavaScript.</p><ul><li><strong><code>JSON.stringify(objeto)</code>:</strong> Convierte un objeto de JavaScript a una cadena JSON.</li><li><strong><code>JSON.parse(cadenaJson)</code>:</strong> Convierte una cadena JSON a un objeto de JavaScript.</li></ul><h3>Almacenamiento Local (Local Storage)</h3><p>Permite guardar pares clave-valor en el navegador de forma persistente (no se borran al cerrar la pestaña). Solo puede almacenar cadenas de texto, por lo que es común usar JSON para guardar objetos.</p><pre><code class="language-javascript">const usuario = { nombre: "Alberto" };\\nlocalStorage.setItem("datosUsuario", JSON.stringify(usuario));\\nconst usuarioGuardado = JSON.parse(localStorage.getItem("datosUsuario"));</code></pre>',
+        content: '<h2>Persistencia de Datos en el Navegador</h2><h3>JSON (JavaScript Object Notation)</h3><p>Es un formato de texto ligero para el intercambio de datos. A pesar de su nombre, es independiente del lenguaje, pero su sintaxis es un subconjunto de la de los objetos de JavaScript.</p><ul><li><strong><code>JSON.stringify(objeto)</code>:</strong> Convierte un objeto de JavaScript a una cadena JSON.</li><li><strong><code>JSON.parse(cadenaJson)</code>:</strong> Convierte una cadena JSON a un objeto de JavaScript.</li></ul><h3>Almacenamiento Local (Local Storage)</h3><p>Permite guardar pares clave-valor en el navegador de forma persistente (no se borran al cerrar la pestaña). Solo puede almacenar cadenas de texto, por lo que es común usar JSON para guardar objetos.</p><pre><code class="language-javascript">const usuario = { nombre: "Alberto" };\nlocalStorage.setItem("datosUsuario", JSON.stringify(usuario));\nconst usuarioGuardado = JSON.parse(localStorage.getItem("datosUsuario"));</code></pre>',
         duration: 45,
       },
       {
         id: '2.8',
         title: 'Fetch API: consumir datos de APIs',
-        content: '<h2>Obteniendo Datos del Mundo Exterior: Fetch API</h2><p>La <strong>Fetch API</strong> es la forma moderna en JavaScript de realizar peticiones de red (por ejemplo, a una API REST) para obtener o enviar datos. Se basa en <strong>Promesas</strong>.</p><p>El patrón más común utiliza <code>async/await</code> para escribir código asíncrono que parece síncrono, facilitando su lectura y manejo de errores.</p><pre><code class="language-javascript">async function obtenerUsuarios() {\\n  try {\\n    const respuesta = await fetch("https://jsonplaceholder.typicode.com/users");\\n    if (!respuesta.ok) {\\n      throw new Error("Error en la red");\\n    }\\n    const datos = await respuesta.json();\\n    console.log(datos);\\n  } catch (error) {\\n    console.error("Hubo un problema:", error);\\n  }\\n}\\n\\nobtenerUsuarios();</code></pre>',
+        content: '<h2>Obteniendo Datos del Mundo Exterior: Fetch API</h2><p>La <strong>Fetch API</strong> es la forma moderna en JavaScript de realizar peticiones de red (por ejemplo, a una API REST) para obtener o enviar datos. Se basa en <strong>Promesas</strong>.</p><p>El patrón más común utiliza <code>async/await</code> para escribir código asíncrono que parece síncrono, facilitando su lectura y manejo de errores.</p><pre><code class="language-javascript">async function obtenerUsuarios() {\n  try {\n    const respuesta = await fetch("https://jsonplaceholder.typicode.com/users");\n    if (!respuesta.ok) {\n      throw new Error("Error en la red");\n    }\n    const datos = await respuesta.json();\n    console.log(datos);\n  } catch (error) {\n    console.error("Hubo un problema:", error);\n  }\n}\n\nobtenerUsuarios();</code></pre>',
         duration: 60,
       },
     ],
@@ -158,13 +158,13 @@ export const courseData: CourseModule[] = [
       {
         id: '3.2',
         title: 'Componentes, props y JSX',
-        content: '<h2>Los Bloques de Construcción: Componentes, JSX y Props</h2>\n<p>El corazón de React es el <strong>componente</strong>, una función de JavaScript (con nombre en mayúscula) que devuelve <strong>JSX</strong>.</p><h3>JSX</h3><p>Es una extensión de sintaxis que permite escribir "HTML" en JavaScript. Se transforma en llamadas a funciones de React.</p><h3>Props</h3><p>Son la forma de pasar datos de un componente padre a uno hijo. Son inmutables y fluyen en una sola dirección.</p><pre><code class="language-jsx">// Padre\\n<SaludoPersonalizado nombre="Alberto" />\\n\\n// Hijo\\nfunction SaludoPersonalizado(props) {\\n  return <h1>Hola, {props.nombre}</h1>;\\n}</code></pre>',
+        content: '<h2>Los Bloques de Construcción: Componentes, JSX y Props</h2>\n<p>El corazón de React es el <strong>componente</strong>, una función de JavaScript (con nombre en mayúscula) que devuelve <strong>JSX</strong>.</p><h3>JSX</h3><p>Es una extensión de sintaxis que permite escribir "HTML" en JavaScript. Se transforma en llamadas a funciones de React.</p><h3>Props</h3><p>Son la forma de pasar datos de un componente padre a uno hijo. Son inmutables y fluyen en una sola dirección.</p><pre><code class="language-jsx">// Padre\n<SaludoPersonalizado nombre="Alberto" />\n\n// Hijo\nfunction SaludoPersonalizado(props) {\n  return <h1>Hola, {props.nombre}</h1>;\n}</code></pre>',
         duration: 90,
       },
       {
         id: '3.3',
         title: 'State y ciclo de vida',
-        content: '<h2>La Memoria de los Componentes: State</h2><p>Para que un componente pueda recordar información que cambia con el tiempo (como un contador o el texto de un input), usamos el <strong>estado (state)</strong>. En los componentes de función, esto se gestiona con el Hook <strong><code>useState</code></strong>.</p><pre><code class="language-jsx">import { useState } from "react";\\n\\nfunction Contador() {\\n  const [contador, setContador] = useState(0); // 0 es el valor inicial\\n\\n  // Al llamar a setContador, React vuelve a renderizar el componente\\n  return <button onClick={() => setContador(contador + 1)}>{contador}</button>\\n}</code></pre><p>React solo vuelve a renderizar un componente cuando cambian sus props o su estado.</p>',
+        content: '<h2>La Memoria de los Componentes: State</h2><p>Para que un componente pueda recordar información que cambia con el tiempo (como un contador o el texto de un input), usamos el <strong>estado (state)</strong>. En los componentes de función, esto se gestiona con el Hook <strong><code>useState</code></strong>.</p><pre><code class="language-jsx">import { useState } from "react";\n\nfunction Contador() {\n  const [contador, setContador] = useState(0); // 0 es el valor inicial\n\n  // Al llamar a setContador, React vuelve a renderizar el componente\n  return <button onClick={() => setContador(contador + 1)}>{contador}</button>\n}</code></pre><p>React solo vuelve a renderizar un componente cuando cambian sus props o su estado.</p>',
         duration: 90,
       },
       {
@@ -242,7 +242,129 @@ export const courseData: CourseModule[] = [
       description: 'Contenerizar la aplicación completa en Docker y crear un pipeline de CI/CD con GitHub Actions para desplegarla automáticamente.',
     },
     quizId: 'quiz_5',
-  }
+  },
+  {
+    id: '6',
+    title: 'MÓDULO 6: Proyecto Intermedio',
+    objective: 'Construir una app completa full-stack y desplegarla',
+    classes: [],
+    project: {
+      title: 'Sistema de gestión de usuarios (CRUD, login, dashboard, etc.)',
+      description: 'Entregable: Repositorio Git + Deploy en Render/Vercel + Documentación',
+    },
+    quizId: 'quiz_6',
+  },
+  {
+    id: '7',
+    title: 'MÓDULO 7: Ciberseguridad para Desarrolladores Web',
+    objective: 'Prevenir ataques y proteger aplicaciones web',
+    classes: [
+      { id: '7.1', title: 'Principios de ciberseguridad', content: '', duration: 60 },
+      { id: '7.2', title: 'OWASP Top 10', content: '', duration: 90 },
+      { id: '7.3', title: 'XSS, CSRF, SQL Injection', content: '', duration: 90 },
+      { id: '7.4', title: 'Seguridad en autenticación y JWT', content: '', duration: 120 },
+      { id: '7.5', title: 'HTTPS, CORS, headers seguros', content: '', duration: 120 },
+      { id: '7.6', title: 'Hardening de aplicaciones', content: '', duration: 60 },
+    ],
+    project: {
+      title: 'Análisis y hardening de una app',
+      description: 'Realizar un análisis de seguridad de una aplicación y aplicar las mejoras necesarias.',
+    },
+    quizId: 'quiz_7',
+  },
+  {
+    id: '8',
+    title: 'MÓDULO 8: Introducción a la Inteligencia Artificial',
+    objective: 'Aplicar IA a productos web',
+    classes: [
+      { id: '8.1', title: '¿Qué es IA y cómo se usa en la web?', content: '', duration: 60 },
+      { id: '8.2', title: 'Introducción a Python y modelos preentrenados', content: '', duration: 90 },
+      { id: '8.3', title: 'API de OpenAI y otras herramientas', content: '', duration: 90 },
+      { id: '8.4', title: 'Procesamiento de lenguaje natural (NLP)', content: '', duration: 120 },
+      { id: '8.5', title: 'Aplicaciones prácticas: chatbot con IA', content: '', duration: 120 },
+    ],
+    project: {
+      title: 'Web app con integración de IA',
+      description: 'Crear una aplicación web que integre una funcionalidad de IA, como un asistente o un sistema de recomendaciones.',
+    },
+    quizId: 'quiz_8',
+  },
+  {
+    id: '9',
+    title: 'MÓDULO 9: Web3 y Blockchain',
+    objective: 'Entender la web descentralizada y crear apps sobre blockchain',
+    classes: [
+      { id: '9.1', title: 'Fundamentos de Web3 y contratos inteligentes', content: '', duration: 60 },
+      { id: '9.2', title: 'Wallets y redes blockchain', content: '', duration: 90 },
+      { id: '9.3', title: 'Smart contracts con Solidity', content: '', duration: 90 },
+      { id: '9.4', title: 'DApps con React + Web3.js', content: '', duration: 120 },
+      { id: '9.5', title: 'NFT y marketplaces', content: '', duration: 120 },
+    ],
+    project: {
+      title: 'Aplicación descentralizada con smart contract',
+      description: 'Desarrollar una dApp que interactúe con un smart contract en una red de prueba.',
+    },
+    quizId: 'quiz_9',
+  },
+  {
+    id: '10',
+    title: 'MÓDULO 10: Portafolio, Freelancing y Monetización',
+    objective: 'Preparar al estudiante para trabajar, emprender y vender sus servicios',
+    classes: [
+      { id: '10.1', title: 'Cómo crear un portafolio impactante', content: '', duration: 60 },
+      { id: '10.2', title: 'Plataformas para encontrar trabajo (Upwork, Freelancer, etc.)', content: '', duration: 90 },
+      { id: '10.3', title: 'Marca personal y networking', content: '', duration: 90 },
+      { id: '10.4', title: 'Monetizar tus aplicaciones', content: '', duration: 120 },
+      { id: '10.5', title: 'Estrategias básicas de marketing digital para programadores', content: '', duration: 120 },
+    ],
+    project: {
+      title: 'Lanzamiento de tu marca personal',
+      description: 'Crear un portafolio profesional, perfiles en plataformas de freelancing y una estrategia de monetización.',
+    },
+    quizId: 'quiz_10',
+  },
+  {
+    id: '11',
+    title: 'MÓDULO 11: Proyecto Final',
+    objective: 'Desarrollar un proyecto profesional completo',
+    classes: [],
+    project: {
+      title: 'App full stack con IA o Web3 integrada',
+      description: 'Incluye: diseño, frontend, backend, seguridad, deploy, documentación y defensa oral del proyecto.',
+    },
+    quizId: 'quiz_11',
+  },
+  {
+    id: '12',
+    title: 'MÓDULO 12: Nivel Master',
+    objective: 'Dominar arquitectura avanzada, patrones y escalabilidad',
+    classes: [
+      { id: '12.1', title: 'Arquitectura limpia', content: '', duration: 60 },
+      { id: '12.2', title: 'Monolitos vs Microservicios', content: '', duration: 90 },
+      { id: '12.3', title: 'Patrones de diseño (Factory, Singleton, etc.)', content: '', duration: 90 },
+      { id: '12.4', title: 'Webs de alto tráfico y escalabilidad', content: '', duration: 120 },
+      { id: '12.5', title: 'Testing avanzado y automatización', content: '', duration: 120 },
+    ],
+    project: {
+      title: 'Refactorización y optimización de un proyecto existente',
+      description: 'Aplicar patrones de diseño y arquitecturas avanzadas para mejorar un proyecto anterior.',
+    },
+    quizId: 'quiz_12',
+  },
+  {
+    id: '13',
+    title: 'MÓDULO 13: Nivel Doctorado (Investigación e innovación)',
+    objective: 'Conectar ciencia, ética y futuro de la programación',
+    classes: [
+      { id: '13.1', title: 'Ética en la IA y tecnología', content: '', duration: 60 },
+      { id: '13.2', title: 'Filosofía computacional y pensamiento crítico', content: '', duration: 90 },
+      { id: '13.3', title: 'Tecnologías emergentes (Quantum computing, computación evolutiva)', content: '', duration: 90 },
+      { id: '13.4', title: 'Publicación de papers y proyectos open-source', content: '', duration: 120 },
+    ],
+    project: {
+      title: 'Propuesta de innovación tecnológica o tesis técnica',
+      description: 'Desarrollar una propuesta de investigación o un proyecto open-source innovador.',
+    },
+    quizId: 'quiz_13',
+  },
 ];
-
-    
