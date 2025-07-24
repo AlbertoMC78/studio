@@ -224,7 +224,7 @@ function SignUpForm() {
 }
 
 export default function LoginPage() {
-  if (!INVITATION_CODE) {
+  if (!INVITATION_CODE || INVITATION_CODE === 'SET_YOUR_CODE_IN_FIREBASE') {
     return (
         <div className="flex min-h-screen flex-col items-center justify-center bg-background px-4">
             <Card className="w-full max-w-md shadow-2xl">
