@@ -4,6 +4,7 @@ import { NoteTaking } from '@/components/note-taking';
 import { SaveButton } from '@/components/save-button';
 import { Card, CardContent } from '@/components/ui/card';
 import { AudioPlayer } from '@/components/audio-player';
+import { TutorChat } from '@/components/tutor-chat';
 
 export default function ClassPage({
   params,
@@ -43,8 +44,9 @@ export default function ClassPage({
         </Card>
       </div>
 
-      <div className="lg:col-span-1">
+      <div className="lg:col-span-1 space-y-8">
         <NoteTaking lessonId={lesson.id} />
+        <TutorChat lessonContent={lesson.content} />
       </div>
     </div>
   );
