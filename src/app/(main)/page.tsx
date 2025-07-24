@@ -1,3 +1,4 @@
+
 'use client';
 
 import { courseData } from '@/lib/course-data';
@@ -10,7 +11,7 @@ import Link from 'next/link';
 import { Award, Target } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
-import { useMemo } from 'react';
+import { useMemo, useEffect, useState } from 'react';
 
 type QuizResults = {
   [moduleId: string]: boolean;
@@ -23,16 +24,16 @@ type ProgressState = {
 export default function DashboardPage() {
   const [quizResults] = useLocalStorage<QuizResults>('quiz-results', {});
   const { user } = useAuth();
-  
+  const [completedClasses, setCompletedClasses] = useState(0);
+
   const totalClasses = useMemo(() => courseData.reduce((acc, module) => acc + module.classes.length, 0), []);
-  
-  const completedClasses = useMemo(() => {
-    let count = 0;
-    courseData.forEach(module => {
-      // Since useLocalStorage is a hook, we can't call it in a loop.
-      // This is a limitation we accept for this implementation. A more robust solution might use a global state manager.
-      // For now, we read from localStorage directly, which is not ideal but works for this scenario.
-      if (typeof window !== 'undefined') {
+
+  useEffect(() => {
+    // This function will run on the client side after hydration
+    // and can safely access localStorage.
+    const calculateCompletedClasses = () => {
+      let count = 0;
+      courseData.forEach(module => {
         try {
           const progressItem = window.localStorage.getItem(`progress-${module.id}`);
           if (progressItem) {
@@ -42,10 +43,21 @@ export default function DashboardPage() {
         } catch (error) {
           console.warn(`Could not read progress for module ${module.id}`, error);
         }
-      }
-    });
-    return count;
-  }, [courseData]);
+      });
+      return count;
+    };
+    
+    setCompletedClasses(calculateCompletedClasses());
+
+    // A simple way to re-calculate when storage changes.
+    // A more robust solution might use a custom event.
+    const handleStorageChange = () => {
+       setCompletedClasses(calculateCompletedClasses());
+    }
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
+
+  }, [quizResults]); // Reruns when quiz results change, which is a good proxy for progress changes.
 
   const overallProgress = totalClasses > 0 ? (completedClasses / totalClasses) * 100 : 0;
 
@@ -55,10 +67,13 @@ export default function DashboardPage() {
       return false; // Module 1 is never locked
     }
     const previousModuleId = String(numericModuleId - 1);
-    const previousModuleHasQuiz = courseData.find(m => m.id === previousModuleId)?.quizId;
-    if (!previousModuleHasQuiz) {
+    const previousModule = courseData.find(m => m.id === previousModuleId);
+    
+    // If the previous module doesn't exist or doesn't have a quiz, it's not locked.
+    if (!previousModule || !previousModule.quizId) {
         return false;
     }
+    
     return !quizResults[previousModuleId];
   };
 
@@ -92,7 +107,7 @@ export default function DashboardPage() {
       </Card>
 
       {allModulesCompleted && user && (
-        <div className="p-6 bg-accent/20 rounded-lg text-center shadow-lg">
+        <div className="p-6 bg-accent/20 rounded-lg text-center shadow-lg border border-accent">
           <h2 className="text-2xl font-bold font-headline text-primary">¡Felicidades, {user.email?.split('@')[0]}!</h2>
           <p className="mt-2 text-muted-foreground">Has completado todos los módulos del curso. ¡Estás listo para reclamar tu certificado!</p>
           <Button asChild size="lg" className="mt-4">
