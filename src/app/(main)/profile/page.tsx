@@ -20,6 +20,7 @@ type ProgressState = {
 export default function ProfilePage() {
   const { user } = useAuth();
   const [quizResults] = useLocalStorage<QuizResults>('quiz-results', {});
+  const [avatarUrl] = useLocalStorage<string | null>('user-avatar', null);
   const [completedClasses, setCompletedClasses] = useState(0);
 
   const totalClasses = useMemo(() => courseData.reduce((acc, module) => acc + module.classes.length, 0), []);
@@ -65,7 +66,7 @@ export default function ProfilePage() {
     <div className="space-y-8">
       <div className="flex flex-col md:flex-row items-center gap-6">
         <Avatar className="h-24 w-24 border-4 border-primary shadow-lg">
-          <AvatarImage src="https://placehold.co/100x100" data-ai-hint="user avatar" />
+          <AvatarImage src={avatarUrl ?? undefined} data-ai-hint="user avatar" />
           <AvatarFallback className="text-4xl">
             {user.email?.[0].toUpperCase()}
           </AvatarFallback>
