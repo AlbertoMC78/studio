@@ -21,6 +21,7 @@ import {
   Bookmark,
   LogOut,
   Search,
+  User,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -51,9 +52,14 @@ function InnerLayout({ children }: { children: React.ReactNode }) {
       icon: LayoutDashboard,
     },
     {
-      href: '/ai-injector',
-      label: 'AI Content Injector',
-      icon: Sparkles,
+      href: '/profile',
+      label: 'Perfil',
+      icon: User,
+    },
+    {
+      href: '/search',
+      label: 'Buscador',
+      icon: Search,
     },
     {
       href: '/saved',
@@ -61,9 +67,9 @@ function InnerLayout({ children }: { children: React.ReactNode }) {
       icon: Bookmark,
     },
     {
-      href: '/search',
-      label: 'Buscador',
-      icon: Search,
+      href: '/ai-injector',
+      label: 'AI Content Injector',
+      icon: Sparkles,
     },
   ];
 
