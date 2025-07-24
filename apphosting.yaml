@@ -1,6 +1,20 @@
 # Settings to manage and configure a Firebase App Hosting backend.
 # https://firebase.google.com/docs/app-hosting/configure
 
+# The environment variables that will be available to your app.
+# You can set these using the Firebase CLI or in the Firebase console.
+# https://firebase.google.com/docs/app-hosting/configure#set-environment-variables
+#
+# IMPORTANT: It is not recommended to store secrets in this file.
+# We recommend using Secret Manager to store secrets.
+# https://firebase.google.com/docs/app-hosting/configure-with-secret-manager
+env:
+  - variable: NEXT_PUBLIC_INVITATION_CODE
+    # Set the value of your invitation code in the Firebase console
+    # or by running the following command:
+    # firebase apphosting:backends:update --project=<your-project-id> --backend=<your-backend-id> --update-env-vars=NEXT_PUBLIC_INVITATION_CODE="YOUR_CODE_HERE"
+    value: "FIREBASE_STUDIO_DEFAULT"
+
 runConfig:
   # Increase this value if you'd like to automatically spin up
   # more instances in response to increased traffic.
