@@ -22,17 +22,23 @@ import {
   LogOut,
   Search,
   User,
+  Loader2,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { AuthProvider, useAuth } from '@/context/auth-context';
 import { auth } from '@/lib/firebase';
 import { signOut } from 'firebase/auth';
+import { useLocalStorage } from '@/hooks/use-local-storage';
+import { generateAvatar } from '@/ai/flows/generate-avatar';
 
 function InnerLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
   const { user } = useAuth();
+  const [avatarUrl, setAvatarUrl] = useLocalStorage<string | null>('user-avatar', null);
+  const [isAvatarLoading, setIsAvatarLoading] = React.useState(false);
+
 
   React.useEffect(() => {
     if (!user) {
@@ -40,8 +46,29 @@ function InnerLayout({ children }: { children: React.ReactNode }) {
     }
   }, [user, router]);
 
+  React.useEffect(() => {
+    async function getAvatar() {
+        if (user?.email && !avatarUrl) {
+            setIsAvatarLoading(true);
+            try {
+                const result = await generateAvatar({ userEmail: user.email });
+                setAvatarUrl(result.avatarImage);
+            } catch (error) {
+                console.error("Failed to generate avatar", error);
+                // In case of error, we can leave the fallback avatar.
+            } finally {
+                setIsAvatarLoading(false);
+            }
+        }
+    }
+    getAvatar();
+  }, [user, avatarUrl, setAvatarUrl]);
+
+
   const handleLogout = async () => {
     await signOut(auth);
+    // Clear the avatar from storage on logout
+    setAvatarUrl(null); 
     router.push('/login');
   };
 
@@ -115,8 +142,16 @@ function InnerLayout({ children }: { children: React.ReactNode }) {
         <SidebarFooter className="p-4 mt-auto">
           <div className="flex items-center gap-3 p-3 rounded-lg bg-sidebar-accent/50">
             <Avatar>
-              <AvatarImage src="https://placehold.co/40x40" data-ai-hint="user avatar" />
-              <AvatarFallback>{user.email?.[0].toUpperCase()}</AvatarFallback>
+               {isAvatarLoading ? (
+                  <AvatarFallback>
+                    <Loader2 className="animate-spin" />
+                  </AvatarFallback>
+                ) : (
+                  <>
+                    <AvatarImage src={avatarUrl ?? undefined} data-ai-hint="user avatar" />
+                    <AvatarFallback>{user.email?.[0].toUpperCase()}</AvatarFallback>
+                  </>
+                )}
             </Avatar>
             <div className="flex flex-col overflow-hidden">
               <span className="font-semibold text-sidebar-foreground truncate">
