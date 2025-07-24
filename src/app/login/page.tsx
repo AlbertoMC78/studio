@@ -32,7 +32,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { BookOpen, Loader2 } from 'lucide-react';
-import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { useToast } from '@/hooks/use-toast';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
@@ -79,7 +79,7 @@ function LoginForm() {
   return (
       <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)}>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-4 pt-6">
               {error && (
                   <Alert variant="destructive">
                       <AlertDescription>{error}</AlertDescription>
@@ -167,7 +167,7 @@ function SignUpForm() {
   return (
       <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)}>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-4 pt-6">
               {error && (
                   <Alert variant="destructive">
                       <AlertDescription>{error}</AlertDescription>
@@ -233,8 +233,9 @@ export default function LoginPage() {
                 </CardHeader>
                 <CardContent>
                     <Alert variant="destructive">
+                        <AlertTitle>Missing Invitation Code</AlertTitle>
                         <AlertDescription>
-                            The application is not configured for registration. Please set an invitation code.
+                            The application is not configured for registration. Please contact the administrator to set up an invitation code environment variable.
                         </AlertDescription>
                     </Alert>
                 </CardContent>

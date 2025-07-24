@@ -13,7 +13,11 @@ env:
     # Set the value of your invitation code in the Firebase console
     # or by running the following command:
     # firebase apphosting:backends:update --project=<your-project-id> --backend=<your-backend-id> --update-env-vars=NEXT_PUBLIC_INVITATION_CODE="YOUR_CODE_HERE"
-    value: "FIREBASE_STUDIO_DEFAULT"
+    value: "L3UM4S" # This is a placeholder, you should set a real secret.
+  - variable: GEMINI_API_KEY
+    # Set your Gemini API key in the Firebase console or via the CLI:
+    # firebase apphosting:backends:update --project=<your-project-id> --backend=<your-backend-id> --update-env-vars=GEMINI_API_KEY="YOUR_API_KEY"
+    value: "AIzaSyA2y39yfX7rXXx4DfOjpgUqV9r1t6HJeIw" # This is a placeholder, set your real key.
 
 runConfig:
   # Increase this value if you'd like to automatically spin up
