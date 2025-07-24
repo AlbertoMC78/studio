@@ -27,7 +27,6 @@ export default function CertificatePage() {
     setError(null);
     try {
       const result = await generateCertificate({
-        // Using email as the name for simplicity, can be changed to a display name if available
         studentName: user.email.split('@')[0] || 'Student',
       });
       setCertificateUrl(result.certificateImage);
@@ -66,8 +65,8 @@ export default function CertificatePage() {
                 <p className="text-muted-foreground">Generating your personalized certificate...</p>
               </div>
             )}
-            {error && (
-              <div className="flex h-full w-full flex-col items-center justify-center gap-4 text-destructive">
+            {error && !isLoading && (
+              <div className="flex h-full w-full flex-col items-center justify-center gap-4 text-destructive p-4">
                  <AlertCircle className="h-16 w-16" />
                  <p className="font-semibold">{error}</p>
                  <Button onClick={handleGenerateCertificate}>Try Again</Button>
@@ -77,10 +76,8 @@ export default function CertificatePage() {
               <Image
                 src={certificateUrl}
                 alt="Certificate of Completion"
-                layout="fill"
-                objectFit="contain"
-                className="transition-opacity duration-500 ease-in-out"
-                onLoadingComplete={(e) => e.classList.remove('opacity-0')}
+                fill
+                className="object-contain"
               />
             )}
           </div>
