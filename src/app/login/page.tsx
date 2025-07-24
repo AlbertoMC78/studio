@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import {
-  createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   AuthError,
 } from 'firebase/auth';
@@ -39,10 +38,7 @@ const formSchema = z.object({
   password: z.string().min(6, 'Password must be at least 6 characters.'),
 });
 
-type Action = 'login' | 'signup';
-
 export default function LoginPage() {
-  const [action, setAction] = useState<Action>('login');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
@@ -63,13 +59,8 @@ export default function LoginPage() {
     const { email, password } = values;
 
     try {
-      if (action === 'login') {
-        await signInWithEmailAndPassword(auth, email, password);
-      } else {
-        // For the first user, we can just create an account.
-        // In a multi-user scenario, this would be a protected admin action.
-        await createUserWithEmailAndPassword(auth, email, password);
-      }
+      await signInWithEmailAndPassword(auth, email, password);
+      
       toast({
         title: 'Success!',
         description: "You've successfully logged in.",
@@ -83,7 +74,7 @@ export default function LoginPage() {
         case 'auth/invalid-credential':
         case 'auth/user-not-found':
         case 'auth/wrong-password':
-          errorMessage = 'Invalid email or password. Please try again or sign up.';
+          errorMessage = 'Invalid email or password. Please try again.';
           break;
         case 'auth/email-already-in-use':
           errorMessage = 'This email is already in use. Please log in.';
@@ -111,9 +102,7 @@ export default function LoginPage() {
             Master Web Developer
           </CardTitle>
           <CardDescription>
-            {action === 'login'
-              ? 'Sign in to access your course'
-              : 'Create an account to begin your journey'}
+            Sign in to access your course
           </CardDescription>
         </CardHeader>
         <Form {...form}>
@@ -160,23 +149,9 @@ export default function LoginPage() {
                 {isLoading ? (
                   <Loader2 className="mr-2 animate-spin" />
                 ) : (
-                  action === 'login' ? 'Login' : 'Sign Up'
+                  'Login'
                 )}
               </Button>
-               <p className="text-sm text-muted-foreground">
-                {action === 'login' ? "Don't have an account? " : "Already have an account? "}
-                <button
-                  type="button"
-                  onClick={() => {
-                    setAction(action === 'login' ? 'signup' : 'login');
-                    setError(null);
-                    form.reset();
-                  }}
-                  className="font-medium text-primary hover:underline"
-                >
-                  {action === 'login' ? 'Sign up' : 'Login'}
-                </button>
-              </p>
             </CardFooter>
           </form>
         </Form>
