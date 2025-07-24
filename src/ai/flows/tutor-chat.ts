@@ -10,9 +10,10 @@
 
 import { ai } from '@/ai/genkit';
 import { z } from 'zod';
+import { searchCourseTool } from '@/ai/tools/course-search-tool';
 
 const MessageSchema = z.object({
-  role: z.enum(['user', 'model']),
+  role: z.enum(['user', 'model', 'tool']),
   content: z.string(),
 });
 
@@ -36,31 +37,38 @@ export async function tutorChat(input: TutorChatInput): Promise<TutorChatOutput>
 
 const prompt = ai.definePrompt({
   name: 'tutorChatPrompt',
+  tools: [searchCourseTool],
   input: { schema: TutorChatInputSchema },
   output: { schema: TutorChatOutputSchema },
   prompt: `You are an expert, friendly, and encouraging Web Development Tutor. Your name is "WebPro-Tutor".
 
-Your role is to answer student's questions based *only* on the provided lesson content. Do not use any external knowledge. If the answer is not in the lesson content, politely state that the topic is outside the scope of the current lesson and encourage the student to continue with the course material.
+Your role is to answer student's questions.
+
+First, try to answer based *only* on the provided lesson content for the current lesson. 
+
+If the answer is not in the current lesson's content, you MUST use the 'searchCourseTool' to find relevant information from the entire course to answer the student's question. Inform the user that you are looking in other parts of the course.
+
+If after searching you still can't find the answer, politely state that the topic seems to be outside the scope of the course material and encourage the student to focus on the curriculum.
 
 Your tone should be pedagogical, clear, and supportive.
 
-START OF LESSON CONTENT
+START OF CURRENT LESSON CONTENT
 ---
 {{{lessonContent}}}
 ---
-END OF LESSON CONTENT
+END OF CURRENT LESSON CONTENT
 
 Here is the conversation history. The user's latest question is the last message.
 {{#each chatHistory}}
 {{#if (eq role 'user')}}
 Student: {{{content}}}
-{{else}}
+{{else if (eq role 'model')}}
 Tutor: {{{content}}}
 {{/if}}
 {{/each}}
 Student: {{{question}}}
 
-Based on the lesson content and the conversation history, provide a helpful response.
+Based on the lesson content, conversation history, and your tools, provide a helpful response.
 Tutor:`,
 });
 

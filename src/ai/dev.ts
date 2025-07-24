@@ -9,3 +9,4 @@ import '@/ai/flows/summarize-lesson.ts';
 import '@/ai/flows/generate-certificate.ts';
 import '@/ai/flows/tutor-chat.ts';
 import '@/ai/flows/generate-avatar.ts';
+import '@/ai/tools/course-search-tool.ts';
