@@ -41,7 +41,7 @@ export function CourseModuleItem({ module, isLocked }: { module: CourseModule; i
     }));
   };
 
-  const hasProjectAndNoClasses = module.project && module.classes.length === 0;
+  const hasClasses = module.classes.length > 0;
 
   return (
     <AccordionItem value={module.id} className="border-b-0" disabled={isLocked}>
@@ -58,7 +58,7 @@ export function CourseModuleItem({ module, isLocked }: { module: CourseModule; i
               <p className={cn("text-sm text-muted-foreground mt-1", isLocked && "text-muted-foreground/80")}>
                 {module.objective}
               </p>
-              {!hasProjectAndNoClasses && (
+              {hasClasses && (
                 <div className="flex items-center gap-4 mt-3">
                   <Progress value={progressPercentage} className={cn("w-[70%]", isLocked && "bg-muted-foreground/30")} />
                   <span className={cn("text-sm font-medium text-foreground", isLocked && "text-muted-foreground")}>
@@ -73,7 +73,7 @@ export function CourseModuleItem({ module, isLocked }: { module: CourseModule; i
           </div>
         </AccordionTrigger>
         <AccordionContent className="p-6 bg-background/50">
-          {module.classes.length > 0 && (
+          {hasClasses && (
             <ul className="space-y-4">
               {module.classes.map((cls) => (
                 <li
@@ -97,13 +97,13 @@ export function CourseModuleItem({ module, isLocked }: { module: CourseModule; i
               ))}
             </ul>
           )}
-          <div className={cn("pt-6 border-t", module.classes.length > 0 && "mt-6")}>
+          <div className={cn("pt-6 border-t", hasClasses && "mt-6")}>
             <div className="flex justify-between items-center">
               <div>
                 <h4 className="font-semibold flex items-center gap-2"><Trophy className="h-5 w-5 text-accent"/>{module.project.title}</h4>
-                <p className="text-sm text-muted-foreground pl-7">{module.project.description}</p>
+                <p className="text-sm text-muted-foreground pl-7" dangerouslySetInnerHTML={{ __html: module.project.description }}/>
               </div>
-              {!hasProjectAndNoClasses && module.quizId && (
+              {hasClasses && module.quizId && (
                 <Link href={`/quiz/${module.id}`} passHref>
                   <Button>
                     <FileQuestion className="mr-2 h-4 w-4" />
