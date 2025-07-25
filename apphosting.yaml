@@ -1,5 +1,0 @@
-run:
-  build: npm run build
-  start: npm start
-cpu: 2
-memory: 2Gi
