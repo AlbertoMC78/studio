@@ -1,0 +1,9 @@
+{
+  "hosting": {
+    "source": ".",
+    "frameworksBackend": {
+      "id": "web-dev-pro-ugufi",
+      "region": "us-central1"
+    }
+  }
+}
