@@ -137,6 +137,19 @@ function SignUpForm() {
     defaultValues: { email: '', password: '', invitationCode: '' },
   });
 
+  if (!INVITATION_CODE || INVITATION_CODE === 'SET_YOUR_CODE_IN_FIREBASE') {
+    return (
+        <CardContent>
+            <Alert variant="destructive">
+                <AlertTitle>Registration Disabled</AlertTitle>
+                <AlertDescription>
+                    New user registration is not configured. Please contact the administrator.
+                </AlertDescription>
+            </Alert>
+        </CardContent>
+    )
+  }
+
   async function onSubmit(values: z.infer<typeof signupSchema>) {
     setIsLoading(true);
     setError(null);
@@ -224,26 +237,6 @@ function SignUpForm() {
 }
 
 export default function LoginPage() {
-  if (!INVITATION_CODE || INVITATION_CODE === 'SET_YOUR_CODE_IN_FIREBASE') {
-    return (
-        <div className="flex min-h-screen flex-col items-center justify-center bg-background px-4">
-            <Card className="w-full max-w-md shadow-2xl">
-                <CardHeader>
-                    <CardTitle>Configuration Error</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <Alert variant="destructive">
-                        <AlertTitle>Missing Invitation Code</AlertTitle>
-                        <AlertDescription>
-                            The application is not configured for registration. Please contact the administrator to set up an invitation code environment variable.
-                        </AlertDescription>
-                    </Alert>
-                </CardContent>
-            </Card>
-        </div>
-    )
-  }
-  
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-background px-4">
        <Card className="w-full max-w-md shadow-2xl">
