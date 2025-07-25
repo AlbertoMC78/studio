@@ -1,36 +1,5 @@
-# Settings to manage and configure a Firebase App Hosting backend.
-# https://firebase.google.com/docs/app-hosting/configure
-
-# The environment variables that will be available to your app.
-# You can set these using the Firebase CLI or in the Firebase console.
-# https://firebase.google.com/docs/app-hosting/configure#set-environment-variables
-#
-# IMPORTANT: It is not recommended to store secrets in this file.
-# We recommend using Secret Manager to store secrets.
-# https://firebase.google.com/docs/app-hosting/configure-with-secret-manager
-env:
-  - variable: NEXT_PUBLIC_INVITATION_CODE
-    # Set the value of your invitation code in the Firebase console
-    # or by running the following command:
-    # firebase apphosting:backends:update --project=<your-project-id> --backend=<your-backend-id> --update-env-vars=NEXT_PUBLIC_INVITATION_CODE="YOUR_CODE_HERE"
-    value: "SET_YOUR_CODE_IN_FIREBASE" # This is a placeholder, you must set a real secret.
-  - variable: GEMINI_API_KEY
-    # Set your Gemini API key in the Firebase console or via the CLI:
-    # firebase apphosting:backends:update --project=<your-project-id> --backend=<your-backend-id> --update-env-vars=GEMINI_API_KEY="YOUR_API_KEY"
-    value: "" # This is a placeholder, set your real key.
-
-# Specifies the commands to build and run your application.
 run:
-  # The command to build your application.
-  # This command is run before the server starts.
   build: npm run build
-  # The command to start your application.
   start: npm start
-
-# The number of CPUs allocated to your backend.
-# https://firebase.google.com/docs/app-hosting/configure#cpu
 cpu: 2
-
-# The amount of memory allocated to your backend.
-# https://firebase.google.com/docs/app-hosting/configure#memory
 memory: 2Gi
